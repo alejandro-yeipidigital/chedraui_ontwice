@@ -1,0 +1,309 @@
+@font-face {
+  font-family: "Avenir-Medium";
+  src: url("../fonts/Avenir-Medium.woff2") format("woff2"), url("../fonts/Avenir-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Magic-Dreams";
+  src: url("../fonts/MagicDreams.woff2") format("woff2"), url("../fonts/MagicDreams.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+header {
+  background-color: #37338d;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+header .containerHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  background-color: #37338d;
+  padding-right: 20px;
+  padding-left: 20px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+}
+header .containerHeader .containerLogo div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+header .containerHeader .containerLogo div img {
+  max-width: 100%;
+  max-height: 40px;
+  cursor: pointer;
+}
+header .navMenu {
+  background-color: #37338d;
+  display: none;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+header .navMenu :nth-child(1) {
+  padding-top: 15px;
+}
+header .navMenu a {
+  text-decoration: none;
+}
+header .navMenu .linkMenu {
+  border-bottom: 1px solid #83bac5;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+header .navMenu .linkMenu h1 {
+  font-family: "Magic-Dreams";
+  font-size: 20px;
+  color: white;
+  margin: 0;
+}
+
+/* (991px and down) */
+@media only screen and (max-width: 991px) {
+  header .containerHeader {
+    padding: 0;
+    margin: 0;
+  }
+  header .containerHeader .containerLogo {
+    height: 100%;
+    width: 50%;
+  }
+  header .containerHeader .containerSections {
+    display: none;
+  }
+  header .containerHeader .containerLogin {
+    display: none;
+  }
+  header .containerHeader .containerMenu {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    padding-right: 30px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  header .containerHeader .containerMenu #Icon_Close {
+    display: none;
+  }
+}
+/* (992px and up) */
+@media only screen and (min-width: 992px) and (orientation: landscape) {
+  header {
+    padding-top: 5px;
+    background-color: #83bac5;
+  }
+  header .containerHeader {
+    padding: 0;
+    margin: 0;
+  }
+  header .containerHeader .containerLogo {
+    height: 100%;
+    width: 20%;
+  }
+  header .containerHeader .containerSections {
+    height: 100%;
+    width: 60%;
+  }
+  header .containerHeader .containerSections ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+  }
+  header .containerHeader .containerSections ul li {
+    padding: 15px;
+  }
+  header .containerHeader .containerSections ul li a {
+    text-decoration: none;
+  }
+  header .containerHeader .containerSections ul li h1 {
+    font-family: "Magic-Dreams";
+    font-size: 20px;
+    margin: 0;
+    color: white;
+    cursor: pointer;
+  }
+  header .containerHeader .containerLogin {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+    width: 20%;
+  }
+  header .containerHeader .containerLogin .shape {
+    width: 200px;
+    height: 70px;
+    margin-top: -8px;
+    background-image: url("../images/header/Icon_ShapeP.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  header .containerHeader .containerLogin .shape .circleProfile {
+    background-color: white;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  header .containerHeader .containerLogin .shape .circleProfile i {
+    padding: 0;
+    margin: 0;
+    color: #37338d;
+  }
+  header .containerHeader .containerLogin .shape .circleProfile img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  header .containerHeader .containerLogin .avatarLoaded {
+    border-radius: 50%;
+  }
+  header .containerHeader .containerMenu {
+    display: none;
+  }
+  header .navMenu {
+    display: none !important;
+  }
+}
+footer {
+  font-family: "Avenir-Medium";
+  width: 100%;
+}
+footer .containerFooter {
+  background-color: #83bac5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+footer .containerFooter .footerLogos {
+  display: flex;
+  flex-wrap: wrap;
+}
+footer .containerFooter .footerLogos .logosBrands {
+  padding: 0;
+  margin: 0;
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+footer .containerFooter .footerLogos .logosBrands a {
+  display: flex;
+  align-items: center;
+}
+footer .containerFooter .footerLogos .logosBrands a img {
+  max-width: 100%;
+  max-height: 100%;
+}
+footer .containerFooter .footerCopyright {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+footer .containerFooter .footerSocial {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+footer .containerFooter .footerSocial .socialIcon {
+  width: 20%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+footer .containerFooter .footerSocial .socialIcon a {
+  text-decoration: none;
+}
+footer .containerFooter .footerSocial .socialIcon .roundedShape {
+  display: flex;
+  flex-wrap: wrap;
+  width: 40px;
+  height: 40px;
+  background-color: #37338d;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  text-emphasis: center;
+}
+footer .containerFooter .footerSocial .socialIcon .roundedShape .fab {
+  color: white;
+}
+
+@media only screen and (max-width: 991px) {
+  footer .containerFooter {
+    padding-top: 10px;
+    padding-bottom: 15px;
+  }
+  footer .containerFooter .footerLogos {
+    width: 100%;
+  }
+  footer .containerFooter .footerLogos .logosBrands a {
+    width: 80px;
+    height: 80px;
+  }
+  footer .containerFooter .footerCopyright {
+    width: 100%;
+    padding: 20px;
+  }
+  footer .containerFooter .footerSocial {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  footer {
+    height: 100px;
+  }
+  footer .containerFooter {
+    height: 100%;
+  }
+  footer .containerFooter .footerLogos {
+    width: 30%;
+  }
+  footer .containerFooter .footerLogos .logosBrands a {
+    max-width: 40%;
+    max-height: 100%;
+  }
+  footer .containerFooter .footerCopyright {
+    height: 100%;
+    width: 40%;
+  }
+  footer .containerFooter .footerSocial {
+    width: 30%;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

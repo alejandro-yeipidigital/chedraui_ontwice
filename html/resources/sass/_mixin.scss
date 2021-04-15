@@ -1,0 +1,27 @@
+@mixin backgroungImages($url) {
+    background-image: url($url);
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+@mixin buttonGeneralFormat($bgColor , $color){
+    text-align: center;
+    padding: 10px 0px;
+    button , a{
+        font-family: 'Magic-Dreams';
+        border-radius: 15px;
+        padding: 3px 30px;
+        font-size:20px;
+        background-color: $bgColor;
+        color: $color;
+        border: none;
+        outline: none;
+        margin: 0;
+        text-decoration: none;
+    }
+}

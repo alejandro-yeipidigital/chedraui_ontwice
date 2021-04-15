@@ -1,0 +1,97 @@
+.termsContainer{
+    padding-top: 100px;
+    .termsBanner{
+        @include backgroungImages('../images/registerTicket/Banner_Registro.png');
+        min-height: $min-height-header-footer;
+        .termsSection{
+            padding: 0px;
+            padding-top: 30px;
+            background-color: rgba($color: #000000, $alpha: .2);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            width: 100%;
+            overflow: auto;
+            text-align: center;
+            .generalSectionsContain{
+                padding-top: 20px;
+                height: 400px;
+                overflow: auto;
+                z-index: 5;
+                p{
+                    text-align: justify;
+                }
+            }
+            .termsSectionGeneral{
+                table{
+                    width: 100%;
+                    overflow: auto;
+                    p{
+                        text-align: start;
+                    }
+                }
+                tr , td{
+                    border: 1px solid white;
+                    padding: 5px;
+                    text-align: start;
+                }
+            }
+        }
+    }
+}
+
+
+
+//xs and down
+@media only screen and (max-width: 575px) {
+    .termsContainer{
+        .termsBanner{
+            .termsSection{
+                .generalSectionsContain{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+//sm
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .termsContainer{
+        .termsBanner{
+            .termsSection{
+                .generalSectionsContain{
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+
+//md (tablet)
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .termsContainer{
+        .termsBanner{
+            .termsSection{
+                .generalSectionsContain{
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+
+//lg and up
+@media only screen and (min-width : 992px) {
+    .termsContainer{
+        .termsBanner{
+            .termsSection{
+                .generalSectionsContain{
+                    width: 70%;
+                }
+            }
+        }
+    }
+}

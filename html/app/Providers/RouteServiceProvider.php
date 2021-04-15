@@ -21,7 +21,10 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+
+    //Change made by Carlos make a redirect to profile this will redirect you to profile view after a count creation
+    //  public const HOME = '/tickets';
+    public const HOME = '/perfil';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -30,7 +33,11 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Route::macro('catch', function($action) {
+            $this->any('{anything}', $action)
+                ->where('anything', '.*')
+                ->fallback();
+         });
 
         parent::boot();
     }
@@ -43,6 +50,8 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         $this->mapApiRoutes();
+
+        $this->mapAdminRoutes();
 
         $this->mapWebRoutes();
 
@@ -61,6 +70,29 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/web.php'));
+    }
+
+
+    /**
+     * Define the "admin" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection,
+     * require authentication and an admin user.
+     *
+     * @return void
+     */
+    protected function mapAdminRoutes()
+    {
+        // Route::middleware(['web', 'auth:admin'])
+        //      ->namespace($this->namespace.'\Admin')
+        //     ->prefix('/admin')
+        //      ->group(base_path('routes/admin.php'));
+
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->prefix('/admin')
+            ->namespace('App\Http\Controllers\Admin')
+            ->group(base_path('routes/admin.php'));
     }
 
     /**

@@ -1,0 +1,232 @@
+.profileContainer {
+  padding-top: 100px;
+}
+.profileContainer .profileBanner {
+  background-image: url("../images/profile/Banner_Profile.png");
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  min-height: calc(100vh - 100px - 100px);
+}
+.profileContainer .profileBanner .profileSection {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0px;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards {
+  width: 100%;
+  z-index: 5;
+  text-align: center;
+  padding-top: 70px;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards h3 {
+  font-size: 20px;
+  font-family: "Magic-Dreams";
+  color: #37338d;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards h6 {
+  font-size: 16px;
+  font-family: "Magic-Dreams";
+  color: #37338d;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentInfo {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #83bac5;
+  border-radius: 15px;
+  margin: auto;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentInfo .profileContentAvatar {
+  margin: auto;
+  margin-top: -50px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px solid #37338d;
+  background-color: #83bac5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentInfo .profileContentAvatar img {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentInfo .profileContentName {
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentInfo .profileContentName h3 {
+  font-size: 26px;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentInfo .profileContentDetails {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentInfo .profileContentDetails h6 {
+  color: #17bdf7;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentTickets {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #83bac5;
+  border-radius: 15px;
+  margin: auto;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentTickets .profileContentTicketTitle {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentTickets .profileContentTicketTitle h3 {
+  font-size: 26px;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentTickets .profileContentTable {
+  height: 73%;
+  width: 100%;
+  overflow: auto;
+  z-index: 99;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentTickets .profileContentTable h6 {
+  color: #17bdf7;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentTickets .profileContentTable h3 {
+  padding: 10px;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentTickets .profileContentTable table {
+  width: 100%;
+  margin: auto;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentTickets .profileContentTable table h3 {
+  white-space: nowrap;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentTickets .profileContentTable table th {
+  position: sticky;
+  top: 0;
+}
+
+@media only screen and (max-width: 575px) {
+  .profileContentInfo {
+    width: 90%;
+    height: 300px;
+  }
+  .profileContentInfo .profileContentDetails {
+    height: 120px;
+  }
+
+  .profileContentTickets {
+    width: 90%;
+    height: 300px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .profileContentInfo {
+    width: 60%;
+    height: 300px;
+  }
+  .profileContentInfo .profileContentDetails {
+    height: 120px;
+  }
+
+  .profileContentTickets {
+    width: 60%;
+    height: 300px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .profileContentInfo {
+    width: 50%;
+    height: 300px;
+  }
+  .profileContentInfo .profileContentDetails {
+    height: 120px;
+  }
+
+  .profileContentTickets {
+    width: 50%;
+    height: 300px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1279px) {
+  .profileContentInfo {
+    width: 40%;
+    height: 300px;
+  }
+  .profileContentInfo .profileContentDetails {
+    height: 120px;
+  }
+
+  .profileContentTickets {
+    width: 40%;
+    height: 300px;
+  }
+
+  .profileContentCards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 1280px) and (max-width: 1919px) {
+  .profileContentInfo {
+    width: 40%;
+    height: 300px;
+  }
+  .profileContentInfo .profileContentDetails {
+    height: 120px;
+  }
+
+  .profileContentTickets {
+    width: 40%;
+    height: 300px;
+  }
+
+  .profileContentCards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .profileContentInfo {
+    width: 35%;
+    height: 400px;
+  }
+  .profileContentInfo .profileContentDetails {
+    height: 120px;
+  }
+
+  .profileContentTickets {
+    width: 35%;
+    height: 400px;
+  }
+
+  .profileContentCards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,214 @@
+@import '../variables';
+@import '../fonts/index.scss';
+
+
+header{
+    background-color: $colorMenuBar;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+
+    .containerHeader {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        background-color: $colorMenuBar;
+        padding-right: 20px;
+        padding-left: 20px;
+        box-shadow: 0px 5px 5px rgba($color: #000000, $alpha: .5);
+
+        .containerLogo{
+            div{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    max-width: 100%;
+                    max-height: 40px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .navMenu{
+        background-color: $colorMenuBar;
+        display: none;
+        text-align: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        
+        :nth-child(1){
+            padding-top: 15px;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+
+        .linkMenu{
+            border-bottom: 1px solid rgba($color: $colorMenuEyelash , $alpha: 1);
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            h1{
+                font-family:'Magic-Dreams';
+                font-size: 20px;
+                color: white;
+                margin: 0;
+            }
+        }
+
+    }
+}
+
+/* (991px and down) */
+@media only screen and (max-width : 991px) {
+    header{
+
+        .containerHeader {
+            padding: 0;
+            margin:0;
+
+            .containerLogo{
+                height: 100%;
+                width: 50%;
+            }
+
+            .containerSections{
+                display: none;
+            }
+        
+            .containerLogin{
+                display:none;
+            }
+
+            .containerMenu{
+                width: 50%;
+                height: 100%;
+                display: flex;
+                margin: 0;
+                padding: 0;
+                padding-right: 30px;
+                align-items: center;
+                justify-content: flex-end;
+                #Icon_Close{
+                    display: none;
+                }
+            }        
+        }
+    }
+}
+
+
+/* (992px and up) */  
+@media only screen and (min-width : 992px) and (orientation:landscape) {
+    header{
+        padding-top: 5px;
+        background-color: $colorMenuEyelash;
+
+        .containerHeader {
+            padding: 0;
+            margin:0;
+            .containerLogo{
+                height: 100%;
+                width: 20%;
+            }
+
+            .containerSections{
+                height: 100%;
+                width: 60%;
+                ul{
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    flex-wrap: wrap;
+                    list-style: none;
+                    height: 100%;
+                    justify-content: space-around;
+                    align-items: center;
+                    
+                    li{
+                        padding: 15px;
+                        a{
+                            text-decoration: none;
+                        }
+                        h1{
+                            font-family:'Magic-Dreams';
+                            font-size: 20px;
+                            margin: 0;
+                            color: white;
+                            cursor: pointer;
+                        }
+
+                    }
+                }
+            }
+
+            .containerLogin{
+                display: flex;
+                flex-wrap: wrap;
+                text-align: center;
+                justify-content: center;
+                height: 100%;
+                width: 20%;
+                .shape{
+                    width: 200px;
+                    height: 70px;
+                    margin-top: -8px;
+                    background-image: url('../images/header/Icon_ShapeP.png');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    .circleProfile{
+                        background-color: white;
+                        height: 55px;
+                        width: 55px;
+                        border-radius: 50%;
+                        margin-top: 8px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        i{
+                            padding: 0;
+                            margin: 0;
+                            color: $colorMenuBar;
+                        }
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+                .avatarLoaded{
+                    border-radius: 50%;
+                }
+            }
+        
+            .containerMenu{
+                display: none;
+            }    
+        }
+
+        .navMenu{
+            display: none !important;
+        }
+    }
+}

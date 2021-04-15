@@ -1,0 +1,71 @@
+.termsContainer {
+  padding-top: 100px;
+}
+.termsContainer .termsBanner {
+  background-image: url("../images/registerTicket/Banner_Registro.png");
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  min-height: calc(100vh - 100px - 100px);
+}
+.termsContainer .termsBanner .termsSection {
+  padding: 0px;
+  padding-top: 30px;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 100%;
+  overflow: auto;
+  text-align: center;
+}
+.termsContainer .termsBanner .termsSection .generalSectionsContain {
+  padding-top: 20px;
+  height: 400px;
+  overflow: auto;
+  z-index: 5;
+}
+.termsContainer .termsBanner .termsSection .generalSectionsContain p {
+  text-align: justify;
+}
+.termsContainer .termsBanner .termsSection .termsSectionGeneral table {
+  width: 100%;
+  overflow: auto;
+}
+.termsContainer .termsBanner .termsSection .termsSectionGeneral table p {
+  text-align: start;
+}
+.termsContainer .termsBanner .termsSection .termsSectionGeneral tr, .termsContainer .termsBanner .termsSection .termsSectionGeneral td {
+  border: 1px solid white;
+  padding: 5px;
+  text-align: start;
+}
+
+@media only screen and (max-width: 575px) {
+  .termsContainer .termsBanner .termsSection .generalSectionsContain {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .termsContainer .termsBanner .termsSection .generalSectionsContain {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .termsContainer .termsBanner .termsSection .generalSectionsContain {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .termsContainer .termsBanner .termsSection .generalSectionsContain {
+    width: 70%;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

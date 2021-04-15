@@ -1,0 +1,28 @@
+.pagination{
+
+}
+	.pagination li a,
+	.pagination li span{
+		font-size: 1.077rem;
+		line-height: 14px;
+		font-weight: 400;
+		padding: 0.7692rem 0.9231rem;
+		color: #404040;
+		background-color: #fff;
+		border: 1px solid #ddd;
+		border-radius: 2px;
+		margin-left: 4px;
+	}
+	.pagination li.disabled a{
+		color: #878787;
+		pointer-events: none;
+		cursor: auto;
+		background-color: #FFFFFF;
+		border-color: #dee2e6;
+	}
+	.pagination li.active span{
+		z-index: 1;
+		color: #FFFFFF;
+		background-color: #4285f4;
+		border-color: #4285f4;
+	}

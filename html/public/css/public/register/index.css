@@ -1,0 +1,115 @@
+.registerContainer {
+  padding-top: 100px;
+}
+.registerContainer .registerBanner {
+  background-image: url("../images/register/Banner_Registro.png");
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  min-height: calc(100vh - 100px - 100px);
+}
+.registerContainer .registerBanner .registerSection {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.registerContainer .registerBanner .registerSection .registerContain {
+  padding: 0;
+  padding-top: 30px;
+}
+.registerContainer .registerBanner .registerSection .registerContain .registerForm {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 2px solid #83bac5;
+  border-radius: 15px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+.registerContainer .registerBanner .registerSection .registerContain .registerForm .dataRegister .formRegisterFirstSection, .registerContainer .registerBanner .registerSection .registerContain .registerForm .dataRegister .formRegisterSecondSection, .registerContainer .registerBanner .registerSection .registerContain .registerForm .dataRegister .formRegisterFirstSectionAuth {
+  padding: 0 10px;
+}
+.registerContainer .registerBanner .registerSection .registerContain .registerForm .dataRegister .formRegisterFirstSection *, .registerContainer .registerBanner .registerSection .registerContain .registerForm .dataRegister .formRegisterSecondSection *, .registerContainer .registerBanner .registerSection .registerContain .registerForm .dataRegister .formRegisterFirstSectionAuth * {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.registerContainer .registerBanner .registerSection .registerContain .registerForm .formRegisterThirdSection {
+  padding-top: 10px;
+}
+.registerContainer .registerBanner .registerSection .registerContain .registerForm .formRegisterThirdSection div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  padding-top: 5px;
+  padding-right: 10px;
+}
+.registerContainer .registerBanner .registerSection .registerContain .registerForm .formRegisterThirdSection div label {
+  font-size: 14px;
+  padding-right: 10px;
+  color: #37338d;
+  font-weight: bold;
+}
+.registerContainer .registerBanner .registerSection .registerContain .registerForm .formRegisterThirdSection div label a {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  color: #37338d;
+}
+.registerContainer .registerBanner .registerSection .registerContain .registerForm .formRegisterThirdSection div label a u {
+  cursor: pointer;
+  color: #37338d;
+}
+.registerContainer .registerBanner .registerSection .registerContain .registerForm .formRegisterThirdSection div input {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .dataRegister {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .dataRegister .formRegisterFirstSection {
+    width: 50%;
+  }
+  .dataRegister .formRegisterSecondSection {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .dataRegister {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .dataRegister .formRegisterFirstSection {
+    width: 50%;
+  }
+  .dataRegister .formRegisterSecondSection {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .dataRegister {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .dataRegister .formRegisterFirstSection {
+    width: 50%;
+  }
+  .dataRegister .formRegisterSecondSection {
+    width: 50%;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

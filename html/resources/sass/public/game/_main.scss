@@ -1,0 +1,7 @@
+.game{
+    @include backgroungImages('../images/game/bg_game.png');
+    height: 100vh;
+    #c2canvasdiv{
+        z-index: 2;
+    }
+}

@@ -1,0 +1,18 @@
+$colorMenuBar : #37338d ;
+$colorMenuEyelash : #83bac5;
+$colorFooterShadow : #00e0e7;
+$colorWhite : white;
+$colorPricesDark : #64b3c1 ;
+$colorPricesLight : #00c7d0 ;
+$colorRedCompra : #f72929;
+$colorGreenRegister : #c0c431;
+$colorBlueRedime : #17bdf7;
+$colorMiddleBannerPadding : #53c6cd;
+$colorFB : #3b5998;
+
+
+//----------------
+$min-height-header: calc(100vh - 100px); //vh - header
+$min-height-header-footer: calc(100vh - 100px - 100px); //vh - header - footer
+$min-height-header-genTitle : calc(100vh - 100px - 75px - 100px); //vh - header - generalTitle
+$min-height-header-genTitle-footer : calc(100vh - 100px - 75px - 100px); //vh - header - generalTitle - footer

@@ -1,0 +1,101 @@
+.topBanner{
+    padding-top: 100px;
+    .backTopImage{
+        @include backgroungImages('../images/home/top_banner/Banner_Top_1.png');
+        min-height: 100vh;
+        .buttonsContainer{
+            position: absolute;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            text-align: center;
+
+            .buttonsGroup{
+                .buttonTopBanner{
+                    padding: 0;
+                    *{
+                        font-family:'Magic-Dreams';
+                        border-radius: 10px;
+                        border: none;
+                        padding: 5px 20px;
+                        font-size: 18px;
+                        color: white;
+                        margin: 10px;
+                        cursor: pointer;
+                    }
+                    .loginBtn{
+                        text-decoration: none;
+                        background-color: $colorBlueRedime;
+                        outline: none;
+                    }
+                    .registerBtn{
+                        text-decoration: none;
+                        background-color: $colorRedCompra;
+                        outline: none;
+                    }
+                }
+            }
+        }
+
+        .hellmansLogoMain{
+            position: absolute;
+            .hellmansLogoMainImg{
+                width: 100px;
+            }
+        }
+
+        .modalForm{
+            border-radius: 15px;
+            .close{
+                outline: none;
+            }
+        }    
+    }
+}
+
+
+
+//xs and down
+@media only screen and (max-width: 575px) {
+    @include stylesMdDown;
+
+    .hellmansLogoMain{
+        top:50%;
+        left:5%;
+    }
+}
+
+//sm
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+    @include stylesMdDown;
+
+    .hellmansLogoMain{
+        top:60%;
+        left:20%;
+    }
+}
+
+//md (tablet)
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    
+    @include stylesMdDown;
+    
+    .hellmansLogoMain{
+        top:50%;
+        left:20%;
+    }
+}
+
+//lg and up
+@media only screen and (min-width : 992px) {
+    
+    @include styleMdUp;
+
+    .hellmansLogoMain{
+        top:70%;
+        left:40%;
+    }
+}
+

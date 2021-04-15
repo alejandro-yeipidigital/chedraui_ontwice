@@ -1,0 +1,121 @@
+.registerContainer{
+    padding-top: 100px;
+    .registerBanner{
+        @include backgroungImages('../images/register/Banner_Registro.png');
+        min-height: $min-height-header-footer;
+        .registerSection{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            .registerContain{
+                padding: 0;
+                padding-top: 30px;
+                .registerForm{
+                    padding: 10px;
+                    background-color: rgba($color: #ffffff, $alpha: .6);
+                    border: 2px solid $colorMenuEyelash;
+                    border-radius: 15px;
+                    box-shadow: 0px 10px 10px rgba($color: #000000, $alpha: .5);
+                    .dataRegister{
+                        .formRegisterFirstSection , .formRegisterSecondSection , .formRegisterFirstSectionAuth{
+                            padding: 0 10px;
+                            *{
+                                display: flex;
+                                flex-direction: column-reverse;
+                            }
+                        }
+                    }
+    
+                    .formRegisterThirdSection{
+                        padding-top: 10px;
+                        
+                        div{
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-items: center;
+                            justify-content: flex-start;
+                            margin: 0;
+                            padding: 0;
+                            padding-top: 5px;
+                            padding-right: 10px;
+                            label{
+                                font-size: 14px;
+                                padding-right: 10px;
+                                color: $colorMenuBar;
+                                font-weight: bold;
+                                a{
+                                    padding: 0;
+                                    margin: 0;
+                                    text-decoration: none;
+                                    color: $colorMenuBar;
+                                    u{
+                                        cursor: pointer;
+                                        color: $colorMenuBar;
+                                    }
+                                }
+                            }
+                            input{
+                                cursor: pointer;
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+//xs and down
+@media only screen and (max-width: 575px) {
+}
+
+//sm
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .dataRegister{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        .formRegisterFirstSection{
+            width: 50%;
+        }
+        .formRegisterSecondSection{
+            width: 50%;
+        }
+    }
+}
+
+//md (tablet)
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .dataRegister{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        .formRegisterFirstSection{
+            width: 50%;
+        }
+        .formRegisterSecondSection{
+            width: 50%;
+        }
+    }
+}
+
+//lg and up
+@media only screen and (min-width : 992px) {
+    .dataRegister{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        .formRegisterFirstSection{
+            width: 50%;
+        }
+        .formRegisterSecondSection{
+            width: 50%;
+        }
+    }
+}

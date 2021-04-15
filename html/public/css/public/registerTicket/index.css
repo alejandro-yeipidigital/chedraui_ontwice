@@ -1,0 +1,75 @@
+.registerTicketContainer {
+  padding-top: 100px;
+}
+.registerTicketContainer .registerTicketBanner {
+  background-image: url("../images/registerTicket/Banner_Registro.png");
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  min-height: calc(100vh - 100px - 100px);
+}
+.registerTicketContainer .registerTicketBanner .registerTicketSection {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  padding: 30px 0px;
+}
+.registerTicketContainer .registerTicketBanner .registerTicketSection .registerTicketContain {
+  padding-top: 30px;
+}
+.registerTicketContainer .registerTicketBanner .registerTicketSection .registerTicketContain .registerTicketForm {
+  padding-top: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 2px solid #83bac5;
+  border-radius: 15px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.registerTicketContainer .registerTicketBanner .registerTicketSection .registerTicketContain .registerTicketForm .registerTicketFormContain {
+  width: 90%;
+}
+.registerTicketContainer .registerTicketBanner .registerTicketSection .registerTicketContain .registerTicketForm .registerTicketFormContain .ticketNameGroup {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.registerTicketContainer .registerTicketBanner .registerTicketSection .registerTicketContain .registerTicketForm .registerTicketFormContain .ticketButtonGroup {
+  height: 100%;
+}
+.registerTicketContainer .registerTicketBanner .registerTicketSection .registerTicketContain .registerTicketForm .registerTicketFormContain .ticketButtonGroup .ticketSelectedInput {
+  display: none;
+}
+
+@media only screen and (max-width: 575px) {
+  .registerTicketContain .registerTicketForm {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .registerTicketContain .registerTicketForm {
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .registerTicketContain .registerTicketForm {
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1919px) {
+  .registerTicketContain .registerTicketForm {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .registerTicketContain .registerTicketForm {
+    width: 40%;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

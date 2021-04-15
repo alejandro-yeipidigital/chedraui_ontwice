@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Participation;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -16,7 +17,27 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'middle_name',
+        'last_name',
+        'email',
+        'telephone',
+        'birthday',
+        'size',
+        'street',
+        'number_int',
+        'number_ext',
+        'zip_code',
+        'neighborhood',
+        'municipality',
+        'state',
+        'total_info',
+        'fb_email',
+        'avatar',
+        'register_type',
+        'active',
+        'password',
+        'observations'
     ];
 
     /**
@@ -28,6 +49,25 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /*
+    |--------------------------------------------------------------------------
+    | Accesors
+    |--------------------------------------------------------------------------
+    */
+    public function getFullNameAttribute() {
+        return "{$this->name} {$this->middle_name} {$this->last_name}";
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Relationships
+    |--------------------------------------------------------------------------
+    */
+    public function participations()
+    {
+        return $this->hasMany('App\Models\Participation');
+    }
+
     /**
      * The attributes that should be cast to native types.
      *
@@ -36,4 +76,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isAdmin()
+    {
+        return false;
+    }
 }

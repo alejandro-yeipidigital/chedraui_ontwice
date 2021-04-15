@@ -1,0 +1,125 @@
+footer{
+    font-family: "Avenir-Medium";
+    width: 100%;
+    .containerFooter{
+        background-color: $colorMenuEyelash;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        .footerLogos{
+            display: flex;
+            flex-wrap: wrap;
+
+            .logosBrands{
+                padding: 0;
+                margin: 0;
+                width: 50%;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                a{
+                    display: flex;
+                    align-items: center;
+                    img{
+                        max-width: 100%;
+                        max-height: 100%;
+                    }
+                }
+            }
+        }
+
+        .footerCopyright{
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footerSocial{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            .socialIcon{
+                width: 20%;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                a{
+                    text-decoration: none;
+                }
+                .roundedShape{
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 40px;
+                    height: 40px;
+                    background-color:$colorMenuBar;
+                    border-radius: 50%;
+                    align-items: center;
+                    justify-content: center;
+                    text-emphasis: center;
+                    .fab{
+                        color : white;
+                    }    
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 991px) {
+    footer{
+        .containerFooter{
+            padding-top: 10px;
+            padding-bottom: 15px;
+            .footerLogos{
+                width: 100%;
+                .logosBrands {
+                    a{
+                        width: 80px;
+                        height: 80px;
+                    }
+                }
+            }
+
+            .footerCopyright{
+                width: 100%;
+                padding: 20px;
+            }
+
+            .footerSocial{
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width : 992px) {
+    footer{
+        height: 100px;
+        .containerFooter{
+            height: 100%;
+            .footerLogos{
+                width: 30%;
+                .logosBrands {
+                    a{
+                        max-width: 40%;
+                        max-height: 100%;
+                    }
+                }
+            }
+
+            .footerCopyright{
+                height: 100%;
+                width: 40%;
+            }
+
+            .footerSocial{
+                width: 30%;
+            }
+        }
+    }
+}

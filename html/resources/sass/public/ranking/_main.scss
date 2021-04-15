@@ -1,0 +1,210 @@
+.rankingContainer{
+    padding-top: 100px;
+    .rankingBanner{
+        @include backgroungImages('../images/register/Banner_Registro.png');
+        min-height: $min-height-header-footer;
+        .rankingSection{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            .rankingContain{
+                padding: 0;
+                padding-top: 30px;
+                .carouselContainer{
+                    padding: 30px 0px;
+                    background-color: rgba($color: #ffffff, $alpha: .6);
+                    border: 2px solid $colorMenuEyelash;
+                    border-radius: 15px;
+                    box-shadow: 0px 10px 10px rgba($color: #000000, $alpha: .5);
+                    .carouselContainerContent{
+                        height: 400px;
+                        .week{
+                            font-family: 'Magic-Dreams';
+                            color: $colorMenuBar;
+                            font-size: 40px;
+                        }
+                        .text-Ranking1{
+                            font-family: 'Magic-Dreams';
+                            color: $colorMenuBar ;
+                            font-size: 18px;
+                        }
+                        .text-Ranking2{
+                            font-family: 'Magic-Dreams';
+                            color: white ;
+                            font-size: 18px;
+                        }
+                        .circleArrow{
+                            background-color: $colorGreenRegister;
+                            border-radius: 50%;
+                            border: none;
+                            outline: none;
+                            padding: 0px;
+                            margin: 0px;
+                            height: 40px;
+                            width: 40px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            i{
+                                color: white;
+                                border-radius: 50%;
+                                padding: 0px;
+                                margin: 0px;
+    
+                            }
+                            .leftArrow{
+                                transform: rotate(-90deg);
+                            }
+                            .rightArrow{
+                                transform: rotate(90deg);
+                            }
+                                
+                        }
+                    }
+                }
+                .ranking{
+                    a{
+                        text-decoration: none;
+                        outline: none;
+                    }
+                    &__temporalities{
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 0px;
+                        margin: 0px;
+                        .icon-prev{
+                            position: relative;
+                            padding: 0;
+                        }
+                        &-content{
+                            position: relative;
+                            padding: 0px 20px;
+                            margin: 0;
+                            li{
+                                text-align: center;
+                                top: 0;
+                                left: 0;
+                                display: none;
+                                &.active{
+                                    display: block;
+                                }
+                                h1{
+                                    padding: 0px;
+                                    margin: 0px;
+    
+                                }
+                            }
+                        }
+                        .icon-next{
+                            position: relative;
+                        }
+                    }
+                    &__tabs{
+                        padding: 20px 0px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        .btn{
+                            @include buttonGeneralFormat($colorBlueRedime , white);
+                        }
+                        .active{
+                            @include buttonGeneralFormat($colorRedCompra , white);
+                        }
+                    }
+                    &__list{
+                        height: 200px;
+                        overflow: auto;
+                        &-content{
+                            display: none;
+                            &.active{
+                                display: block;
+                            }
+                        }
+                    }
+                    &__legal{
+                        text-align: center;
+                        font-style: italic;
+                        padding-top: 20px;
+                        small{
+                            color : $colorMenuBar ;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+            .pagination{
+                display: flex;
+                justify-content: center;
+                margin-top: 1.5rem;
+            }
+            .page-item .page-link,
+            .page-item.disabled .page-link{
+                background-color: $colorMenuBar;
+                border: 1px solid $colorMenuBar;
+                color: #fff;
+            }
+            .page-item.active .page-link{
+                background-color: $colorBlueRedime;
+                border-color: $colorMenuBar;
+            }
+            .page-item .page-link:focus{
+                outline: none;
+                box-shadow: none;
+            }
+    
+        }
+    }
+}
+
+//xs and down
+@media only screen and (max-width: 575px) {
+    .rankingContain{
+        .carouselContainer{
+            width: 90%;
+        }
+    }
+}
+
+//sm
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .rankingContain{
+        .carouselContainer{
+            width: 60%;
+        }
+    }
+}
+
+//md (tablet)
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .rankingContain{
+        .carouselContainer{
+            width: 60%;
+        }
+    }
+}
+
+//lg
+@media only screen and (min-width : 992px) and (max-width: 1279px) {
+    .rankingContain{
+        .carouselContainer{
+            width: 50%;
+        }
+    }
+}
+
+//xl
+@media only screen and (min-width : 1280px) {
+    .rankingContain{
+        .carouselContainer{
+            width: 40%;
+        }
+    }
+}

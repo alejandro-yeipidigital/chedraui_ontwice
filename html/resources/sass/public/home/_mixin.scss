@@ -1,0 +1,79 @@
+@mixin stylesMdDown{
+    .modalLogin{
+        width: 90%;
+    }
+
+    .Logo_Main1{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        img{
+            max-width: 350px;
+            max-height: 450px;
+        }
+    }
+
+    .Logo_Main2{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-self: flex-end;
+        :nth-child(2){
+            display: none;
+        }
+        img{
+            max-width: 500px;
+        }
+    }
+
+    .buttonsContainer{
+        width: 100%;
+        .buttonsGroup{
+            padding-bottom: 30vh;
+        }
+    }
+
+}
+
+@mixin styleMdUp {
+    .modalLogin{
+        width: 30%;
+    }
+
+    .topBanner{
+        padding-top: 0px;
+    }
+
+    .Logo_Main1{
+        width: 50%;
+        height: 100%;
+        text-align: center;
+        img{
+            max-width: 65%;
+        }
+    }
+    
+    .Logo_Main2{
+        width: 50%;
+        height: 100%;
+        text-align: end;
+        align-self: flex-end;
+        :nth-child(1){
+            display: none;
+        }
+        img{
+            max-width: 100%;
+        }
+    }
+
+    .buttonsContainer{
+        width: 50%;
+        .buttonsGroup{
+            padding-bottom: 5vh;
+            display: flex;
+        }
+    }
+
+}

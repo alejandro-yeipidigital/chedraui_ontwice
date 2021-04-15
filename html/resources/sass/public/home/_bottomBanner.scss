@@ -1,0 +1,169 @@
+.bottomBanner{
+    .backBottomImage{
+        @include backgroungImages('../images/home/bottom_banner/Banner_Bottom.png');
+        background-position: top;
+        background-repeat: no-repeat;
+        min-height: $min-height-header-footer;
+        .premiosSection{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            .premiosContain{
+                padding: 0;
+                padding-top: 50px;
+                .leftArrowCarouselSM , .rightArrowCarouselSM,
+                .leftArrowCarouselLG , .rightArrowCarouselLG {
+                    width: 10%;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0;
+                    margin: 0;
+                    button{
+                        background-color: $colorGreenRegister;
+                        border-radius: 50%;
+                        border: none;
+                        outline: none;
+                        padding: 0px;
+                        margin: 0px;
+                        height: 40px;
+                        width: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        i{
+                            color: white;
+                            border-radius: 50%;
+                            padding: 0px;
+                            margin: 0px;
+
+                        }
+                        .leftArrow{
+                            transform: rotate(-90deg);
+                        }
+                        .rightArrow{
+                            transform: rotate(90deg);
+                        }
+                    }
+                }
+                .carouselItemsSM , .carouselItemsLGDiv{
+                    text-align: center;
+                    justify-content: center;
+                    div{
+                        background-color: white;
+                        margin: auto;
+                        width: 95%;
+                        img{
+                            max-height: 90%;
+                            max-width: 80%;
+                        }
+                        .rewardName{
+                            font-family: 'BarlowSemiCondensed';
+                            color: $colorMenuBar;
+                            font-weight: bolder;
+                        }
+                        .rewardPoints{
+                            font-family: 'BarlowSemiCondensed';
+                            color: $colorMenuBar;
+                            font-style: italic;
+                            font-weight: bolder;
+                            font-size: 30px;
+                        }
+                    }
+                    :nth-child(1){
+                        height: 250px;
+                        border-radius: 10px 10px 0px 0px;
+                    }
+                    :nth-child(2){
+                        border-radius: 0px 0px 10px 10px;
+                    }
+                }
+
+                .carouselItemsLGDiv{
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+
+//xs and down
+@media only screen and (max-width: 575px) {
+    #rewardsCarouselLG, .rightArrowCarouselLG, .leftArrowCarouselLG {
+        display: none;
+    }
+
+    .leftArrowCarouselSM , .rightArrowCarouselSM {
+        display: flex;
+    }
+
+    #rewardsCarouselSmall{
+        width: 75%;
+    }
+}
+
+//sm
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    #rewardsCarouselLG, .rightArrowCarouselLG, .leftArrowCarouselLG {
+        display: none;
+    }
+
+    .leftArrowCarouselSM , .rightArrowCarouselSM {
+        display: flex;
+    }
+
+    #rewardsCarouselSmall{
+        width: 50%;
+    }
+}
+
+//md (tablet)
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    #rewardsCarouselLG, .rightArrowCarouselLG, .leftArrowCarouselLG {
+        display: none;
+    }
+
+    .leftArrowCarouselSM , .rightArrowCarouselSM {
+        display: flex;
+    }
+
+    #rewardsCarouselSmall{
+        width: 50%;
+    }
+}
+
+//lg
+@media only screen and (min-width : 992px) and (max-width: 1279px) {
+    #rewardsCarouselSmall , .leftArrowCarouselSM , .rightArrowCarouselSM{
+        display: none;
+    }
+
+    .rightArrowCarouselLG, .leftArrowCarouselLG{
+        display: flex;
+    }
+
+    #rewardsCarouselLG{
+        width: 78%;
+    }
+}
+
+//xl
+@media only screen and (min-width : 1280px) {
+    #rewardsCarouselSmall , .leftArrowCarouselSM , .rightArrowCarouselSM{
+        display: none;
+    }
+
+    .rightArrowCarouselLG, .leftArrowCarouselLG{
+        display: flex;
+    }
+
+    #rewardsCarouselLG{
+        width: 78%;
+    }
+}
+
+
+

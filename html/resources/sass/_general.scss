@@ -1,0 +1,411 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Avenir-Medium";
+}
+
+body, html, .main {
+    height: 100%;
+}
+
+.actionButton{
+    text-align: center;
+    button, a{
+        font-family:'Magic-Dreams';
+        border-radius: 15px;
+        padding: 3px 30px;
+        font-size: 18px;
+        color: white;
+        background-color: $colorPricesDark;
+        border: 1px solid white;
+        outline: none;
+        text-decoration: none;
+    }
+    span{
+        font-family:'Magic-Dreams';
+    }
+}
+
+.actionButtonDark{
+    text-align: center;
+    button, a{
+        font-family:'Magic-Dreams';
+        border-radius: 15px;
+        padding: 3px 30px;
+        font-size: 18px;
+        color: white;
+        background-color: $colorMenuBar;
+        border: 2px solid white;
+        outline: none;
+        text-decoration: none;
+    }
+}
+
+.buttonFBConnect{
+    text-align: center;
+    a{
+        text-decoration: none;
+        font-family:'Magic-Dreams';
+        border-radius: 15px;
+        padding: 3px 30px;
+        font-size: 18px;
+        color: white;
+        background-color: $colorFB;
+        border: 2px solid $colorFB;
+    }
+}
+
+.buttonCreateAccount{
+    text-align: center;
+    a{
+        text-decoration: none;
+        font-family:'Magic-Dreams';
+        border-radius: 15px;
+        padding: 3px 30px;
+        font-size: 18px;
+        color: white;
+        background-color: $colorRedCompra;
+        border: 2px solid $colorRedCompra;
+    }
+}
+
+.instructionsText{
+    * , a{
+        font-size: 23px;
+    }
+}
+
+
+.text-blueSaladitas {
+    color: $colorMenuBar;
+    *{
+        color: $colorMenuBar;
+        // font-family: 'Magic-Dreams';
+    }
+}
+
+.text-colorRedCompra{
+    color: $colorRedCompra;
+    font-family: 'Magic-Dreams';
+    *{
+        color: $colorRedCompra;
+        font-family: 'Magic-Dreams';
+    }
+}
+
+.text-colorGreenRegister{
+    color: $colorGreenRegister;
+    font-family: 'Magic-Dreams';
+    *{
+        color: $colorGreenRegister;
+        font-family: 'Magic-Dreams';
+    }
+}
+
+.text-colorBlueRedime , .text-fase4{
+    color: $colorBlueRedime;
+    font-family: 'Magic-Dreams';
+    *{
+        color: $colorBlueRedime;
+        font-family: 'Magic-Dreams';
+    }
+}
+
+.bg-colorRedCompraShadow{
+    background-color: $colorRedCompra;
+    box-shadow: 5px 5px #cb2525;
+}
+
+.bg-colorRedCompra{
+    background-color: $colorRedCompra;
+}
+
+.bg-colorBlueRedimeShadow{
+    background-color: $colorBlueRedime;
+    box-shadow: 5px 5px #1280a7;
+}
+
+.bg-colorBlueRedime{
+    background-color: $colorBlueRedime;
+}
+
+.bg-colorGreenRegisterShadow{
+    background-color: $colorGreenRegister;
+    box-shadow: 5px 5px #8e9309;
+}
+
+.bg-colorGreenRegister{
+    background-color: $colorGreenRegister;
+}
+
+.generalSectionsTitle{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    h1{
+        font-family: 'Magic-Dreams';
+        color: $colorMenuBar;
+        text-align: center;
+        font-size: 50px;
+        text-shadow: 4px 4px white;
+        margin: 0;
+        padding: 0;
+    }
+    img{
+        max-width: 97%;
+    }
+}
+
+.generalSectionsContain{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    *{
+        z-index: 4;
+    }
+}
+
+.generalFormLabel{
+    font-family: "Avenir-Medium";
+    color: $colorMenuBar;
+    padding-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.generalFormInput{
+    font-family: "Avenir-Medium";
+    background-color: rgba($color: gray, $alpha: .1);
+    border: none;
+    border-bottom: 2px solid $colorMenuBar;
+    width: 100%;
+    color: $colorMenuBar;
+    font-size: 18px;
+    outline: none;
+    text-align: center;
+    align-items: center;
+    min-height: 40px;
+    &:focus {
+        border-bottom: 2px solid $colorFooterShadow;
+    }
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    padding: 0;
+    margin: 0;
+}
+
+.generalLogoCookie{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.gameInstructions{
+    min-height: $min-height-header-genTitle-footer;
+    .instructionStep{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: auto;
+        margin-top: 30px;
+        background-color: white;
+        background-color: rgba($color: #ffffff, $alpha: .6);
+        border: 2px solid $colorMenuEyelash;
+        border-radius: 15px;
+        box-shadow: 0px 10px 10px rgba($color: #000000, $alpha: .5);
+        min-height: 350px;
+        padding: 25px;
+        text-align: center;
+
+    }
+}
+
+//xs
+@media only screen and (max-width: 575px) {
+    .generalSectionsTitle{
+        img{
+            max-width: 90%;
+        }
+    }
+    .generalLogoCookie{
+        img{
+            max-width: 60%;
+        }
+    }
+}
+
+//sm
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .generalSectionsTitle{
+        img{
+            max-height: 60px;
+        }
+    }
+
+    .generalLogoCookie{
+        img{
+            max-width: 50%;
+        }
+    }
+}
+
+//md (tablet)
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .generalSectionsTitle{
+        img{
+            max-height: 70px;
+        }
+    }
+
+    .generalLogoCookie{
+        img{
+            max-width: 50%;
+        }
+    }
+}
+
+//lg and xl
+@media only screen and (min-width : 992px) and (max-width:1919px) {
+    .generalSectionsTitle{
+        img{
+            max-height: 50px;
+        }
+    }
+
+    .generalLogoCookie{
+        img{
+            max-width: 40%;
+        }
+    }
+}
+
+//xxl
+@media only screen and (min-width : 1920px) {
+    .generalSectionsTitle{
+        img{
+            max-height: 70px;
+        }
+    }
+
+    .generalLogoCookie{
+        img{
+            max-width: 30%;
+        }
+    }
+}
+
+
+//---------------------------------------------
+.game{
+    &__title{
+        margin: 0 auto;
+        width: 220px;
+    }
+    &__instructions{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        margin: 4rem;
+        &-item{
+            margin: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 260px;
+            .number{
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                font-family: 'Passion One';
+                font-style: italic;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2.5rem;
+            }
+            &:nth-child(1){
+                .number{
+                    background-color: #facd01;
+                }
+            }
+            &:nth-child(2){
+                .number{
+                    background-color: #56d4b5;
+                }
+            }
+            &:nth-child(3){
+                .number{
+                    background-color: #ff8610;
+                }
+            }
+            .title{
+                font-family: 'Passion One';
+                font-style: italic;
+                margin: 1rem 0;
+                font-size: 1.5rem;
+            }
+            p{
+                text-align: center;
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .btn{
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    iframe{
+        background: transparent !important; 
+        width: 500px; 
+        height: $min-height-header-footer;
+    }
+
+    &.emperador{
+        position: relative;
+        width: 100%;
+        min-height: $min-height-header-footer;
+        background-image: url(../images/bg_emperador.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 0;
+        .general__emperador-galleta{
+            bottom: initial;
+            top: 100px;
+        }
+    }
+    &.chokis{
+        position: relative;
+        width: 100%;
+        min-height: $min-height-header-footer;
+        background-image: url(../images/bg_chokis.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 0;
+    }
+}

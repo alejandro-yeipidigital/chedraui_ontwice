@@ -1,0 +1,1275 @@
+.topBanner {
+  padding-top: 100px;
+}
+.topBanner .backTopImage {
+  background-image: url("../images/home/top_banner/Banner_Top_1.png");
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  min-height: 100vh;
+}
+.topBanner .backTopImage .buttonsContainer {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+}
+.topBanner .backTopImage .buttonsContainer .buttonsGroup .buttonTopBanner {
+  padding: 0;
+}
+.topBanner .backTopImage .buttonsContainer .buttonsGroup .buttonTopBanner * {
+  font-family: "Magic-Dreams";
+  border-radius: 10px;
+  border: none;
+  padding: 5px 20px;
+  font-size: 18px;
+  color: white;
+  margin: 10px;
+  cursor: pointer;
+}
+.topBanner .backTopImage .buttonsContainer .buttonsGroup .buttonTopBanner .loginBtn {
+  text-decoration: none;
+  background-color: #17bdf7;
+  outline: none;
+}
+.topBanner .backTopImage .buttonsContainer .buttonsGroup .buttonTopBanner .registerBtn {
+  text-decoration: none;
+  background-color: #f72929;
+  outline: none;
+}
+.topBanner .backTopImage .hellmansLogoMain {
+  position: absolute;
+}
+.topBanner .backTopImage .hellmansLogoMain .hellmansLogoMainImg {
+  width: 100px;
+}
+.topBanner .backTopImage .modalForm {
+  border-radius: 15px;
+}
+.topBanner .backTopImage .modalForm .close {
+  outline: none;
+}
+
+@media only screen and (max-width: 575px) {
+  .modalLogin {
+    width: 90%;
+  }
+
+  .Logo_Main1 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .Logo_Main1 img {
+    max-width: 350px;
+    max-height: 450px;
+  }
+
+  .Logo_Main2 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-self: flex-end;
+  }
+  .Logo_Main2 :nth-child(2) {
+    display: none;
+  }
+  .Logo_Main2 img {
+    max-width: 500px;
+  }
+
+  .buttonsContainer {
+    width: 100%;
+  }
+  .buttonsContainer .buttonsGroup {
+    padding-bottom: 30vh;
+  }
+
+  .hellmansLogoMain {
+    top: 50%;
+    left: 5%;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .modalLogin {
+    width: 90%;
+  }
+
+  .Logo_Main1 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .Logo_Main1 img {
+    max-width: 350px;
+    max-height: 450px;
+  }
+
+  .Logo_Main2 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-self: flex-end;
+  }
+  .Logo_Main2 :nth-child(2) {
+    display: none;
+  }
+  .Logo_Main2 img {
+    max-width: 500px;
+  }
+
+  .buttonsContainer {
+    width: 100%;
+  }
+  .buttonsContainer .buttonsGroup {
+    padding-bottom: 30vh;
+  }
+
+  .hellmansLogoMain {
+    top: 60%;
+    left: 20%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .modalLogin {
+    width: 90%;
+  }
+
+  .Logo_Main1 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .Logo_Main1 img {
+    max-width: 350px;
+    max-height: 450px;
+  }
+
+  .Logo_Main2 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-self: flex-end;
+  }
+  .Logo_Main2 :nth-child(2) {
+    display: none;
+  }
+  .Logo_Main2 img {
+    max-width: 500px;
+  }
+
+  .buttonsContainer {
+    width: 100%;
+  }
+  .buttonsContainer .buttonsGroup {
+    padding-bottom: 30vh;
+  }
+
+  .hellmansLogoMain {
+    top: 50%;
+    left: 20%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .modalLogin {
+    width: 30%;
+  }
+
+  .topBanner {
+    padding-top: 0px;
+  }
+
+  .Logo_Main1 {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+  }
+  .Logo_Main1 img {
+    max-width: 65%;
+  }
+
+  .Logo_Main2 {
+    width: 50%;
+    height: 100%;
+    text-align: end;
+    align-self: flex-end;
+  }
+  .Logo_Main2 :nth-child(1) {
+    display: none;
+  }
+  .Logo_Main2 img {
+    max-width: 100%;
+  }
+
+  .buttonsContainer {
+    width: 50%;
+  }
+  .buttonsContainer .buttonsGroup {
+    padding-bottom: 5vh;
+    display: flex;
+  }
+
+  .hellmansLogoMain {
+    top: 70%;
+    left: 40%;
+  }
+}
+.middleBanner {
+  background-color: #53c6cd;
+  padding-top: 5px;
+}
+.middleBanner .backMiddleImage {
+  background-image: url("../images/home/middle_banner/Banner_Middle.png");
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  min-height: calc(100vh - 100px);
+}
+.middleBanner .backMiddleImage .mecanicaSection {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.middleBanner .backMiddleImage .mecanicaSection .mecanicaSteps .mecanicaStepsContain {
+  width: 100%;
+}
+.middleBanner .backMiddleImage .mecanicaSection .mecanicaSteps .mecanicaStepsContain .step1, .middleBanner .backMiddleImage .mecanicaSection .mecanicaSteps .mecanicaStepsContain .step2, .middleBanner .backMiddleImage .mecanicaSection .mecanicaSteps .mecanicaStepsContain .step3 {
+  margin: 0;
+  padding: 10px;
+  margin-top: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.middleBanner .backMiddleImage .mecanicaSection .mecanicaSteps .mecanicaStepsContain .steps {
+  background-color: white;
+  min-height: 400px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 25px;
+  padding-top: 0;
+  text-align: center;
+}
+.middleBanner .backMiddleImage .mecanicaSection .mecanicaSteps .mecanicaStepsContain .steps .romboNumbers {
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  margin-top: -25px;
+  border-radius: 5px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.middleBanner .backMiddleImage .mecanicaSection .mecanicaSteps .mecanicaStepsContain .steps .romboNumbers span {
+  font-family: "Magic-Dreams";
+  font-size: 35px;
+  color: white;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+.middleBanner .backMiddleImage .mecanicaSection .mecanicaSteps .mecanicaStepsContain .steps .romboArray {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.middleBanner .backMiddleImage .mecanicaSection .mecanicaSteps .mecanicaStepsContain .steps .romboArray .romboThree {
+  margin: 10px 10px;
+  width: 20px;
+  height: 20px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.middleBanner .backMiddleImage .mecanicaSection .mecanicaSteps .mecanicaStepsContain .steps .stepDescription {
+  text-align: justify;
+}
+
+@media only screen and (max-width: 575px) {
+  .mecanicaStepsContain {
+    display: inline-block;
+  }
+  .mecanicaStepsContain .step1, .mecanicaStepsContain .step2, .mecanicaStepsContain .step3 {
+    width: 100%;
+  }
+
+  .steps {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .mecanicaStepsContain {
+    display: inline-block;
+  }
+  .mecanicaStepsContain .step1, .mecanicaStepsContain .step2, .mecanicaStepsContain .step3 {
+    width: 100%;
+  }
+
+  .steps {
+    width: 60%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .mecanicaStepsContain {
+    display: inline-block;
+  }
+  .mecanicaStepsContain .step1, .mecanicaStepsContain .step2, .mecanicaStepsContain .step3 {
+    width: 100%;
+  }
+
+  .steps {
+    width: 60%;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1279px) {
+  .mecanicaStepsContain {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .mecanicaStepsContain .step1, .mecanicaStepsContain .step2, .mecanicaStepsContain .step3 {
+    width: 33.33%;
+  }
+  .mecanicaStepsContain .steps {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) and (max-width: 1919px) {
+  .mecanicaStepsContain {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .mecanicaStepsContain .step1, .mecanicaStepsContain .step2, .mecanicaStepsContain .step3 {
+    width: 33.33%;
+  }
+  .mecanicaStepsContain .steps {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .mecanicaStepsContain {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .mecanicaStepsContain .step1, .mecanicaStepsContain .step2, .mecanicaStepsContain .step3 {
+    width: 33.33%;
+  }
+  .mecanicaStepsContain .steps {
+    width: 80%;
+  }
+}
+.bottomBanner .backBottomImage {
+  background-image: url("../images/home/bottom_banner/Banner_Bottom.png");
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  background-position: top;
+  background-repeat: no-repeat;
+  min-height: calc(100vh - 100px - 100px);
+}
+.bottomBanner .backBottomImage .premiosSection {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.bottomBanner .backBottomImage .premiosSection .premiosContain {
+  padding: 0;
+  padding-top: 50px;
+}
+.bottomBanner .backBottomImage .premiosSection .premiosContain .leftArrowCarouselSM, .bottomBanner .backBottomImage .premiosSection .premiosContain .rightArrowCarouselSM,
+.bottomBanner .backBottomImage .premiosSection .premiosContain .leftArrowCarouselLG, .bottomBanner .backBottomImage .premiosSection .premiosContain .rightArrowCarouselLG {
+  width: 10%;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+.bottomBanner .backBottomImage .premiosSection .premiosContain .leftArrowCarouselSM button, .bottomBanner .backBottomImage .premiosSection .premiosContain .rightArrowCarouselSM button,
+.bottomBanner .backBottomImage .premiosSection .premiosContain .leftArrowCarouselLG button, .bottomBanner .backBottomImage .premiosSection .premiosContain .rightArrowCarouselLG button {
+  background-color: #c0c431;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  padding: 0px;
+  margin: 0px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bottomBanner .backBottomImage .premiosSection .premiosContain .leftArrowCarouselSM button i, .bottomBanner .backBottomImage .premiosSection .premiosContain .rightArrowCarouselSM button i,
+.bottomBanner .backBottomImage .premiosSection .premiosContain .leftArrowCarouselLG button i, .bottomBanner .backBottomImage .premiosSection .premiosContain .rightArrowCarouselLG button i {
+  color: white;
+  border-radius: 50%;
+  padding: 0px;
+  margin: 0px;
+}
+.bottomBanner .backBottomImage .premiosSection .premiosContain .leftArrowCarouselSM button .leftArrow, .bottomBanner .backBottomImage .premiosSection .premiosContain .rightArrowCarouselSM button .leftArrow,
+.bottomBanner .backBottomImage .premiosSection .premiosContain .leftArrowCarouselLG button .leftArrow, .bottomBanner .backBottomImage .premiosSection .premiosContain .rightArrowCarouselLG button .leftArrow {
+  transform: rotate(-90deg);
+}
+.bottomBanner .backBottomImage .premiosSection .premiosContain .leftArrowCarouselSM button .rightArrow, .bottomBanner .backBottomImage .premiosSection .premiosContain .rightArrowCarouselSM button .rightArrow,
+.bottomBanner .backBottomImage .premiosSection .premiosContain .leftArrowCarouselLG button .rightArrow, .bottomBanner .backBottomImage .premiosSection .premiosContain .rightArrowCarouselLG button .rightArrow {
+  transform: rotate(90deg);
+}
+.bottomBanner .backBottomImage .premiosSection .premiosContain .carouselItemsSM, .bottomBanner .backBottomImage .premiosSection .premiosContain .carouselItemsLGDiv {
+  text-align: center;
+  justify-content: center;
+}
+.bottomBanner .backBottomImage .premiosSection .premiosContain .carouselItemsSM div, .bottomBanner .backBottomImage .premiosSection .premiosContain .carouselItemsLGDiv div {
+  background-color: white;
+  margin: auto;
+  width: 95%;
+}
+.bottomBanner .backBottomImage .premiosSection .premiosContain .carouselItemsSM div img, .bottomBanner .backBottomImage .premiosSection .premiosContain .carouselItemsLGDiv div img {
+  max-height: 90%;
+  max-width: 80%;
+}
+.bottomBanner .backBottomImage .premiosSection .premiosContain .carouselItemsSM div .rewardName, .bottomBanner .backBottomImage .premiosSection .premiosContain .carouselItemsLGDiv div .rewardName {
+  font-family: "BarlowSemiCondensed";
+  color: #37338d;
+  font-weight: bolder;
+}
+.bottomBanner .backBottomImage .premiosSection .premiosContain .carouselItemsSM div .rewardPoints, .bottomBanner .backBottomImage .premiosSection .premiosContain .carouselItemsLGDiv div .rewardPoints {
+  font-family: "BarlowSemiCondensed";
+  color: #37338d;
+  font-style: italic;
+  font-weight: bolder;
+  font-size: 30px;
+}
+.bottomBanner .backBottomImage .premiosSection .premiosContain .carouselItemsSM :nth-child(1), .bottomBanner .backBottomImage .premiosSection .premiosContain .carouselItemsLGDiv :nth-child(1) {
+  height: 250px;
+  border-radius: 10px 10px 0px 0px;
+}
+.bottomBanner .backBottomImage .premiosSection .premiosContain .carouselItemsSM :nth-child(2), .bottomBanner .backBottomImage .premiosSection .premiosContain .carouselItemsLGDiv :nth-child(2) {
+  border-radius: 0px 0px 10px 10px;
+}
+.bottomBanner .backBottomImage .premiosSection .premiosContain .carouselItemsLGDiv {
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: 575px) {
+  #rewardsCarouselLG, .rightArrowCarouselLG, .leftArrowCarouselLG {
+    display: none;
+  }
+
+  .leftArrowCarouselSM, .rightArrowCarouselSM {
+    display: flex;
+  }
+
+  #rewardsCarouselSmall {
+    width: 75%;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  #rewardsCarouselLG, .rightArrowCarouselLG, .leftArrowCarouselLG {
+    display: none;
+  }
+
+  .leftArrowCarouselSM, .rightArrowCarouselSM {
+    display: flex;
+  }
+
+  #rewardsCarouselSmall {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  #rewardsCarouselLG, .rightArrowCarouselLG, .leftArrowCarouselLG {
+    display: none;
+  }
+
+  .leftArrowCarouselSM, .rightArrowCarouselSM {
+    display: flex;
+  }
+
+  #rewardsCarouselSmall {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1279px) {
+  #rewardsCarouselSmall, .leftArrowCarouselSM, .rightArrowCarouselSM {
+    display: none;
+  }
+
+  .rightArrowCarouselLG, .leftArrowCarouselLG {
+    display: flex;
+  }
+
+  #rewardsCarouselLG {
+    width: 78%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  #rewardsCarouselSmall, .leftArrowCarouselSM, .rightArrowCarouselSM {
+    display: none;
+  }
+
+  .rightArrowCarouselLG, .leftArrowCarouselLG {
+    display: flex;
+  }
+
+  #rewardsCarouselLG {
+    width: 78%;
+  }
+}
+.registerContainer {
+  padding-top: 100px;
+}
+.registerContainer .registerBanner {
+  background-image: url("../images/register/Banner_Registro.png");
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  min-height: calc(100vh - 100px - 100px);
+}
+.registerContainer .registerBanner .registerSection {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.registerContainer .registerBanner .registerSection .registerContain {
+  padding: 0;
+  padding-top: 30px;
+}
+.registerContainer .registerBanner .registerSection .registerContain .registerForm {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 2px solid #83bac5;
+  border-radius: 15px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+.registerContainer .registerBanner .registerSection .registerContain .registerForm .dataRegister .formRegisterFirstSection, .registerContainer .registerBanner .registerSection .registerContain .registerForm .dataRegister .formRegisterSecondSection, .registerContainer .registerBanner .registerSection .registerContain .registerForm .dataRegister .formRegisterFirstSectionAuth {
+  padding: 0 10px;
+}
+.registerContainer .registerBanner .registerSection .registerContain .registerForm .dataRegister .formRegisterFirstSection *, .registerContainer .registerBanner .registerSection .registerContain .registerForm .dataRegister .formRegisterSecondSection *, .registerContainer .registerBanner .registerSection .registerContain .registerForm .dataRegister .formRegisterFirstSectionAuth * {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.registerContainer .registerBanner .registerSection .registerContain .registerForm .formRegisterThirdSection {
+  padding-top: 10px;
+}
+.registerContainer .registerBanner .registerSection .registerContain .registerForm .formRegisterThirdSection div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  padding-top: 5px;
+  padding-right: 10px;
+}
+.registerContainer .registerBanner .registerSection .registerContain .registerForm .formRegisterThirdSection div label {
+  font-size: 14px;
+  padding-right: 10px;
+  color: #37338d;
+  font-weight: bold;
+}
+.registerContainer .registerBanner .registerSection .registerContain .registerForm .formRegisterThirdSection div label a {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  color: #37338d;
+}
+.registerContainer .registerBanner .registerSection .registerContain .registerForm .formRegisterThirdSection div label a u {
+  cursor: pointer;
+  color: #37338d;
+}
+.registerContainer .registerBanner .registerSection .registerContain .registerForm .formRegisterThirdSection div input {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .dataRegister {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .dataRegister .formRegisterFirstSection {
+    width: 50%;
+  }
+  .dataRegister .formRegisterSecondSection {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .dataRegister {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .dataRegister .formRegisterFirstSection {
+    width: 50%;
+  }
+  .dataRegister .formRegisterSecondSection {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .dataRegister {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .dataRegister .formRegisterFirstSection {
+    width: 50%;
+  }
+  .dataRegister .formRegisterSecondSection {
+    width: 50%;
+  }
+}
+.registerTicketContainer {
+  padding-top: 100px;
+}
+.registerTicketContainer .registerTicketBanner {
+  background-image: url("../images/registerTicket/Banner_Registro.png");
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  min-height: calc(100vh - 100px - 100px);
+}
+.registerTicketContainer .registerTicketBanner .registerTicketSection {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  padding: 30px 0px;
+}
+.registerTicketContainer .registerTicketBanner .registerTicketSection .registerTicketContain {
+  padding-top: 30px;
+}
+.registerTicketContainer .registerTicketBanner .registerTicketSection .registerTicketContain .registerTicketForm {
+  padding-top: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 2px solid #83bac5;
+  border-radius: 15px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.registerTicketContainer .registerTicketBanner .registerTicketSection .registerTicketContain .registerTicketForm .registerTicketFormContain {
+  width: 90%;
+}
+.registerTicketContainer .registerTicketBanner .registerTicketSection .registerTicketContain .registerTicketForm .registerTicketFormContain .ticketNameGroup {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.registerTicketContainer .registerTicketBanner .registerTicketSection .registerTicketContain .registerTicketForm .registerTicketFormContain .ticketButtonGroup {
+  height: 100%;
+}
+.registerTicketContainer .registerTicketBanner .registerTicketSection .registerTicketContain .registerTicketForm .registerTicketFormContain .ticketButtonGroup .ticketSelectedInput {
+  display: none;
+}
+
+@media only screen and (max-width: 575px) {
+  .registerTicketContain .registerTicketForm {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .registerTicketContain .registerTicketForm {
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .registerTicketContain .registerTicketForm {
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1919px) {
+  .registerTicketContain .registerTicketForm {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .registerTicketContain .registerTicketForm {
+    width: 40%;
+  }
+}
+.profileContainer {
+  padding-top: 100px;
+}
+.profileContainer .profileBanner {
+  background-image: url("../images/profile/Banner_Profile.png");
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  min-height: calc(100vh - 100px - 100px);
+}
+.profileContainer .profileBanner .profileSection {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0px;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards {
+  width: 100%;
+  z-index: 5;
+  text-align: center;
+  padding-top: 70px;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards h3 {
+  font-size: 20px;
+  font-family: "Magic-Dreams";
+  color: #37338d;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards h6 {
+  font-size: 16px;
+  font-family: "Magic-Dreams";
+  color: #37338d;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentInfo {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #83bac5;
+  border-radius: 15px;
+  margin: auto;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentInfo .profileContentAvatar {
+  margin: auto;
+  margin-top: -50px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px solid #37338d;
+  background-color: #83bac5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentInfo .profileContentAvatar img {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentInfo .profileContentName {
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentInfo .profileContentName h3 {
+  font-size: 26px;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentInfo .profileContentDetails {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentInfo .profileContentDetails h6 {
+  color: #17bdf7;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentTickets {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #83bac5;
+  border-radius: 15px;
+  margin: auto;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentTickets .profileContentTicketTitle {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentTickets .profileContentTicketTitle h3 {
+  font-size: 26px;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentTickets .profileContentTable {
+  height: 73%;
+  width: 100%;
+  overflow: auto;
+  z-index: 99;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentTickets .profileContentTable h6 {
+  color: #17bdf7;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentTickets .profileContentTable h3 {
+  padding: 10px;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentTickets .profileContentTable table {
+  width: 100%;
+  margin: auto;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentTickets .profileContentTable table h3 {
+  white-space: nowrap;
+}
+.profileContainer .profileBanner .profileSection .profileContent .profileContentCards .profileContentTickets .profileContentTable table th {
+  position: sticky;
+  top: 0;
+}
+
+@media only screen and (max-width: 575px) {
+  .profileContentInfo {
+    width: 90%;
+    height: 300px;
+  }
+  .profileContentInfo .profileContentDetails {
+    height: 120px;
+  }
+
+  .profileContentTickets {
+    width: 90%;
+    height: 300px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .profileContentInfo {
+    width: 60%;
+    height: 300px;
+  }
+  .profileContentInfo .profileContentDetails {
+    height: 120px;
+  }
+
+  .profileContentTickets {
+    width: 60%;
+    height: 300px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .profileContentInfo {
+    width: 50%;
+    height: 300px;
+  }
+  .profileContentInfo .profileContentDetails {
+    height: 120px;
+  }
+
+  .profileContentTickets {
+    width: 50%;
+    height: 300px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1279px) {
+  .profileContentInfo {
+    width: 40%;
+    height: 300px;
+  }
+  .profileContentInfo .profileContentDetails {
+    height: 120px;
+  }
+
+  .profileContentTickets {
+    width: 40%;
+    height: 300px;
+  }
+
+  .profileContentCards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 1280px) and (max-width: 1919px) {
+  .profileContentInfo {
+    width: 40%;
+    height: 300px;
+  }
+  .profileContentInfo .profileContentDetails {
+    height: 120px;
+  }
+
+  .profileContentTickets {
+    width: 40%;
+    height: 300px;
+  }
+
+  .profileContentCards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .profileContentInfo {
+    width: 35%;
+    height: 400px;
+  }
+  .profileContentInfo .profileContentDetails {
+    height: 120px;
+  }
+
+  .profileContentTickets {
+    width: 35%;
+    height: 400px;
+  }
+
+  .profileContentCards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.rankingContainer {
+  padding-top: 100px;
+}
+.rankingContainer .rankingBanner {
+  background-image: url("../images/register/Banner_Registro.png");
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  min-height: calc(100vh - 100px - 100px);
+}
+.rankingContainer .rankingBanner .rankingSection {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain {
+  padding: 0;
+  padding-top: 30px;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .carouselContainer {
+  padding: 30px 0px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 2px solid #83bac5;
+  border-radius: 15px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .carouselContainer .carouselContainerContent {
+  height: 400px;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .carouselContainer .carouselContainerContent .week {
+  font-family: "Magic-Dreams";
+  color: #37338d;
+  font-size: 40px;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .carouselContainer .carouselContainerContent .text-Ranking1 {
+  font-family: "Magic-Dreams";
+  color: #37338d;
+  font-size: 18px;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .carouselContainer .carouselContainerContent .text-Ranking2 {
+  font-family: "Magic-Dreams";
+  color: white;
+  font-size: 18px;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .carouselContainer .carouselContainerContent .circleArrow {
+  background-color: #c0c431;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  padding: 0px;
+  margin: 0px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .carouselContainer .carouselContainerContent .circleArrow i {
+  color: white;
+  border-radius: 50%;
+  padding: 0px;
+  margin: 0px;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .carouselContainer .carouselContainerContent .circleArrow .leftArrow {
+  transform: rotate(-90deg);
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .carouselContainer .carouselContainerContent .circleArrow .rightArrow {
+  transform: rotate(90deg);
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .ranking a {
+  text-decoration: none;
+  outline: none;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .ranking__temporalities {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .ranking__temporalities .icon-prev {
+  position: relative;
+  padding: 0;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .ranking__temporalities-content {
+  position: relative;
+  padding: 0px 20px;
+  margin: 0;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .ranking__temporalities-content li {
+  text-align: center;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .ranking__temporalities-content li.active {
+  display: block;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .ranking__temporalities-content li h1 {
+  padding: 0px;
+  margin: 0px;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .ranking__temporalities .icon-next {
+  position: relative;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .ranking__tabs {
+  padding: 20px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .ranking__tabs .btn {
+  text-align: center;
+  padding: 10px 0px;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .ranking__tabs .btn button, .rankingContainer .rankingBanner .rankingSection .rankingContain .ranking__tabs .btn a {
+  font-family: "Magic-Dreams";
+  border-radius: 15px;
+  padding: 3px 30px;
+  font-size: 20px;
+  background-color: #17bdf7;
+  color: white;
+  border: none;
+  outline: none;
+  margin: 0;
+  text-decoration: none;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .ranking__tabs .active {
+  text-align: center;
+  padding: 10px 0px;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .ranking__tabs .active button, .rankingContainer .rankingBanner .rankingSection .rankingContain .ranking__tabs .active a {
+  font-family: "Magic-Dreams";
+  border-radius: 15px;
+  padding: 3px 30px;
+  font-size: 20px;
+  background-color: #f72929;
+  color: white;
+  border: none;
+  outline: none;
+  margin: 0;
+  text-decoration: none;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .ranking__list {
+  height: 200px;
+  overflow: auto;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .ranking__list-content {
+  display: none;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .ranking__list-content.active {
+  display: block;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .ranking__legal {
+  text-align: center;
+  font-style: italic;
+  padding-top: 20px;
+}
+.rankingContainer .rankingBanner .rankingSection .rankingContain .ranking__legal small {
+  color: #37338d;
+  font-weight: bold;
+}
+.rankingContainer .rankingBanner .rankingSection .pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+.rankingContainer .rankingBanner .rankingSection .page-item .page-link,
+.rankingContainer .rankingBanner .rankingSection .page-item.disabled .page-link {
+  background-color: #37338d;
+  border: 1px solid #37338d;
+  color: #fff;
+}
+.rankingContainer .rankingBanner .rankingSection .page-item.active .page-link {
+  background-color: #17bdf7;
+  border-color: #37338d;
+}
+.rankingContainer .rankingBanner .rankingSection .page-item .page-link:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+@media only screen and (max-width: 575px) {
+  .rankingContain .carouselContainer {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .rankingContain .carouselContainer {
+    width: 60%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .rankingContain .carouselContainer {
+    width: 60%;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1279px) {
+  .rankingContain .carouselContainer {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .rankingContain .carouselContainer {
+    width: 40%;
+  }
+}
+.termsContainer {
+  padding-top: 100px;
+}
+.termsContainer .termsBanner {
+  background-image: url("../images/registerTicket/Banner_Registro.png");
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  min-height: calc(100vh - 100px - 100px);
+}
+.termsContainer .termsBanner .termsSection {
+  padding: 0px;
+  padding-top: 30px;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 100%;
+  overflow: auto;
+  text-align: center;
+}
+.termsContainer .termsBanner .termsSection .generalSectionsContain {
+  padding-top: 20px;
+  height: 400px;
+  overflow: auto;
+  z-index: 5;
+}
+.termsContainer .termsBanner .termsSection .generalSectionsContain p {
+  text-align: justify;
+}
+.termsContainer .termsBanner .termsSection .termsSectionGeneral table {
+  width: 100%;
+  overflow: auto;
+}
+.termsContainer .termsBanner .termsSection .termsSectionGeneral table p {
+  text-align: start;
+}
+.termsContainer .termsBanner .termsSection .termsSectionGeneral tr, .termsContainer .termsBanner .termsSection .termsSectionGeneral td {
+  border: 1px solid white;
+  padding: 5px;
+  text-align: start;
+}
+
+@media only screen and (max-width: 575px) {
+  .termsContainer .termsBanner .termsSection .generalSectionsContain {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .termsContainer .termsBanner .termsSection .generalSectionsContain {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .termsContainer .termsBanner .termsSection .generalSectionsContain {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .termsContainer .termsBanner .termsSection .generalSectionsContain {
+    width: 70%;
+  }
+}
+.game {
+  background-image: url("../images/game/bg_game.png");
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  height: 100vh;
+}
+.game #c2canvasdiv {
+  z-index: 2;
+}
+
+/*# sourceMappingURL=index.css.map */
