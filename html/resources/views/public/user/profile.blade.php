@@ -16,14 +16,14 @@
                         <div class="profileContentCards">
                             <div class="profileContentInfo">
                                 <div class="profileContentAvatar bg-white">
-                                    @if ( $userAvatar == null )
+                                    @if ( $user->profile_photo_path == null )
                                         <i class="fas fa-user fa-2x text-blueSaladitas"></i>
                                     @else
-                                        <img src={{$userAvatar}} class="avatarLoaded" alt="avatar">
+                                        <img src={{$user->profile_photo_path}} class="avatarLoaded" alt="avatar">
                                     @endif
                                 </div>
                                 <div class="profileContentName">
-                                    <h3> {{ $name }} </h3>
+                                    <h3> {{ $user->name }} </h3>
                                 </div>
                                 @if ($actualTemporality != 0)
                                     <div class="pt-3">
@@ -39,7 +39,7 @@
                                         </div>
                                         <div class="profileContentDetailPoints">
                                             <h6>PTS ACUMULADOS</h6>
-                                            <h3>{{ $user_points->validated_points }}</h3>
+                                            <h3>{{ $user_points->points ?? 0}}</h3>
                                         </div>
                                         <div class="profileContentDetailExchanged">
                                             <h6>TICKETS REGISTRADOS</h6>

@@ -61,7 +61,6 @@ class ParticipationRepository
     {
         return Participation::whereUserId($user_id)
                         ->whereDate('created_at', Carbon::today())
-                        ->whereFree(0)
                         ->count();
     }
 

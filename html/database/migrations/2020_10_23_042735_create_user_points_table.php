@@ -17,8 +17,7 @@ class CreateUserPointsTable extends Migration
             $table->id();
             $table->integer("user_id");
             $table->integer("temporality_id");
-            $table->integer("validated_points");
-            $table->integer("pending_points");
+            $table->integer("points");
             $table->boolean("winner")->default(0);
             $table->timestamps();
         });

@@ -43,7 +43,6 @@ class ParticipationController extends Controller
      */
     public function upload (StorePaticipationRequest $request)
     {
-
         // Obtener usuario que está logueado
         $user = auth()->user();
 
@@ -78,24 +77,9 @@ class ParticipationController extends Controller
         // REGISTRAR TICKET en Base de datos
         $ticket_data = $this->participationRepository->createTicket($file_name, $request->ticket_code, $temporality_id, $user->id);
 
-        // validate if user point with this temporality exists
-        $user_point = UserPoint::whereTemporalityId( $temporality_id )
-                                ->whereUserId( $user->id )
-                                ->first();
+        // auth()->user()->participations()->save($ticket_data);
 
-        if ( $user_point == null ) {
-            UserPoint::create([
-                'temporality_id'    => $temporality_id,
-                'user_id'           => $user->id,
-                'validated_points'  => 0,
-                'pending_points'    => 0,
-                'winner'            => 0
-            ]);
-        }
-
-        auth()->user()->participations()->save($ticket_data);
-
-        return redirect()->route('game.instructions')
+        return redirect()->route('users.profile')
                         ->with('status', [
                                             'status'    => 'success'
                                         ]);

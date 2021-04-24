@@ -21,8 +21,6 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth:web');
-        $this->middleware('verifyOnlyOneSession');
-        $this->middleware('VerifyAbandonedActiveParticipation');
     }
 
     public function index(){
@@ -54,41 +52,60 @@ class UserController extends Controller
 
     public function profile()
     {
-        $auth_user = Auth::user();
+        $user = Auth::user();
 
-        $name = $auth_user->name;
-        $middle_name = $auth_user->middle_name;
-        $last_name = $auth_user->last_name;
-        $userAvatar = $auth_user->avatar;
+        $name           = $user->name;
+        $middle_name    = $user->middle_name;
+        $last_name      = $user->last_name;
+        $userAvatar     = $user->profile_photo_path;
         $uploadedTickets = false;
 
         Session::put('userAvatar', $userAvatar);
 
+        // Get current temporality
         $actualTemporality  = $this->activeTemporality()->id;
 
-        $user_points = UserPoint::select('validated_points')
-        ->whereUserId($auth_user->id)
-        ->whereTemporalityId($actualTemporality)
-        ->first();
+        $tickets = Participation::whereUserId($user->id)
+                            ->whereTemporalityId($actualTemporality)
+                            ->first();
+                            // dd($user_points);
 
-        if ($user_points) {
-            $tickets_validated = Participation::whereUserId($auth_user->id)->whereTemporalityId($actualTemporality)->whereFree(0)->count();
+        $user_points = UserPoint::whereUserId($user->id)->first();
 
-            $user_position = UserPoint::where('validated_points', '>', $user_points->validated_points)
-                        ->whereTemporalityId($actualTemporality)
-                        ->orderBy('validated_points', 'desc')
-                        ->count();
+        // Default values
+        $user_position      = 0;
+        $user_points        = $user_points->points ?? 0;
+        $tickets_validated  = 0;
+        // $tickets = null;
+
+        // If user has points, then update default values
+        if ($tickets) {
+            // dd('si');
+            $tickets_validated = Participation::whereUserId($user->id)
+                                                ->whereTemporalityId($actualTemporality)
+                                                ->count();
+
+            $user_position = UserPoint::where('points', '>', $user_points)
+                                        ->whereTemporalityId($actualTemporality)
+                                        ->orderBy('points', 'desc')
+                                        ->count();
+
             $user_position++;
+
             $uploadedTickets = true;
-            $tickets = Participation::whereUserId($auth_user->id)->whereFree(0)->get();
-        }else{
-            $user_position=0;
-            $user_points=0;
-            $tickets_validated=0;
-            $tickets=0;    
+            
+            $tickets = Participation::whereUserId($user->id)->get();
         }      
            
-        return view('public.user.profile', compact('name', 'middle_name', 'last_name', 'userAvatar', 'user_points', 'user_position', 'actualTemporality', 'tickets_validated', 'tickets', 'uploadedTickets'));
+        return view('public.user.profile', compact(
+                                                    'user', 
+                                                    'user_points', 
+                                                    'user_position', 
+                                                    'actualTemporality', 
+                                                    'tickets_validated', 
+                                                    'tickets', 
+                                                    'uploadedTickets'
+                                                ));
     }
 
 }
