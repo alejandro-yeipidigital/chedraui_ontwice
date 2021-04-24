@@ -30,7 +30,8 @@ class CreateUsersTable extends Migration
             // $table->string('state')->nullable();
             $table->string('total_info')->nullable();
             $table->string('fb_email')->unique()->nullable();
-            $table->text('avatar')->nullable();
+            $table->string('fb_id')->nullable();
+            $table->text('profile_photo_path')->nullable();
             $table->string('register_type')->default('formulario');
             $table->boolean('address_confirmed')->default(0);
             $table->timestamp('email_verified_at')->nullable();

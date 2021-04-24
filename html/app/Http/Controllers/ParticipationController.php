@@ -20,9 +20,6 @@ class ParticipationController extends Controller
     public function __construct()
     {
         $this->middleware('auth:web');
-        $this->middleware('verifyRegister');
-        $this->middleware('verifyOnlyOneSession');
-        $this->middleware('VerifyAbandonedActiveParticipation');
 
         $this->participationRepository = new ParticipationRepository;
     }

@@ -55,9 +55,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'name'      => ['required', 'string', 'max:255'],
+            'email'     => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password'  => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
 
@@ -85,38 +85,6 @@ class RegisterController extends Controller
      */
     protected function registered(Request $request, $user)
     {
-        // REGISTRAR TICKET
-        $activeTemp = $this->activeTemporality()->id;
-
-        $ticket_data = Participation::create([
-            'ticket'            => '',
-            'ticket_code'       => 'free life',
-            'validation'        => 2,
-            'temporality_id'    => $activeTemp,
-            'user_id'           => $user->id,
-            'free'              => 1
-        ]);
-
-        // validate if user point with this temporality exists
-        $user_point = UserPoint::whereTemporalityId( $activeTemp )
-                                    ->whereUserId( $user->id )
-                                    ->first();
-
-        if ( $user_point == null ) {
-            UserPoint::create([
-                'temporality_id'    => $activeTemp,
-                'user_id'           => $user->id,
-                'validated_points'  => 0,
-                'pending_points'    => 0,
-                'winner'            => 0
-            ]);
-        }
-
-        auth()->user()->participations()->save($ticket_data);
-
-        return redirect()->route('game.instructions')->with('status', [
-            'status'    => 'success',
-            'freeLife'  => true
-        ]);
+        return redirect($this->redirectTo);
     }
 }

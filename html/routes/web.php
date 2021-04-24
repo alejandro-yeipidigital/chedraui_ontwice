@@ -53,8 +53,8 @@ Route::group(['prefix' => 'tickets'], function() {
 
 
 // ======== ROUTES USER FACEBOOK ========
-Route::get('auth/{provider}', 'Auth\SocialAuthController@redirectToProvider')->name('social.auth');
-Route::get('auth/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback');
+Route::get('auth/{provider}', 'Auth\SocialAuthController@redirectToFacebookProvider')->name('social.auth');
+Route::get('auth/{provider}/callback', 'Auth\SocialAuthController@handleFacebookCallback');
 
 /***************************
  *          Admin

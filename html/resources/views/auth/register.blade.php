@@ -10,7 +10,6 @@
                     <div class="generalSectionsTitle">
                         <img src="{{asset('images/register/Logo_Registro.png')}}" alt="Logo_Registro">
                     </div>
-    
                     <div class="registerContain generalSectionsContain">
                         <form class="registerForm col-11 col-sm-8 col-lg-6" method="POST" action="{{ route('register') }}">
                             @csrf
