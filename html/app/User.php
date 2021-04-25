@@ -37,7 +37,9 @@ class User extends Authenticatable
         'register_type',
         'active',
         'password',
-        'observations'
+        'observations',
+        'fb_id',
+        'profile_photo_path'
     ];
 
     /**

@@ -84,47 +84,70 @@ class TicketController extends Controller
      */
     public function update (ParticipationUpdateRequest $request)
     {
-        // dd($request->all());
-
         // Actualiza Participation
         $participation = $this->participationRepository->validateTicket($request);
 
         // Obtiene registro de User Points
         $user_points = UserPoint::whereTemporalityId($participation->temporality_id)
-        ->whereUserId($participation->user_id)
-        ->first();
+                                ->whereUserId($participation->user_id)
+                                ->first();
+
+        if ($user_points) {
+            UserPoint::whereTemporalityId($participation->temporality_id)
+                        ->whereUserId($participation->user_id)
+                        ->update([
+                            'points'  => $user_points->points + $participation->total_points
+                        ]);
+        } else {
+            $user_points = new UserPoint;
+            $user_points->user_id = $participation->user_id;
+            $user_points->temporality_id = $participation->temporality_id;
+            $user_points->points = $participation->total_points;
+            $user_points->winner = 0;
+            $user_points->save();
+        }
+
+        // $current_points = $user_points->points ?? 0;
         
         // Actualizar User Points
-        $dataToUpdate = [
-                            'validated_points'  => $user_points->validated_points + $participation->total_points,
-                            'pending_points'    => $user_points->pending_points - $participation->total_points,
-                        ];
+        // $this->updateOrCreateUserPoints($participation->user_id, $participation->temporality_id, $current_points);
 
-        // actualizamos el valor completo de datos
-        UserPoint::whereTemporalityId($participation->temporality_id)
-                            ->whereUserId($participation->user_id)
-                            ->update( $dataToUpdate );
 
         // Encontrar registro de User
         $user = User::find($participation->user_id);
 
-        // Envío de mailing
-        if ($request->valido == 2) {
-            Mail::to($user->email)->send(new ValidTicket($user, $participation));
-        } 
-        else {
+        // Envío de mailing ticker rechazado
+        if ($request->valido != 2) {
             Mail::to($user->email)->send(new InvalidTicket($user, $participation));
-        }
+        } 
+            
+        // Mailing ticket valido
+        Mail::to($user->email)->send(new ValidTicket($user, $participation));
         
-
-        // return redirect(route('tickets.main'))->with('status',[
-        //     'status'    => 'success',
-        //     'message'   => "El ticke se validó correctamente"
-        // ]);
-
+        
         // Obtener el mensaje de validación
-        $validation_message = ($request->valido == 2) ? 'El ticket fue aceptado.' : 'El ticket fue rechazado';
+        $validation_message = ($request->valido == 2) 
+                                ? 'El ticket fue aceptado.' 
+                                : 'El ticket fue rechazado';
 
         return redirect('/admin/tickets/pendientes')->with('validation_message', $validation_message);
     }
+
+    // /**
+    //  * 
+    //  */
+    // public function updateOrCreateUserPoints ($user_id, $temporality_id, $new_points)
+    // {
+    //     $user_points = UserPoint::whereTemporalityId($participation->temporality_id)
+    //                             ->whereUserId($participation->user_id)
+    //                             ->first();
+
+    //     if ($user_points) {
+    //         UserPoint::whereTemporalityId($participation->temporality_id)
+    //                         ->whereUserId($participation->user_id)
+    //                         ->update([
+    //                             'points'  => $current_points + $participation->total_points
+    //                         ]);
+    //     }
+    // }
 }

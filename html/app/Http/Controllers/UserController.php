@@ -68,9 +68,11 @@ class UserController extends Controller
         $tickets = Participation::whereUserId($user->id)
                             ->whereTemporalityId($actualTemporality)
                             ->first();
-                            // dd($user_points);
+                            // dd($tickets);
 
-        $user_points = UserPoint::whereUserId($user->id)->first();
+        $user_points = UserPoint::whereUserId($user->id)
+                                ->whereTemporalityId($actualTemporality)
+                                ->first();
 
         // Default values
         $user_position      = 0;

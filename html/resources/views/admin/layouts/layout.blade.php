@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>CMS | Chile | Summer</title>
+        <title>CMS | Luis Miguel Chedraui</title>
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -56,7 +56,7 @@
                                 </div>
                             </li>
                         </ul>
-                        <div class="page-title"><span>CMS | Saladitas Cuaresma</span></div>
+                        <div class="page-title"><span>CMS | Luis Miguel Chedraui</span></div>
                         <ul class="nav navbar-nav float-right be-icons-nav"></ul>
                     </div>
                 </div>

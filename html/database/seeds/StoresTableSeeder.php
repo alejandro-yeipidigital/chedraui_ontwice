@@ -19,9 +19,5 @@ class StoresTableSeeder extends Seeder
         Store::create([
             'store' => 'Chedrahui'
         ]);
-
-        Store::create([
-            'store' => 'Walmart'
-        ]);
     }
 }

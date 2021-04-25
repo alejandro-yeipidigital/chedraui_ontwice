@@ -39,7 +39,7 @@
                                         </div>
                                         <div class="profileContentDetailPoints">
                                             <h6>PTS ACUMULADOS</h6>
-                                            <h3>{{ $user_points->points ?? 0}}</h3>
+                                            <h3>{{ $user_points }}</h3>
                                         </div>
                                         <div class="profileContentDetailExchanged">
                                             <h6>TICKETS REGISTRADOS</h6>

@@ -56,7 +56,7 @@ class ParticipationUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'total'             => 'required_if:valido,2|numeric',
+            'total'             => 'required|numeric',
             'valido'            => 'required',
             'store_id'          => 'required_if:valido,2',
             'payment'           => 'required_if:valido,2',

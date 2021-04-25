@@ -90,10 +90,9 @@
 
 
 @section('scripts')
-<script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
     <script>
         $(document).ready(function(){
-            alert('si'); 
+            // alert('si'); 
             function isInputEmpty(){
                 if ($('.ticketSelectedInput').get(0).files.length == 0 ) {
                     $('#labelSelectTicket').html('Seleccionar Ticket');
