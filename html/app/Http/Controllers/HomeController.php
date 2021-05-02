@@ -40,16 +40,16 @@ class HomeController extends Controller
         }
      
         $users = UserPoint::whereTemporalityId($temporality->id)
-                    ->where('validated_points', '>', 0)
-                    ->orderBy('validated_points', 'desc')
+                    ->where('points', '>', 0)
+                    ->orderBy('points', 'desc')
                     ->paginate(10);
 
         $rank = $users->firstItem();
 
         $winners = UserPoint::whereTemporalityId($temporality->id)
                     ->whereWinner(1)
-                    ->where('validated_points', '>', 0)
-                    ->orderBy('validated_points', 'desc')
+                    ->where('points', '>', 0)
+                    ->orderBy('points', 'desc')
                     ->get();
 
         return view('public.ranking', compact('users', 'rank', 'winners', 'temporality'));
