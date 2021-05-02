@@ -5,16 +5,18 @@ namespace App\Http\Controllers\Admin;
 use App\Exports\RankingExport;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\{DownloadRankingRequest};
-use App\Models\{Country, Temporality, Promotion};
-use App\Repositories\{AccountRepository, CountryRepository, PromotionRepository, TemporalityPointsRepository, TicketRepository, UserRepository};
+use App\Models\{Country, Temporality, Promotion, UserPoint};
+use App\Repositories\{PromotionRepository, TemporalityPointsRepository, UserRepository};
 use App\Services\{TemporalityServiceClass};
+use App\Traits\{CsvExportTrait, TemporalityTrait};
 
 use Illuminate\Http\Request;
 
 class PromotionController extends Controller
 {
-    protected $countryRepository;
-    protected $accountRepository;
+    use TemporalityTrait;
+    use CsvExportTrait;
+
     protected $temporalityService;
     protected $temporalityPointsRepository;
 
@@ -24,12 +26,9 @@ class PromotionController extends Controller
                                         return (\Auth::user()->cannot('accessPromotions', \Auth::user())) ? redirect('/admin/home') : $next($request);
                                     });
 
-        $this->accountRepository            = new AccountRepository;
-        $this->countryRepository            = new CountryRepository;
         $this->promotionRepository          = new PromotionRepository;
         $this->temporalityPointsRepository  = new TemporalityPointsRepository;
         $this->temporalityService           = new TemporalityServiceClass;
-        $this->ticketRepository             = new TicketRepository;
         $this->userRepository               = new UserRepository;
     }        
 
@@ -42,12 +41,11 @@ class PromotionController extends Controller
     public function index () 
     {
         // Get all promotions
-        $promotions = $this->promotionRepository->allPromotions();
-        
-        foreach ($promotions as $promotion) {
-            // Add temporality to promotions
-            $promotion->temporality_name = $this->getPromotionCurrentTemporality($promotion->id);
-        }
+        $promotions = [
+                                'id'                => 1,
+                                'name'              => "Saladitas Cuaresma",
+                                'temporality_name'  => $this->activeTemporality()->name
+                            ];        
 
         return view('admin.promotions.index')->with(compact(['promotions']));
     }
@@ -57,57 +55,46 @@ class PromotionController extends Controller
      * @param Country $promotion
      * @return View admin.countries.show
      */
-    public function show (Promotion $promotion) 
+    public function show ($promotion_id) 
     {
+        // Create a promotion array
+        $promotion = [];
         // Add temporality to country
-        $promotion->temporality_name = $this->getPromotionCurrentTemporality($promotion->id);
+        $promotion['name'] = "Saladitas Cuaresma";
+        $promotion['temporality_name'] = $this->activeTemporality()->name;
 
         // Get Statistics
-        $total_users                = $this->userRepository->countUsers();
-        $total_registred_users      = $this->userRepository->countRegisteredUsers();
-        $tickets                    = $this->ticketRepository->countAllTickets();
-        $sended                     = $this->promotionRepository->messagesByPromotion($promotion->id, 'sent');
-        $received                   = $this->promotionRepository->messagesByPromotion($promotion->id, 'received');
+        // $total_users                = $this->userRepository->countUsers();
+        // $total_registred_users      = $this->userRepository->countRegisteredUsers();
+        // $tickets                    = $this->ticketRepository->countAllTickets();
 
         // General data
         $response = [
             0 => [
                 'classification'    => "Mayoría de Edad",
-                'total'             => $promotion->country->age_majority
+                'total'             => 18
             ],
             1 => [
                 'classification'    => "Tickets Registrados",
-                'total'             => $tickets
-            ],
-            2 => [
-                'classification'    => "Usuarios Que Escribieron",
-                'total'             => $total_users
+                'total'             => 200
             ],
             3 => [
-                'classification'    => "Usuarios Registrados",
-                'total'             => $total_registred_users
+                'classification'    => "Usuarios Participando",
+                'total'             => 2
             ],
             4 => [
-                'classification'    => "Mensajes Recibidos",
-                'total'             => $received
-            ],
-            5 => [
-                'classification'    => "Mensajes Enviados",
-                'total'             => $sended
+                'classification'    => "Usuarios Registro Completo",
+                'total'             => 1
             ]
         ];
 
         $response = json_encode($response);
 
-        // Get Whatsapp Numbers
-        $numbers = $this->accountRepository->getNumbersByCountry($promotion->id);
-
         // Get Temporalities
-        $temporalities = $this->promotionRepository->getPromotionTemporalities($promotion->id);
+        $temporalities = Temporality::whereFinalized(0)->get();
 
         return view('admin.promotions.show')->with(compact([
                                                             'promotion',
-                                                            'numbers',
                                                             'temporalities',  
                                                             'response'
                                                         ]));
@@ -193,15 +180,22 @@ class PromotionController extends Controller
     }
 
     /**
-     * Download temporality temporality
-     * @param DownloadRankingRequest $request
-     * @return file $temporality_ranking
+     * Exports query results to a CSV file
+     * 
+     * @param Request $request
+     * @return CSV
      */
-    public function downloadTemporalityRanking(DownloadRankingRequest $request) 
+    public function downloadTemporalityRanking (Request $request)
     {
-        $promotion = Temporality::find($request->temporality_id);
+        // Obtain temporality name
+        $temporality = Temporality::find($request->temporality_id);
+        
+        // Create params required to csv export
+        $name       = 'Ranking_' . $temporality->name;
+        $location   = '/rankings';
+        $data       = $this->getRanking($request->temporality_id)->toArray();
 
-        return (new RankingExport($request->temporality_id))->download('Ranking ' . $promotion->name .'.xlsx');
+        return $this->exportToCsv($name, $location, $data);
     }
 
     /**
@@ -211,8 +205,32 @@ class PromotionController extends Controller
      */
     public function displayTemporalityRanking(Temporality $temporality) 
     {
-        $ranking = $this->temporalityPointsRepository->getRankingByTemporalityReport($temporality->id);
+        $ranking = $this->getRanking($temporality->id);
 
         return view('admin.promotions.ranking_show')->with(compact(['ranking', 'temporality']));
+    }
+
+    /**
+     * Get ranking by specific temporality
+     * 
+     * @param int $temporality_id
+     * @return Ranking
+     */
+    public function getRanking (int $temporality_id)
+    {
+        return $users = UserPoint::whereTemporalityId($temporality_id)
+                    ->join('users', 'users.id', '=', 'user_points.user_id')
+                    ->where('points', '>', 0)
+                    ->where('users.active', '=', 1)
+                    ->orderBy('points', 'desc')
+                    ->get([
+                        'points AS Puntos',
+                        'users.name AS Nombre',
+                        'users.middle_name AS Apellido_Materno',
+                        'users.last_name AS Apellido_Paterno',
+                        'users.email AS Correo',
+                        'users.telephone AS Telefono',
+                        'users.birthday AS Fecha_Nacimiento'
+                    ]);
     }
 }

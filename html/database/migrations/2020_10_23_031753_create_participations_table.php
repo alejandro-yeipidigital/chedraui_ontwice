@@ -23,7 +23,7 @@ class CreateParticipationsTable extends Migration
             $table->string("ticket_code");
             $table->integer("total_points")->default(0);
             $table->integer("status")->default(1); // 1 = active, 2 = finished, 3 = abandoned 
-
+            $table->string('region')->nullable();
             $table->string('main_product')->nullable();
             $table->string('store')->nullable();
             $table->string('pay')->nullable();

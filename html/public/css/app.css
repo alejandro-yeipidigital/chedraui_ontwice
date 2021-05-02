@@ -636,7 +636,8 @@ footer .containerFooter .footerSocial .socialIcon .roundedShape {
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  text-emphasis: center;
+  -webkit-text-emphasis: center;
+          text-emphasis: center;
 }
 footer .containerFooter .footerSocial .socialIcon .roundedShape .fab {
   color: white;
@@ -963,10 +964,6 @@ footer .containerFooter .footerSocial .socialIcon .roundedShape .fab {
   margin: auto;
   margin-top: -25px;
   border-radius: 5px;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
   transform: rotate(45deg);
   position: relative;
   display: flex;
@@ -994,10 +991,6 @@ footer .containerFooter .footerSocial .socialIcon .roundedShape .fab {
   margin: 10px 10px;
   width: 20px;
   height: 20px;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 .middleBanner .backMiddleImage .mecanicaSection .mecanicaSteps .mecanicaStepsContain .steps .stepDescription {
@@ -1957,5 +1950,3 @@ footer .containerFooter .footerSocial .socialIcon .roundedShape .fab {
 .game #c2canvasdiv {
   z-index: 2;
 }
-
-/*# sourceMappingURL=app.css.map */

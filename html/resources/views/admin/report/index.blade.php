@@ -57,12 +57,23 @@
                         <!-- Tab links -->
                         <div class="tab">
                             @foreach ($temporalidades as $temporalidad)
-                                <button class="tablinks"  onclick="temporada(event, '{{$temporalidad->temporality}}')" )>{{$temporalidad->temporality}}</button>
+                                <button class="{{ ($loop->first) ? 'tablinks active' : 'tablinks'}}"  onclick="temporada(event, '{{ $temporalidad->temporality }}')" )>{{ $temporalidad->temporality }}</button>
                             @endforeach
                         </div>
                         <!-- Tab content -->
                         @foreach ($temporalidades as $temporalidad)
-                            <div id="{{$temporalidad->temporality}}" class="tabcontent">
+                            <div id="{{ $temporalidad->temporality }}" class="tabcontent" style="{{ ($loop->first) ? 'display: block; margin-top: 20px;' : 'display: none; margin-top: 20px;'}}">
+
+                                {{-- Descargar reporte --}}
+                                <div class="col-12">
+                                    <form action="{{ route('admin.report.download') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="temporality_id" value="{{ $temporalidad->id }}">
+                                        <button class="btn btn-primary" type="submit">Descargar Reporte {{ $temporalidad->temporality }}</button>
+                                    </form>
+                                </div>
+
+                                {{-- Participaciones por Fase --}}
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="card card-table">
@@ -76,8 +87,9 @@
                                                         <th>Correo</th>
                                                         <th>Estatus</th>
                                                         <th>Folio</th>
-                                                        <th>Producto</th>
+                                                        <th>Región</th>
                                                         <th>Tienda</th>
+                                                        <th>Producto</th>
                                                         <th>Método de pago</th>
                                                         <th>Monto Total</th>
                                                         <th>Razón</th>
@@ -105,8 +117,9 @@
                                                                         @endif
                                                                     </td>
                                                                     <td>{{ $participacion['folio'] }}</td>
-                                                                    <td>{{ $participacion['product'] }}</td>
+                                                                    <td>{{ $participacion['region']}}</td>
                                                                     <td>{{ $participacion['store']}}</td>
+                                                                    <td>{{ $participacion['product'] }}</td>
                                                                     <td>{{ $participacion['pay'] }}</td>
                                                                     <td>{{ $participacion['total']}}</td>
                                                                     <td>{{ $participacion['reason']}}</td>

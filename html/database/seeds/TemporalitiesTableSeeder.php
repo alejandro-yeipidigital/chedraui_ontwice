@@ -18,27 +18,41 @@ class TemporalitiesTableSeeder extends Seeder
         // |-------------|
         Temporality::create([
             'name'          => 'Fase 1',
-            'start'         => '2021-02-01 00:00:00',
-            'end'           => '2021-02-05 23:59:59'
+            'start'         => '2021-05-01 00:00:00',
+            'end'           => '2021-05-05 23:59:59'
         ]);
 
         Temporality::create([
             'name'          => 'Fase 2',
-            'start'         => '2021-02-06 00:00:00',
-            'end'           => '2021-02-12 23:59:59'
+            'start'         => '2021-05-06 00:00:00',
+            'end'           => '2021-05-12 23:59:59'
         ]);
 
         Temporality::create([
             'name'          => 'Fase 3',
-            'start'         => '2021-02-13 00:00:00',
-            'end'           => '2021-02-19 23:59:59'
+            'start'         => '2021-05-13 00:00:00',
+            'end'           => '2021-05-19 23:59:59'
         ]);
 
         Temporality::create([
             'name'          => 'Finalizado',
-            'start'         => '2021-02-20 00:00:00',
-            'end'           => '2021-10-20 23:59:59',
+            'start'         => '2021-05-20 00:00:00',
+            'end'           => '2031-10-20 23:59:59',
             'finalized'     => 1
         ]);
+
+        // Final
+        // Temporality::create([
+        //     'name'          => 'Fase 1',
+        //     'start'         => '2021-05-17 00:00:00',
+        //     'end'           => '2021-06-15 23:59:59'
+        // ]);
+
+        // Temporality::create([
+        //     'name'          => 'Finalizado',
+        //     'start'         => '2021-06-16 00:00:00',
+        //     'end'           => '2031-10-20 23:59:59',
+        //     'finalized'     => 1
+        // ]);
     }
 }
