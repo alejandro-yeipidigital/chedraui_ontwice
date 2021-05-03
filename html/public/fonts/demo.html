@@ -134,9 +134,8 @@
         }
         pre {
             display: block;
-            position: relative;
             padding: 9px;
-            margin: 0 0 10px;
+            margin: 0 0 12px;
             font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
             font-size: 13px;
             line-height: 1.428571429;
@@ -147,23 +146,6 @@
             border: 1px solid #ccc;
             overflow-x: auto;
             border-radius: 4px;
-        }
-        pre:after {
-            display: block;
-            position: absolute;
-            right: 0;
-            top: 0;
-            content: 'Usage';
-            line-height: 1;
-            padding: 5px 8px;
-            font-size: 12px;
-            color: #767676;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-right: none;
-            border-top: none;
-            border-radius: 0 4px 0 4px;
-            z-index: 10;
         }
         /* responsive */
         @media (max-width: 959px) {
@@ -177,17 +159,19 @@
 <body>
 <div class="page">
     <div class="demo">
-        <h1 style="font-family: 'Magic Dreams'; font-weight: normal; font-style: normal;">Magic Dreams</h1>
-        <pre>.your-style {
-    font-family: 'Magic Dreams';
-    font-weight: normal;
+        <h1 style="font-family: 'Helvetica LT Std'; font-weight: bold; font-style: normal;">Helvetica LT Std Extra Compressed</h1>
+        <pre title="Usage">.your-style {
+    font-family: 'Helvetica LT Std';
+    font-weight: bold;
     font-style: normal;
 }</pre>
-        <div class="font-container" style="font-family: 'Magic Dreams'; font-weight: normal; font-style: normal;">
+        <pre title="Preload (optional)">
+&lt;link rel=&quot;preload&quot; href=&quot;HelveticaLTStd-ExtraComp.woff2&quot; as=&quot;font&quot; type=&quot;font/woff2&quot; crossorigin&gt;</pre>
+        <div class="font-container" style="font-family: 'Helvetica LT Std'; font-weight: bold; font-style: normal;">
             <p class="letters">
                 abcdefghijklmnopqrstuvwxyz<br>
 ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-                0123456789.:,;()*!?'@#<>$%&^+-=~
+                0123456789.:,;()*!?'@#&lt;&gt;$%&^+-=~
             </p>
             <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
             <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
@@ -202,32 +186,7 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
             <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
         </div>
     </div>
-    <div class="demo">
-        <h1 style="font-family: 'Avenir'; font-weight: 500; font-style: normal;">Avenir Medium</h1>
-        <pre>.your-style {
-    font-family: 'Avenir';
-    font-weight: 500;
-    font-style: normal;
-}</pre>
-        <div class="font-container" style="font-family: 'Avenir'; font-weight: 500; font-style: normal;">
-            <p class="letters">
-                abcdefghijklmnopqrstuvwxyz<br>
-ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-                0123456789.:,;()*!?'@#<>$%&^+-=~
-            </p>
-            <p class="s10" style="font-size: 10px;">The quick brown fox jumps over the lazy dog.</p>
-            <p class="s11" style="font-size: 11px;">The quick brown fox jumps over the lazy dog.</p>
-            <p class="s12" style="font-size: 12px;">The quick brown fox jumps over the lazy dog.</p>
-            <p class="s14" style="font-size: 14px;">The quick brown fox jumps over the lazy dog.</p>
-            <p class="s18" style="font-size: 18px;">The quick brown fox jumps over the lazy dog.</p>
-            <p class="s24" style="font-size: 24px;">The quick brown fox jumps over the lazy dog.</p>
-            <p class="s30" style="font-size: 30px;">The quick brown fox jumps over the lazy dog.</p>
-            <p class="s36" style="font-size: 36px;">The quick brown fox jumps over the lazy dog.</p>
-            <p class="s48" style="font-size: 48px;">The quick brown fox jumps over the lazy dog.</p>
-            <p class="s60" style="font-size: 60px;">The quick brown fox jumps over the lazy dog.</p>
-            <p class="s72" style="font-size: 72px;">The quick brown fox jumps over the lazy dog.</p>
-        </div>
-    </div>
+
 </div>
 </body>
 </html>

@@ -21,3 +21,8 @@ mix.js('resources/js/app.js', 'public/js')
     .options({
         processCssUrls: false // Process/optimize relative stylesheet url()'s. Set to false, if you don't want them touched.
     });
+
+
+
+
+ 
