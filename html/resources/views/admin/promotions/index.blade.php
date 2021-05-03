@@ -22,29 +22,17 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Promoción</th>
-                                        <th>País</th>
                                         <th>Fase de Participación</th>
-                                        <th>Activo</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($promotions as $promotion)
-                                        <tr>
-                                            <td>{{ $promotion->id }}</td>
-                                            <td><a href="{{ route('admin.promociones.promocion', ['promotion' => $promotion->id]) }}">{{ $promotion->name }}</a></td>
-                                            <td>{{ $promotion->country->name }}</td>
-                                            <td>{{ $promotion->temporality_name }}</td>
-                                            <td>
-                                                @if($promotion->active == 1)
-                                                    <i class="mdi mdi-check-circle text-success"></i>
-                                                @else
-                                                    <i class="mdi mdi-close-circle text-danger"></i>
-                                                @endif
-                                            </td>
-                                            <td><a href="{{ route('admin.promociones.promocion', ['promotion' => $promotion->id]) }}"><button class="btn btn-primary">Ver</button></a></td>
-                                        </tr>
-                                    @endforeach
+                                    <tr>
+                                        <td>{{ $promotions['id'] }}</td>
+                                        <td><a href="{{ route('admin.promociones.promocion', ['promotion' => 1]) }}">{{ $promotions['name'] }}</a></td>
+                                        <td>{{ $promotions['temporality_name'] }}</td>
+                                        <td><a href="{{ route('admin.promociones.promocion', ['promotion' => 1]) }}"><button class="btn btn-primary">Ver</button></a></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

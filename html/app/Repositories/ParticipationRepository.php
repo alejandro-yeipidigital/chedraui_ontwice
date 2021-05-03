@@ -39,14 +39,15 @@ class ParticipationRepository
     {
         $participation = Participation::find($request->participation_id);
         $participation->total_ticket    = $request->total;
-        $participation->total_points    = (int) $request->total;
+        $participation->total_points    = ($request->valido == 2) ? (int) $request->total : 0;
         $participation->ticket_code     = $request->folio;
         $participation->validation      = $request->valido;
-        $participation->store           = $request->store_id;
+        $participation->store           = $request->store;
         $participation->pay             = $request->payment;
         $participation->main_product    = $request->main_product;
         $participation->other_products  = $request->other_products;
         $participation->reason          = $request->reason;
+        $participation->region          = $request->region;
         $participation->save(); 
 
         return $participation;

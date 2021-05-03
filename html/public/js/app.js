@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -49787,17 +49787,6 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/css/tailwind.css":
-/*!************************************!*\
-  !*** ./resources/css/tailwind.css ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -49950,15 +49939,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 0:
-/*!****************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/css/tailwind.css ***!
-  \****************************************************************/
+/***/ 1:
+/*!***********************************!*\
+  !*** multi ./resources/js/app.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/davidgutierreztovar/Dockers/chedraui/html/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/davidgutierreztovar/Dockers/chedraui/html/resources/css/tailwind.css */"./resources/css/tailwind.css");
+module.exports = __webpack_require__(/*! /Users/davidgutierreztovar/Dockers/chedraui/html/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })

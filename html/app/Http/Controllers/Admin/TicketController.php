@@ -6,7 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\{ParticipationUpdateRequest};
 use App\Mails\{ValidTicket, InvalidTicket};
-use App\Models\{Participation, UserPoint};
+use App\Models\{Estado, Participation, UserPoint};
 use App\Repositories\{ParticipationRepository, StoreRepository};
 
 use Illuminate\Http\Request;
@@ -68,11 +68,13 @@ class TicketController extends Controller
      */
     public function show (Participation $ticket) 
     {
-        $stores = $this->storeRepository->all();
+        $estados    = Estado::all();
+        $stores     = $this->storeRepository->all();
 
         return view('admin.tickets.show', compact([
                                                     'ticket',
-                                                    'stores'
+                                                    'stores',
+                                                    'estados'
                                                 ]));
     }
 

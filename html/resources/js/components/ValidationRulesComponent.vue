@@ -1,5 +1,5 @@
 <template>
-    <div class="col-md-3">
+    <div class="col-12">
         <div class="card card-border-color card-border-color-primary">
             <div class="card-header card-header-divider" align="center">
                 Saladitas Cuaresma

@@ -29,7 +29,8 @@ class ParticipationUpdateRequest extends FormRequest
             'store_id'      => 'Proveedor',
             'payment'       => 'Forma de Pago',
             'main_product'  => 'Producto Principal',
-            'reason'        => 'Razón de Rechazo'
+            'reason'        => 'Razón de Rechazo',
+            'region'        => 'Región'
         ];
     }
 
@@ -40,11 +41,14 @@ class ParticipationUpdateRequest extends FormRequest
     {
         return [
             'total.required_if'                 => "El Monto Total es obligatorio cuando Váldio es SI",
+            'folio.required'                    => "EL Folio es obligatorio",
             'valido.required'                   => "El campo Válido es obligatorio",
-            'store_id.required_if'              => "El Proveedor es obligatorio cuando Válido es SI",
+            'store.required_if'                 => "El campo Tienda es obligatorio cuando Válido es SI",
             'payment.required_if'               => "La Forma de Pago es obligatorio cuando Válido es SI",
             'main_product.required_if'          => "El Producto Principal es obligatorio cuando Válido es SI",
-            'reason.required_if'                => "La Razón de Rechazo es obligatorio cuando Válido es NO"
+            'reason.required_if'                => "La Razón de Rechazo es obligatorio cuando Válido es NO",
+            'region.required'                   => "La región es requerida.",
+            'region.exists'                     => "Seleccione un valor valido para región."
         ];
     }
 
@@ -56,16 +60,15 @@ class ParticipationUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'total'             => 'required|numeric',
+            'total'             => 'required_if:valido,2|numeric',
+            'folio'             => 'required',
             'valido'            => 'required',
-            'store_id'          => 'required_if:valido,2',
+            'store'             => 'required_if:valido,2',
             'payment'           => 'required_if:valido,2',
             'main_product'      => 'required_if:valido,2',
             'other_products'    => 'nullable',
-            'reason'            => 'required_if:valido,3'
+            'reason'            => 'required_if:valido,3',
+            'region'            => 'required|exists:estados,estado'
         ];
     }
-
-
-    
 }

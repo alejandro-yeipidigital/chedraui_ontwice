@@ -13,7 +13,8 @@ const tailwindcss = require('tailwindcss')
  */
 
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js('resources/js/adminVue.js', 'public/assets_admin/js')
+    .js('resources/js/app.js', 'public/js')
     .postCss('resources/css/tailwind.css', 'public/css/app.css', [
         require('postcss-import'),
         require('tailwindcss'),

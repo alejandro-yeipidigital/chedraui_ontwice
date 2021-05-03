@@ -81,10 +81,11 @@ Route::group(['prefix' => 'logs'], function() {
 // Download Logs
 Route::get('/logs-download', 'LogDownloadController@index');
 
+
 //Report
 Route::prefix('reportes')
-        ->name('admin.report')
+        ->name('admin.report.')
         ->group(function(){
             Route::get('/', 'ReportController@index')->name('index'); 
-
+            Route::post('/descarga', 'ReportController@exportQueryResultCsv')->name('download'); 
         });
