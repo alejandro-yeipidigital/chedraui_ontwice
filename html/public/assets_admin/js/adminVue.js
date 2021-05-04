@@ -16438,8 +16438,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/davidgutierreztovar/Dockers/chedraui/html/resources/js/adminVue.js */"./resources/js/adminVue.js");
-module.exports = __webpack_require__(/*! /Users/davidgutierreztovar/Dockers/chedraui/html/resources/css/tailwind.css */"./resources/css/tailwind.css");
+__webpack_require__(/*! /var/www/html/resources/js/adminVue.js */"./resources/js/adminVue.js");
+module.exports = __webpack_require__(/*! /var/www/html/resources/css/tailwind.css */"./resources/css/tailwind.css");
 
 
 /***/ })
