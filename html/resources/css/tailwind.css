@@ -13,6 +13,16 @@
         font-style: normal;
         font-display: swap;
     }
+
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('../fonts/Montserrat-SemiBold.woff2') format('woff2'),
+            url('../fonts/Montserrat-SemiBold.woff') format('woff'),
+            url('../fonts/Montserrat-SemiBold.ttf') format('truetype');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+    }
     
 }
 
@@ -20,6 +30,7 @@
 
 html{
     color: #fff6d9;
+    scroll-behavior: smooth;
 }
 
 .line-gradient-yellow{
@@ -31,10 +42,60 @@ html{
 p{
     @apply text-xl tracking-wide;
 }
+h1{
+    @apply text-white text-5xl text-center tracking-widest;
+}
 
-.btn--primary{
+.min-h-main{
+    min-height: calc(100vh - 11.5rem)
+}
+
+.btn__icon--primary{
     @apply bg-btn w-10 h-10 rounded-full text-black border border-yellow flex justify-center items-center text-2xl leading-tight;
 }
+
+.btn__icon--red{
+    @apply bg-red-gradient w-10 h-10 rounded-full border border-red flex justify-center items-center text-2xl leading-tight text-white;
+}
+
+.btn--primary{
+    @apply bg-yellow-gradient text-white rounded-full border border-yellow pt-2 pb-1 px-8 mx-2 text-xl tracking-widest;
+}
+
+.btn--red{
+    @apply bg-red-gradient text-white rounded-full border border-red pt-2 pb-1 px-8 mx-2 text-xl tracking-widest;
+}
+
+.btn--facebook{
+    @apply bg-facebook text-white rounded-full border border-white pt-2 pb-1 px-8 mx-2 text-xl tracking-widest;
+}
+
+
+/* SLICK PRODUCTOS PARTICIAPANTES */
+#products .slick-list{
+    width: calc(100% - 5rem);
+    margin: 0 auto;
+    position: relative;
+}
+#products .slick-prev{
+    position: absolute;
+    top: calc(50% - 2.5rem);
+    left: 0;
+    font-size: 1.8rem;
+    padding-right: 5px;
+    outline: none;
+}
+
+#products .slick-next{
+    position: absolute;
+    top: calc(50% - 2.5rem);
+    right: 0;
+    font-size: 1.8rem;
+    padding-left: 5px;
+    outline: none;
+}
+
+
 
 
 @tailwind utilities;

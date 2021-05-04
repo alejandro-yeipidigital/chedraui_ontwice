@@ -2,404 +2,133 @@
 
 @section('content')
 
-    <div class="topBanner" id="topBanner">
-        <div class="backTopImage">
-
-            <div class="Logo_Main1">
-                <img src="{{asset('images/home/top_banner/Logo_MainTop.png')}}" alt="Logo_MainTop">
-            </div>
-
-            <div class="Logo_Main2">
-                <img src="{{asset('images/home/top_banner/Logo_MainBottom_SM.png')}}" alt="Logo_MainBottom_SM">
-                <img src="{{asset('images/home/top_banner/Logo_MainBottom_LG.png')}}" alt="Logo_MainBottom_LG">
-            </div>
-
-            <div class="buttonsContainer">
-                <div class="buttonsGroup">
-                    <div class="buttonTopBanner">
-                        @guest
-                            <a 
-                                href="#" 
-                                data-toggle="modal" 
-                                data-target="#staticBackdrop"
-                                class="loginBtn"
-                            >
-                                <span class="p-0 m-0" id="btnLoginMain">INICIAR SESIÓN</span>
-                            </a>
-                        @else
-                            <a
-                                href="{{ route('logout') }}"
-                                class="loginBtn"
-                                onclick="event.preventDefault();
-                                document.getElementById('logout-form-nav').submit();"
-                            >
-                                <span class="p-0 m-0">CERRAR SESIÓN</span>
-                            </a>
-                            <form id="logout-form-nav" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        @endguest
-                    </div>
-                    <br><br>
-                    <div class="buttonTopBanner">
-                        @guest
-                            <a 
-                                href="{{route('register')}}"
-                                class="registerBtn"
-                            >
-                                <span class="p-0 m-0">CREAR CUENTA</span>
-                            </a>
-                        @else
-                            <a 
-                                href="{{route('tickets.index')}}"
-                                class="registerBtn"
-                            >
-                                <span class="p-0 m-0">REGISTRA TU TICKET</span>
-                            </a>
-                        @endguest
-                    </div>
+    <section class="relative">
+        <img class="w-full" src="{{ asset('images/banner.jpg') }}" alt="">
+        <div class="absolute left-0 top-0 w-1/2 h-full flex justify-center items-center">
+            <div class="w-full space-y-8">
+                <img class="w-10/12 max-w-xl m-auto" src="{{ asset('images/logo_promo.png') }}" alt="Una promo grande como el sol - Sabritas">
+                <div class="flex justify-center items-center">
+                    <a class="btn--primary" href="{{ route('login') }}">INICIAR SESIÓN</a>
+                    <a class="btn--red" href="{{ route('tickets.index') }}">REGISTRAR TICKET</a>
                 </div>
             </div>
+        </div>
+    </section>
+    <div class="w-8/12 h-1 mx-auto bg-gradient-to-r from-transparent via-yellow to-transparent"></div>
 
-            <div class="hellmansLogoMain">
-                <img src="{{asset('images/footer/Logo_Hellmanns.png')}}"
-                    class="hellmansLogoMainImg"
-                    alt="Logo_Hellmanns"
-                >
+    <section class="container relative pt-24 pb-36" id="mecanica">
+        <h2 class="text-yellow text-center text-5xl tracking-widest">MECÁNICA</h2>
+        <div class="flex justify-center items-start my-16 space-x-4">
+            <div class="flex flex-col justify-center items-center text-center w-full max-w-sm">
+                <a class="btn__icon--primary mb-4" href="#">
+                    1
+                </a>
+                <div class="text-yellow text-3xl tracking-widest">EN LA COMPRA</div>
+                <p>
+                    en línea de productos participantes
+                </p>
+                <div class="flex justify-center items-center space-x-4">
+                    <img class="h-8" src="{{ 'images/logo_sabritas.png' }}" alt="Sabritas">
+                    <p>en</p>
+                    <img class="h-8" src="{{ 'images/logo_chedraui.png' }}" alt="Chedraui">
+                </div>
+            </div>
+            <div class="flex flex-col justify-center items-center text-center w-full max-w-sm">
+                <a class="btn__icon--primary mb-4" href="#">
+                    2
+                </a>
+                <div class="text-yellow text-3xl tracking-widest">REGÍSTRA</div>
+                <p>
+                    Tu ticket en el website para acumular puntos.
+                </p>
+            </div>
+            <div class="flex flex-col justify-center items-center text-center w-full max-w-sm">
+                <a class="btn__icon--primary mb-4" href="#">
+                    3
+                </a>
+                <div class="text-yellow text-3xl tracking-widest">PARTICIPA PARA GANAR</div>
+                <p>
+                    uno de los lentes de la promoción. 
+                    <br>
+                    Podrán ganar los 10 primeros lugares que acumulen más puntos.
+                </p>
+            </div>
+        </div>
+        <img class="absolute w-72 -bottom-36" style="left: calc(50% - 9rem)" src="{{ asset('images/potato.png') }}" alt="Papa Sabritas">
+    </section>
+    <div class="w-8/12 h-1 mx-auto bg-gradient-to-r from-transparent via-yellow to-transparent"></div>
+
+    <section class="container relative py-36 pb-0" id="premios">
+        <div class="w-8/12 h-1 mx-auto bg-gradient-to-r from-transparent via-yellow to-transparent"></div>
+        <div class="bg-white text-black w-full max-w-4xl mx-auto rounded-lg border-2 border-yellow py-12">
+            <h2 class="text-center text-5xl tracking-widest">PREMIOS</h2>
+            <img class="mx-auto max-w-md" src="{{ asset('images/glasses.png') }}" alt="Lentes promoción">
+            <p class="text-center text-sm mt-4">La imágenes son ilustrativas y pueden no coincidir con el premio final</p>
+        </div>
+        <div class="w-8/12 h-1 mx-auto bg-gradient-to-r from-transparent via-yellow to-transparent"></div>
+    </section>
+
+    <section class="container relative py-24">
+        <h2 class="text-yellow text-center text-5xl tracking-widest">PRODUCTOS PARTICIPANTES</h2>
+
+        <div class="my-8" id="products">
+
+            <div class="bg-white mx-6 rounded-lg border-2 border-yellow w-60 h-60">
+                <img class="w-full h-full object-contain p-6" src="{{ asset('images/products/chetetos_torciditos.png') }}" alt="">
             </div>
 
-            <div class="modal fade"  id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content modalForm">
-                        <div class="modal-body">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+            <div class="bg-white mx-6 rounded-lg border-2 border-yellow w-60 h-60">
+                <img class="w-full h-full object-contain p-6" src="{{ asset('images/products/chicharron_cerdo.png') }}" alt="">
+            </div>
 
-                            <div class="generalSectionsTitle pt-1 pb-1">
-                                <img src="{{asset('images/home/top_banner/Logo_IniciarSesion.png')}}" alt="Logo_IniciarSesion">
-                            </div>
+            <div class="bg-white mx-6 rounded-lg border-2 border-yellow w-60 h-60">
+                <img class="w-full h-full object-contain p-6" src="{{ asset('images/products/currumais_flamas.png') }}" alt="">
+            </div>
 
-                            <form method="POST" action="{{ route('login') }}">
-                                @csrf
-
-                                <div class="col-12">
-                                    <label 
-                                        for="email" 
-                                        class="generalFormLabel"
-                                    >
-                                        {{ __('E-mail:') }}
-                                    </label>
-
-        
-                                    <div class="col-12 p-0">
-                                        <input 
-                                            id="email" 
-                                            type="email" 
-                                            class="generalFormInput @error('email') is-invalid @enderror" 
-                                            name="email" 
-                                            value="{{ old('email') }}" 
-                                            required 
-                                            autocomplete="off" 
-                                        >
-        
-                                        @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-        
-                                <div class="col-12">
-                                    <label 
-                                        for="password" 
-                                        class="generalFormLabel"
-                                    >
-                                        {{ __('Contraseña') }}
-                                    </label>
-        
-                                    <div class="col-12 p-0">
-                                        <input 
-                                            id="password" 
-                                            type="password" 
-                                            class="generalFormInput @error('password') is-invalid @enderror" 
-                                            name="password" 
-                                            required 
-                                            autocomplete="off"
-                                        >
-        
-                                        @error('password')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-              
-                                @if (Route::has('password.request'))
-                                    <div class="col-12 text-right">
-                                        <a class="text-blueSaladitas text-decoration-none" href="{{ route('password.request') }}">
-                                            <small>
-                                                {{ __('¿Olvidaste tu contraseña?') }}
-                                            </small>
-                                        </a>
-                                    </div>
-                                @endif
-
-                                <div class="actionButton pb-2">
-                                    <button type="submit">
-                                        {{ __('INICIAR')}}
-                                    </button>    
-                                </div>
-
-                                <div class="col-12 text-center text-blueSaladitas">
-                                    <small class="font-weight-bold">o registrese con</small>
-                                </div>
-    
-                                <div class="buttonFBConnect pt-2">
-                                    <a href="{{ route('social.auth', 'facebook') }}">
-                                        FACEBOOK
-                                    </a>
-                                </div>
-
-                                <div class="col-12 text-center text-blueSaladitas pt-3 pb-3">
-                                    <small class="font-weight-bold">¿Aún no estas registrado?</small>
-                                </div>
-
-                                <div class="buttonCreateAccount">
-                                    <a href="{{route('register')}}">
-                                        CREAR CUENTA
-                                    </a>    
-                                </div>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
+            <div class="bg-white mx-6 rounded-lg border-2 border-yellow w-60 h-60">
+                <img class="w-full h-full object-contain p-6" src="{{ asset('images/products/chetetos_torciditos.png') }}" alt="">
             </div>
 
         </div>
-    </div>
 
-    <div class="middleBanner" id="middleBanner">
-        <div class="backMiddleImage">
-            <div class="mecanicaSection">
-                <div>
-                    <div class="generalSectionsTitle">
-                        <img src="{{asset('images/home/middle_banner/Logo_Mecanica.png')}}" alt="Logo_Mecanica">
-                    </div>
-    
-                    <div class="mecanicaSteps generalSectionsContain">
-                        <div class="mecanicaStepsContain">
-                            
-                            <div class="step1">
-                                <div class="steps">
-                                    <div class="romboNumbers bg-colorRedCompraShadow">
-                                        <span>1</span>
-                                    </div>
-                                    <div class="text-colorRedCompra pt-4">
-                                        <h1>
-                                            COMPRA
-                                        </h1>
-                                    </div>
-                                    <div class="romboArray">
-                                        <div class="romboThree bg-colorRedCompra"></div>
-                                        <div class="romboThree bg-colorRedCompra"></div>
-                                        <div class="romboThree bg-colorRedCompra"></div>
-                                    </div>
-                                    <div class="stepDescription text-colorRedCompra pt-4">
-                                        <h5>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti a molestias veniam itaque cum distinctio natus hic laboriosam sint amet dolores consequuntur, nostrum ipsum qui facilis ullam maiores repellat vel!
-                                        </h5>
-                                    </div>
-                                </div>    
-                            </div>
-    
-                            <div class="step2">
-                                <div class="steps">
-                                    <div class="romboNumbers bg-colorGreenRegisterShadow">
-                                        <span>2</span>
-                                    </div>
-                                    <div class="text-colorGreenRegister pt-4">
-                                        <h1>
-                                            REGISTRA
-                                        </h1>
-                                    </div>
-                                    <div class="romboArray">
-                                        <div class="romboThree bg-colorGreenRegister"></div>
-                                        <div class="romboThree bg-colorGreenRegister"></div>
-                                        <div class="romboThree bg-colorGreenRegister"></div>
-                                    </div>
-                                    <div class="stepDescription text-colorGreenRegister pt-4">
-                                        <h5>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti a molestias veniam itaque cum distinctio natus hic laboriosam sint amet dolores consequuntur, nostrum ipsum qui facilis ullam maiores repellat vel!
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-    
-                            <div class="step3">
-                                <div class="steps">
-                                    <div class="romboNumbers bg-colorBlueRedimeShadow">
-                                        <span>3</span>
-                                    </div>
-                                    <div class="text-colorBlueRedime pt-4">
-                                        <h1>
-                                            REDIME
-                                        </h1>
-                                    </div>
-                                    <div class="romboArray">
-                                        <div class="romboThree bg-colorBlueRedime"></div>
-                                        <div class="romboThree bg-colorBlueRedime"></div>
-                                        <div class="romboThree bg-colorBlueRedime"></div>
-                                    </div>
-                                    <div class="stepDescription text-colorBlueRedime pt-4">
-                                        <h5>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti a molestias veniam itaque cum distinctio natus hic laboriosam sint amet dolores consequuntur, nostrum ipsum qui facilis ullam maiores repellat vel!
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="bottomBanner" id="bottomBanner">
-        <div class="backBottomImage">
-            <div class="premiosSection">
-
-                <div class="col-12 p-0 m-0">
-                    <div class="generalSectionsTitle">
-                        <img src="{{asset('images/home/bottom_banner/Logo_Premios.png')}}" alt="Logo_Premios">
-                    </div>
-    
-                    <div class="premiosContain generalSectionsContain">
-
-                        {{-- Carousel LG --}}
-
-                        <div class="leftArrowCarouselLG">
-                            <button href="#rewardsCarouselLG" data-slide="prev">
-                                <i class="fas fa-caret-up leftArrow fa-3x"></i>
-                            </button>
-                        </div>
-
-                        <div class="carousel slide text-center" id="rewardsCarouselLG" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item carouselItemsLG active">
-                                    <div class="d-flex col-12 align-items-center justify-content-around p-0">
-                                        <div class="carouselItemsLGDiv col-4">
-                                            <div>
-                                                <img class="pt-4 pb-3" src="{{asset('images/home/bottom_banner/Amazon_Card.png')}}" alt="reward1">
-                                            </div>
-                                            <div class="pb-3">
-                                                <span class="rewardName">
-                                                    Tarjeta digital Amazon $1,000.00
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="carouselItemsLGDiv col-4">
-                                            <div>
-                                                <img class="pt-4 pb-3" src="{{asset('images/home/bottom_banner/Amazon_Card.png')}}" alt="reward2">
-                                            </div>
-                                            <div class="pb-3">
-                                                <span class="rewardName">
-                                                    Tarjeta digital Amazon $500.00
-                                                </span>
-                                            </div>    
-                                        </div>
-                                        <div class="carouselItemsLGDiv col-4">
-                                            <div>
-                                                <img class="pt-4 pb-3" src="{{asset('images/home/bottom_banner/Amazon_Card.png')}}" alt="reward3">
-                                            </div>
-                                            <div class="pb-3">
-                                                <span class="rewardName">
-                                                    Tarjeta digital Amazon $300.00
-                                                </span>
-                                            </div>    
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="rightArrowCarouselLG">
-                            <button href="#rewardsCarouselLG" data-slide="next">
-                                <i class="fas fa-caret-up rightArrow fa-3x"></i>
-                            </button>
-                        </div>
-
-                        {{-- Carousel SM --}}
-
-                        <div class="leftArrowCarouselSM">
-                            <button href="#rewardsCarouselSmall" data-slide="prev">
-                                <i class="fas fa-caret-up leftArrow fa-3x"></i>
-                            </button>
-                        </div>
-
-                        <div class="carousel slide text-center" id="rewardsCarouselSmall" data-ride="carousel">
-                            <div class="carousel-inner w-100 text-center">
-                                <div class="carousel-item carouselItemsSM active">
-                                    <div>
-                                        <img class="pt-4 pb-3" src="{{asset('images/home/bottom_banner/Amazon_Card.png')}}" alt="reward1">
-                                    </div>
-                                    <div class="pb-3">
-                                        <span class="rewardName">
-                                            Tarjeta digital Amazon $1,000.00
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="carousel-item carouselItemsSM">
-                                    <div>
-                                        <img class="pt-4 pb-3" src="{{asset('images/home/bottom_banner/Amazon_Card.png')}}" alt="reward2">
-                                    </div>
-                                    <div class="pb-3">
-                                        <span class="rewardName">
-                                            Tarjeta digital Amazon $500.00
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="carousel-item carouselItemsSM">
-                                    <div>
-                                        <img class="pt-4 pb-3" src="{{asset('images/home/bottom_banner/Amazon_Card.png')}}" alt="reward3">
-                                    </div>
-                                    <div class="pb-3">
-                                        <span class="rewardName">
-                                            Tarjeta digital Amazon $300.00
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="rightArrowCarouselSM">
-                            <button href="#rewardsCarouselSmall" data-slide="next">
-                                <i class="fas fa-caret-up rightArrow fa-3x"></i>
-                            </button>
-                        </div>
-
-    
-                    </div>    
-                </div>
-
-            </div>
-        </div>
-    </div>
+    </section>
 
 @endsection
 
 
 @section('scripts')
 
-    @if($errors->any())
-        <script>
-                $('#staticBackdrop').modal('show');
-        </script>    
-    @endif
+    <script>
+        $('#products').slick({
+          dots: false,
+          infinite: true,
+          speed: 300,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          responsive: [
+            {
+              breakpoint: 1023,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+          ],
+          prevArrow: `<button type="button" class="slick-prev btn__icon--red"><i class="fas fa-caret-left"></i></button>`,
+          nextArrow: `<button type="button" class="slick-next btn__icon--red"><i class="fas fa-caret-right"></i></button>`,
+        });
+    </script>
 
 @endsection

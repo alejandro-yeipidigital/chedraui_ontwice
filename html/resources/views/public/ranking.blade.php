@@ -1,110 +1,133 @@
+
 @extends('layouts.app')
 
 @section('content')
 
+    <section class="container min-h-main flex flex-col justify-center items-center py-12 bg-left-bottom bg-no-repeat" style="background-image: url({{ asset('images/potato.png') }})">
 
-    <div class="rankingContainer">
-        <div class="rankingBanner">
-            <div class="rankingSection">
+        <h1>RANKING</h1>
+        <div class="bg-white text-black w-10/12 max-w-lg rounded-lg border-2 border-yellow py-6 px-16 mt-8">
+            
+            <div class="w-full flex justify-center items-center">
+                @if ($temporality->id - 1 > 0)
+                    <a href="{{ route('ranking', $temporality->id - 1) }}" class="text-4xl">
+                        <i class="fas fa-caret-left"></i>
+                    </a>
+                @endif
 
-                <div class="row col-12 p-0 m-0 text-center justify-content-center">
-                    <div class="generalSectionsTitle">
-                        <h1>RANKING</h1>
-                    </div>
+                <div class="text-3xl mx-8">
+                    {{ $temporality->name }}
+                </div>
 
-                    <div class="rankingContain generalSectionsContain">
-                        <div class="carouselContainer">
-                            <div class="carouselContainerContent ranking">
+                @if ($temporality->id + 1 <= 4)
+                    <a href="{{ route('ranking', $temporality->id + 1) }}" class="text-4xl">
+                        <i class="fas fa-caret-right"></i>
+                    </a>
+                @endif
+            </div>
 
-                                <div class="ranking__temporalities">
-                                    @if ($temporality->id - 1 > 0)
-                                        <a href="{{ route('ranking', $temporality->id - 1) }}" class="icon-prev">
-                                        {{-- <div class="icon-prev" id="prevTemporality"> --}}
-                                            <div class="circleArrow">
-                                                <i class="fas fa-caret-up leftArrow fa-2x"></i>
-                                            </div>
-                                        {{-- </div> --}}
-                                        </a>
-                                    @endif
+            <div class="w-full mt-4">
+                {{-- <div class="" data-tab="1">
+                        RANKING
+                </div>
+                <div class="" data-tab="2">
+                        GANADORES
+                </div> --}}
+                <div class="w-full space-y-2">
 
-                                    <ul class="ranking__temporalities-content">
-                                        <li class="faseName active">
-                                            <h1 class="week">{{ $temporality->name }}</h1>
-                                        </li>   
-                                    </ul>
-
-                                    @if ($temporality->id + 1 <= 4)
-                                        <a href="{{ route('ranking', $temporality->id + 1) }}" class="icon-next">
-                                            {{-- <div class="icon-next" id="nextTemporality"> --}}
-                                            <div class="circleArrow">
-                                                <i class="fas fa-caret-up rightArrow fa-2x"></i>
-                                            </div>
-                                            {{-- </div> --}}
-                                        </a>
-                                    @endif
-                                </div>
-
-                                <div class="ranking__tabs col-12">
-                                    <div class="col-6 col-md-4 col-lg-4 col-xl-3 btn tab_ranking tab_1 active pr-3" data-tab="1">
-                                        <a class="p-0 pl-3 pt-1 pb-1 pr-3">
-                                            RANKING
-                                        </a>
-                                    </div>
-                                    <div class="col-6 col-md-4 col-lg-4 col-xl-3 btn tab_ranking tab_2" data-tab="2">
-                                        <a class="p-0 pl-3 pt-1 pb-1 pr-3">
-                                            GANADORES
-                                        </a>
-                                    </div>
-                                </div>
-                    
-                                <div class="ranking__list">
-
-                                    <div class="contentTab ranking_section active">
-                                        @foreach ($users as $user)
-                                            <div class="ranking__list-content active">
-                                                <li class="row p-0 m-0 col-12 justify-content-between">
-                                                    <div class="col-3 col-sm-4 col-lg-5 text-Ranking1 p-0 m-0 text-right font-weight-bold">
-                                                        {{ $rank++ }}
-                                                    </div>
-                                                    <div class="col-9 col-sm-8 col-lg-7 text-Ranking1 p-0 m-0 pl-3 text-left">
-                                                        {{ $user->user->name }} {{ $user->user->middle_name }}
-                                                    </div>
-                                                </li>
-                                            </div>
-                                        @endforeach
-                                        {{ $users->links() }}
-                                    </div>
-                                    <div class="contentTab winners_section" style="display: none;">
-                                        @foreach ($winners as $winner)
-                                            <div class="ranking__list-content active">
-                                                <li class="row p-0 m-0 col-12 justify-content-between">
-                                                    <div class="col-3 col-sm-4 col-lg-5 text-Ranking1 p-0 m-0 text-right font-weight-bold">
-                                                        {{ $loop->index + 1 }}
-                                                    </div>
-                                                    <div class="col-9 col-sm-8 col-lg-7 text-Ranking1 p-0 m-0 pl-3 text-left">
-                                                        {{ $winner->user->name }} {{ $winner->user->middle_name }}
-                                                    </div>
-                                                </li>
-                                            </div>
-                                        @endforeach
-                                    </div>
-
-                                </div>
-                    
-                                <p class="ranking__legal"><small>*Ranking con carácter informativo, no representa resultados finales.</small></p>
-
-                            </div>
+                    <div class="flex justify-start items-center border-b border-yellow">
+                        <div class="text-yellow text-xl">
+                            1
+                        </div>
+                        <div class="col-9 col-sm-8 col-lg-7 text-Ranking1 p-0 m-0 pl-3 text-left text-lg tracking-wider uppercase">
+                            Carla López
                         </div>
                     </div>
-                </div>
+                    <div class="flex justify-start items-center border-b border-yellow">
+                        <div class="text-yellow text-xl">
+                            2
+                        </div>
+                        <div class="col-9 col-sm-8 col-lg-7 text-Ranking1 p-0 m-0 pl-3 text-left text-lg tracking-wider uppercase">
+                            Carla López
+                        </div>
+                    </div>
+                    <div class="flex justify-start items-center border-b border-yellow">
+                        <div class="text-yellow text-xl">
+                            3
+                        </div>
+                        <div class="col-9 col-sm-8 col-lg-7 text-Ranking1 p-0 m-0 pl-3 text-left text-lg tracking-wider uppercase">
+                            Carla López
+                        </div>
+                    </div>
+                    <div class="flex justify-start items-center border-b border-yellow">
+                        <div class="text-yellow text-xl">
+                            4
+                        </div>
+                        <div class="col-9 col-sm-8 col-lg-7 text-Ranking1 p-0 m-0 pl-3 text-left text-lg tracking-wider uppercase">
+                            Carla López
+                        </div>
+                    </div>
+                    <div class="flex justify-start items-center border-b border-yellow">
+                        <div class="text-yellow text-xl">
+                            5
+                        </div>
+                        <div class="col-9 col-sm-8 col-lg-7 text-Ranking1 p-0 m-0 pl-3 text-left text-lg tracking-wider uppercase">
+                            Carla López
+                        </div>
+                    </div>
+                    <div class="flex justify-start items-center border-b border-yellow">
+                        <div class="text-yellow text-xl">
+                            6
+                        </div>
+                        <div class="col-9 col-sm-8 col-lg-7 text-Ranking1 p-0 m-0 pl-3 text-left text-lg tracking-wider uppercase">
+                            Carla López
+                        </div>
+                    </div>
+                    <div class="flex justify-start items-center border-b border-yellow">
+                        <div class="text-yellow text-xl">
+                            7
+                        </div>
+                        <div class="col-9 col-sm-8 col-lg-7 text-Ranking1 p-0 m-0 pl-3 text-left text-lg tracking-wider uppercase">
+                            Carla López
+                        </div>
+                    </div>
+                    <div class="flex justify-start items-center border-b border-yellow">
+                        <div class="text-yellow text-xl">
+                            8
+                        </div>
+                        <div class="col-9 col-sm-8 col-lg-7 text-Ranking1 p-0 m-0 pl-3 text-left text-lg tracking-wider uppercase">
+                            Carla López
+                        </div>
+                    </div>
 
-                <div class="generalLogoCookie">
-                    <img src="{{asset('images/general/Logo_Cookie.png')}}" alt="Logo_Cookie">
+                    @foreach ($users as $user)
+                        <div class="col-3 col-sm-4 col-lg-5 text-Ranking1 p-0 m-0 text-right font-weight-bold">
+                            {{ $rank++ }}
+                        </div>
+                        <div class="col-9 col-sm-8 col-lg-7 text-Ranking1 p-0 m-0 pl-3 text-left">
+                            {{ $user->user->name }} {{ $user->user->middle_name }}
+                        </div>
+                    @endforeach
+                    {{ $users->links() }}
                 </div>
+                {{-- <div class="contentTab winners_section" style="display: none;">
+                    @foreach ($winners as $winner)
+                        <div class="ranking__list-content active">
+                            <li class="row p-0 m-0 col-12 justify-content-between">
+                                <div class="col-3 col-sm-4 col-lg-5 text-Ranking1 p-0 m-0 text-right font-weight-bold">
+                                    {{ $loop->index + 1 }}
+                                </div>
+                                <div class="col-9 col-sm-8 col-lg-7 text-Ranking1 p-0 m-0 pl-3 text-left">
+                                    {{ $winner->user->name }} {{ $winner->user->middle_name }}
+                                </div>
+                            </li>
+                        </div>
+                    @endforeach
+                </div> --}}
 
-            </div>
-        </div>
-    </div>
+        </div> 
+
+    </section>
 
 @endsection
 

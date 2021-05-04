@@ -1,91 +1,64 @@
 @extends('layouts.app')
 
-
 @section('content')
 
-    <div class="registerTicketContainer">
-        <div class="registerTicketBanner">
-            <div class="registerTicketSection">
+    <section class="container min-h-main flex flex-col justify-center items-center py-12 bg-left-bottom bg-no-repeat" style="background-image: url({{ asset('images/potato.png') }})">
 
-                <div class="row col-12 p-0 m-0 pt-3 pb-3">
-                    <div class="generalSectionsTitle">
-                        <img src="{{asset('images/registerTicket/Logo_RegistrarTicket.png')}}" alt="Logo_Registro">
+        <h1>REGISTRA TU TICKET</h1>
+        <form class="my-8" action="{{ route('tickets.upload') }}" enctype="multipart/form-data" method="POST">
+            @csrf
+
+                <div class="w-full max-w-md mx-auto space-y-4">
+                    <div class="w-full">
+                        <label for="ticket_code" class="text-yellow block tracking-widest">NÚMERO DE TICKET:</label>
+                        <input 
+                            id="ticket_code" 
+                            type="text" 
+                            class="w-full text-black tracking-widest px-2 h-8 @error('email') is-invalid @enderror" 
+                            name="ticket_code" 
+                            value="{{ old('ticket_code') }}" 
+                            required 
+                        >
+                        @error('ticket_code')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
 
-                    <div class="registerTicketContain generalSectionsContain">
-                        <form class="registerTicketForm" action="{{ route('tickets.upload') }}" enctype="multipart/form-data" method="POST">
-                            @csrf
-                            <div class="registerTicketFormContain">
-                                <div class="ticketNameGroup">
-                                    @error('ticket_code')
-                                        <span class="col-12 text-center text-danger" role="alert">
-                                            <strong><i>{{ $message }}</i></strong>
-                                        </span>
-                                    @enderror
-                                    <input 
-                                        class="generalFormInput"
-                                        type="text" 
-                                        name="ticket_code"
-                                        id="ticket_codeId"
-                                        autocomplete="off"
-                                        title="Ingrese el número de ticket"
-                                        value="{{ old('ticket_code') }}"
-                                        required
-                                    >
-                                    <label
-                                        class="generalFormLabel pt-4"
-                                        for="ticket_codeId"
-                                    >
-                                        Número de ticket:
-                                    </label>
-                                </div>
-                                <div class="col-12 p-0 m-0 text-blueSaladitas text-justify">
-                                    <small class="font-weight-bold">
-                                        <i>*Solo serán validadas las fotografías de los tickets, todo ticket que sea escaneado será rechazado.</i>
-                                    </small>
-                                </div>
-                                <div class="ticketButtonGroup">
-                                    <input
-                                        class="ticketSelectedInput"
-                                        type="file"
-                                        name="ticket"
-                                        value="{{ old('ticket') }}"
-                                        accept="image/*"
-                                        required
-                                    >
-                                    <div class="actionButton pt-4">
-                                        <button type="button" id="selectTicketBtn">
-                                            <span id="labelSelectTicket">
-                                            </span>
-                                        </button>
-                                    </div>
-
-                                    @error('ticket')
-                                        <span class="col-12 text-center text-danger" role="alert">
-                                            <strong><i>{{ $message }}</i></strong>
-                                        </span>
-                                    @enderror
-
-                                    <div class="actionButtonDark pt-4 pb-5">
-                                        <button type="submit">
-                                            ENVIAR
-                                        </button>
-                                    </div>
-                                </div>
+                    <div class="w-full">
+                        <div class="relative w-full cursor-pointer h-8">
+                            <div class="absolute top-0 left-0 w-full h-full bg-yellow-gradient flex flex-col justify-center items-center text-xl tracking-wider">
+                                SELECCIONAR TICKET
                             </div>
-                        </form>
+                            <input
+                                class="bg-white w-full h-full opacity-0 cursor-pointer"
+                                type="file"
+                                name="ticket"
+                                value="{{ old('ticket') }}"
+                                accept="image/*"
+                                required
+                            >
+                        </div>
+                        @error('ticket')
+                            <span class="col-12 text-center text-danger" role="alert">
+                                <strong><i>{{ $message }}</i></strong>
+                            </span>
+                        @enderror
+                    </div>
+                    
+                    <div class="mt-8 font-montserrat text-xs">
+                        <i>*Solo serán validadas las fotografías de los tickets, todo ticket que sea escaneado será rechazado.</i>
                     </div>
                 </div>
-    
-                <div class="generalLogoCookie">
-                    <img src="{{asset('images/general/Logo_Cookie.png')}}" alt="Logo_Cookie">
-                </div>    
 
-            </div>
-        </div>
-    </div>
+                <div class="flex flex-col justify-center items-center mt-8 space-y-4">
+                    <button class="btn--red" type="submit">REGISTRAR TICKET</button>
+                </div>
+        </form>
 
-
+    </section>
+                
 @endsection
 
 
