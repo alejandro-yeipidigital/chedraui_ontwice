@@ -59,7 +59,10 @@
                             </div>
                             <div class="card-body">
                                 <!--AQUI PEGAR REGLAS DE CADA PROMO -->
-                                            <p><strong>CUARTO: <u>Mec&aacute;nica de la Promoci&oacute;n y Productos Adheridos</u></strong></p>
+                                <p><strong>CUARTO: <u>Mec&aacute;nica de la Promoci&oacute;n y Productos Adheridos</u></strong></p>
+                                <a href="{{ url('/productos') }}">
+                                    <button class="btn btn-primary">Ver Productos</button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -123,11 +126,11 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">VÃ¡lido</label>
+                                    <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">Válido</label>
                                     <div class="col-12 col-sm-8 col-lg-6">
                                        @if($ticket->validation == 1)
                                             <select class="form-control" id="valido" name="valido" onchange="allDisabled()"  required>
-                                                <option value="" selected disabled>SELECCIONA UNA OPCIÃ“N</option>
+                                                <option value="" selected disabled>SELECCIONA UNA OPCIÓN</option>
                                                 <option value="2">SI</option>
                                                 <option value="3">NO</option>
                                             </select>
@@ -149,7 +152,7 @@
                                     <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">Región</label>
                                     <div class="col-12 col-sm-8 col-lg-6">
                                         <select class="form-control" id="region" name="region" required {{ ($ticket->region) ? 'disabled' : '' }}>
-                                            <option value="" selected disabled>SELECCIONA UNA OPCIÃ“N</option>
+                                            <option value="" selected disabled>SELECCIONA UNA OPCIÓN</option>
                                             @foreach ($estados as $estado)
                                                 <option value="{{ $estado->estado }}" {{ ( $ticket->region == $estado->estado) ? 'selected' : '' }}>{{ $estado->estado }}</option>
                                             @endforeach
@@ -161,7 +164,7 @@
                                     <label class="col-12 col-sm-3 col-form-label text-sm-right" for="inputText3">Forma de Pago</label>
                                     <div class="col-12 col-sm-8 col-lg-6">
                                         <select class="form-control" id="payment" name="payment" required>
-                                            <option value="" selected disabled>SELECCIONA UNA OPCIÃ“N</option>
+                                            <option value="" selected disabled>SELECCIONA UNA OPCIÓN</option>
                                             <option value="Efectivo" {{ ( $ticket->pay == "Efectivo") ? 'selected' : '' }}>Efectivo</option>
                                             <option value="Tarjeta" {{ ( $ticket->pay == "Tarjeta") ? 'selected' : '' }}>Tarjeta</option>
                                             <option value="-">No Aplica</option>
@@ -393,7 +396,7 @@
         $( "#main_product" ).autocomplete( "option", "appendTo", ".eventInsForm" );
     });
 
-    //Funcion que inhabilita todas las opciones al seleccionar invÃ¡lido el ticket
+    //Funcion que inhabilita todas las opciones al seleccionar invÁlido el ticket
     function allDisabled () {
         var valido          = document.getElementById("valido")
         var total           = document.getElementById("total")
@@ -403,7 +406,7 @@
         var other_products  = document.getElementById("other_products")
         var reason          = document.getElementById("reason")
         
-        // Si ticket NO es vÃ¡lido
+        // Si ticket NO es válido
         if (valido.value == 3) {
             //cambios          
             payment.selectedIndex   = "3"
@@ -423,7 +426,7 @@
                 store.value = "NO APLICA"
             }
 
-        } else { // Si el ticket es vÃ¡lido
+        } else { // Si el ticket es válido
             //cambio en razon de rechazo = '-'
             reason.value = "-"
 

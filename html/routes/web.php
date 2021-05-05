@@ -62,3 +62,6 @@ Route::get('auth/{provider}/callback', 'Auth\SocialAuthController@handleFacebook
 Route::get('admin/login', 'Admin\Auth\LoginController@showLoginForm')->name('admin.login');
 Route::post('admin/login', 'Admin\Auth\LoginController@login');
 Route::post('admin/logout', 'Admin\Auth\LoginController@logout')->name('admin.logout');
+
+// Productos participantes
+Route::view('/productos', 'public.productos');
