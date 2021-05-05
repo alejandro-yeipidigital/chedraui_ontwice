@@ -102,7 +102,7 @@
                 </div>
 
                 <div class="flex flex-col justify-center items-center mt-8 space-y-4">
-                    <button class="btn--red" type="submit">REGISTRAR TICKET</button>
+                    <button class="btn--red" type="submit">REGISTRAR</button>
                     <a class="btn--facebook" href="{{ route('social.auth', 'facebook') }}">
                         CONECTAR CON FACEBOOK
                     </a>

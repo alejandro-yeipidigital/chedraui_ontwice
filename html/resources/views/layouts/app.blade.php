@@ -35,7 +35,7 @@
                     </ul>
                 </nav>  
                 <div class="">
-                    <a class="btn__icon--primary text-xl" href="#">
+                    <a href="{{ route('users.profile') }}" class="btn__icon--primary text-xl">
                         <i class="fas fa-user"></i>
                     </a>
                 </div>

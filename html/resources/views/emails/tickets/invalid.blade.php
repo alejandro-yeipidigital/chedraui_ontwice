@@ -1,48 +1,54 @@
 <html>
 <head>
-    <title>Saladitas</title>
+    <title>Chedraui</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 </head>
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="font-family: Helvetica, sans-serif;">
-    <table width="600px" style="margin: 0 auto; border-spacing: 0; background-color: #fff; border: 1px solid #000;" align="center" border="0" cellpadding="0" cellspacing="0">
+    <table width="600px" style="margin: 0 auto; border-spacing: 0; background-color: #000; border: 1px solid #000;" align="center" border="0" cellpadding="0" cellspacing="0">
         <tbody>
             <tr>
-                <td style="background-color: #fff;">
+                <td style="background-color: #000;">
                     <table style="margin: 0 auto; border-spacing: 0;" align="center" border="0" cellpadding="0" cellspacing="0">
                         <tr>
-                            <td style="line-height: 0; font-size: 0;">
-                                <img src="{{ asset('images/mailing/img_01.png') }}" alt="" border=”0” style="display: block;">
+                            <td style="color: #fff; width: 600px; background-color: #000;">
+                                <img src="{{ asset('images/mailing/img_01.jpg') }}" alt="" border=”0” style="display: block;">
                             </td>
                         </tr>
                     </table>
                 </td>
             </tr>
             <tr>
-                <td style="background-color: #fff;">
+                <td style="background-color: #000;">
                     <table style="margin: 0 auto; border-spacing: 0;" align="center" border="0" cellpadding="0" cellspacing="0">
                         <tr>
-                            <td style="color: #333081; font-weight: bold; font-size: 16px; text-align: center; line-height: 1.4; width: 600px; height: 174px; padding: 0 100px; background-image: url({{ asset('images/mailing/img_02.png') }})">
-                                Lo Sentimos
-                                <br><br>
+                            <td style="color: #ffdf84; text-align: center; font-size: 3rem; width: 600px; background-color: #000; padding-top: 100px;">
+                                <strong>Lo Sentimos</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff; text-align: center; font-size: 1.5rem; width: 600px; background-color: #000; padding-top: 50px;">
                                 Hola {{ $user->name }},
                                 <br>
                                 Tu ticket de compra "#{{ $participation->ticket_code }}" no ha sido validado correctamente
                                 <br>
                                 Por favor intenta nuevamente o prueba con un ticket diferente
-                                <br>
-                                !Sigue Participando!
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff; text-align: center; font-size: 1rem; width: 600px; background-color: #000; padding : 50px;">
+                                <p>!Sigue Participando!</p>
                             </td>
                         </tr>
                     </table>
                 </td>
             </tr>
             <tr>
-                <td style="background-color: #fff;">
+                <td style="background-color: #000;">
                     <table style="margin: 0 auto; border-spacing: 0;" align="center" border="0" cellpadding="0" cellspacing="0">
                         <tr>
-                            <td style="color: #fff; line-height: 1.4; text-align: center; width: 600px; height: 50px; background-image: url({{ asset('images/mailing/img_03.png') }})">
+                            <td style="line-height: 0; font-size: 0; height: 71px; background-color: #000;">
                                 <a href="{{ route('tickets.index') }}" target="_blank" style="display: inline-block;">
-                                    <img src="{{ asset('images/mailing/btn.png') }}" alt="Login" border=”0” style="display: inline-block; margin: 0 auto; width: 200px;">
+                                    <img src="{{ asset('images/mailing/Btn_RegistrarTicket.png') }}" alt="Ir a la app" border=”0” style="display: inline-block; margin: 0 auto; width: 200px;">
                                 </a>
                             </td>
                         </tr>
@@ -50,18 +56,17 @@
                 </td>
             </tr>
             <tr>
-                <td style="background-color: #fff;">
+                <td style="background-color: #000;">
                     <table style="margin: 0 auto; border-spacing: 0;" align="center" border="0" cellpadding="0" cellspacing="0">
                         <tr>
-                            <td style="line-height: 0; font-size: 0;">
-                                <img src="{{ asset('images/mailing/img_04.png') }}" alt="" border=”0” style="display: block;">
+                            <td style="color: #fff; width: 600px; height: 50px; background-color: #000;">
                             </td>
                         </tr>
                     </table>
                 </td>
             </tr>
             <tr>
-                <td style="background-color: #1e2953;">
+                <td style="background-color: #000;">
                     <table style="margin: 0 auto; border-spacing: 0;" align="center" border="0" cellpadding="0" cellspacing="0">
                         <tr>
                             <td style="color: #fff; font-size: 9px; text-align: center; padding: 0 100px; line-height: 1.4; width: 600px; height: 23px;">

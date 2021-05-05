@@ -2,23 +2,12 @@
 
 @section('content')
 
-    <div class="registerTicketContainer">
-        <div class="registerTicketBanner">
-            <div class="registerTicketSection">
+    <section class="container min-h-main flex flex-col justify-center items-center py-12 bg-left-bottom bg-no-repeat" style="background-image: url({{ asset('images/potato.png') }})">
 
-                <div class="row col-12 p-0 m-0 text-center justify-content-center">
-                    <div class="generalSectionsTitle">
-                        <h1>ERROR 500</h1>
-                    </div>
-                    <div class="registerTicketContain generalSectionsContain">
-                        <div class="actionButtonDark">
-                            <a href="{{ route('home') }}">IR A INICIO</a>
-                        </div>
-                    </div>
-                </div>
+        <h1>ERROR 500</h1>
+        <a class="btn--red" href="{{ route('home') }}">IR AL INICIO</a>
 
-            </div>
-        </div>
-    </div>
-
+    </section>
+   
+                        
 @endsection

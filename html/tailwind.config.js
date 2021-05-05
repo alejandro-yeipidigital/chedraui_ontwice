@@ -29,7 +29,10 @@ module.exports = {
                 bgHeader: '#229c98',
 
                 yellow: '#fade88',
-                facebook: '#3b5998'
+                facebook: '#3b5998',
+
+                avatar1: '#efd660',
+                avatar2: '#dab920',
             },
             container: {
                 center: true,
@@ -45,6 +48,16 @@ module.exports = {
                 'sans': ['"Helvetica LT Std"', 'Verdana', 'sans-serif'],
                 'montserrat': ['Montserrat', 'Verdana']
             },
+        },
+        borderWidth: {
+            DEFAULT: '1px',
+            '0': '0',
+            '2': '2px',
+            '3': '3px',
+            '4': '4px',
+            '6': '6px',
+            '8': '8px',
+            '16': '16px',
         },
         letterSpacing: {
             tightest: '-.075em',
