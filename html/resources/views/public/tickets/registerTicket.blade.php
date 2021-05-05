@@ -5,7 +5,7 @@
     <section class="container min-h-main flex flex-col justify-center items-center py-12 bg-left-bottom bg-no-repeat" style="background-image: url({{ asset('images/potato.png') }})">
 
         <h1>REGISTRA TU TICKET</h1>
-        <form class="my-8" action="{{ route('tickets.upload') }}" enctype="multipart/form-data" method="POST">
+        <form class="my-8 w-full max-w-sm" action="{{ route('tickets.upload') }}" enctype="multipart/form-data" method="POST">
             @csrf
 
                 <div class="w-full max-w-md mx-auto space-y-4">
@@ -28,7 +28,7 @@
 
                     <div class="w-full">
                         <div class="relative w-full cursor-pointer h-8">
-                            <div class="absolute top-0 left-0 w-full h-full bg-yellow-gradient flex flex-col justify-center items-center text-xl tracking-wider">
+                            <div class="absolute top-0 left-0 w-full h-full bg-yellow-gradient flex flex-col justify-center items-center text-xl tracking-wider" id="ticketUploadBtn">
                                 SELECCIONAR TICKET
                             </div>
                             <input
@@ -37,6 +37,7 @@
                                 name="ticket"
                                 value="{{ old('ticket') }}"
                                 accept="image/*"
+                                id="ticketInput"
                                 required
                             >
                         </div>
@@ -67,19 +68,24 @@
         $(document).ready(function(){
             // alert('si'); 
             function isInputEmpty(){
-                if ($('.ticketSelectedInput').get(0).files.length == 0 ) {
-                    $('#labelSelectTicket').html('Seleccionar Ticket');
+                if ($('#ticketInput').get(0).files.length == 0 ) {
+                    $('#ticketUploadBtn').html('Seleccionar Ticket');
+
+                    $('#ticketUploadBtn').removeClass('bg-green');
+                    $('#ticketUploadBtn').addClass('bg-yellow-gradient');
                 } else {
-                    $('#labelSelectTicket').html('Ticket Seleccionado &nbsp;<i class="fas fa-check"></i>')
-                    $('#selectTicketBtn').addClass('bg-success');
+                    $('#ticketUploadBtn').html('Ticket Seleccionado')
+
+                    $('#ticketUploadBtn').removeClass('bg-yellow-gradient');
+                    $('#ticketUploadBtn').addClass('bg-green');
                 }
             }
 
-            $('#selectTicketBtn').click(function(){
-                $('.ticketSelectedInput').click()
+            $('#ticketUploadBtn').click(function(){
+                $('.ticketInput').click()
             });
 
-            $('.ticketSelectedInput').change(function(){
+            $('#ticketInput').change(function(){
                 isInputEmpty();
             })
 

@@ -8,8 +8,15 @@
             <div class="w-full space-y-8">
                 <img class="w-10/12 max-w-xl m-auto" src="{{ asset('images/logo_promo.png') }}" alt="Una promo grande como el sol - Sabritas">
                 <div class="flex justify-center items-center">
-                    <a class="btn--primary" href="{{ route('login') }}">INICIAR SESIÓN</a>
-                    <a class="btn--red" href="{{ route('tickets.index') }}">REGISTRAR TICKET</a>
+
+                    @guest
+                        <a class="btn--primary" href="{{ route('login') }}">INICIAR SESIÓN</a>
+                        <a class="btn--red" href="{{ route('register') }}">REGÍSTRARTE</a>
+                    @else
+                        <a class="btn--primary" href="{{ route('users.profile') }}">VER PERFIL</a>
+                        <a class="btn--red" href="{{ route('tickets.index') }}">REGÍSTRAR TICKET</a>
+                    @endguest
+
                 </div>
             </div>
         </div>

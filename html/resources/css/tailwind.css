@@ -39,9 +39,6 @@ html{
     background: radial-gradient(circle, #fade88 0%, rgba(252,69,69,0) 100%);
 }
 
-p{
-    @apply text-xl tracking-wide;
-}
 h1{
     @apply text-white text-5xl text-center tracking-widest;
 }
@@ -95,6 +92,11 @@ h1{
     outline: none;
 }
 
+
+
+.invalid-feedback{
+    @apply w-full text-red font-montserrat text-xs;
+}
 
 
 

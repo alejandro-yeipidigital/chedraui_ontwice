@@ -20,13 +20,7 @@ module.exports = {
                 gray: '#676767',
                 
                 red: '#ff3555',
-                primary: '#09514e',
-                primaryOpacity: '#09514eb3',
-                green: '#127567',
-                lightGreen: '#229c98',
-                bgColorOrange: '#ffa040',
-                bgColorYellow: '#ffec7f',
-                bgHeader: '#229c98',
+                green: '#4caf50',
 
                 yellow: '#fade88',
                 facebook: '#3b5998',
@@ -48,6 +42,9 @@ module.exports = {
                 'sans': ['"Helvetica LT Std"', 'Verdana', 'sans-serif'],
                 'montserrat': ['Montserrat', 'Verdana']
             },
+            fontSize: {
+                'xxs': '.5rem'
+            }
         },
         borderWidth: {
             DEFAULT: '1px',

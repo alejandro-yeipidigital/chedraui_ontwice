@@ -3,14 +3,37 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
-        <title>Esta Cuaresma con Saladitas® podrás ganar premios increíbles</title>
-        <meta name="description" content="Para participar compra productos Gamesa® participantes, registra tus tickets de compra, participa en nuestro juego y podrás ganar premios increíbles.">
-
-        {{-- Icono Pendiente --}}
-        <link rel="shortcut icon" href="{{asset('images/general/Logo_Cookie.png')}}" type="image/x-icon">
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <title>Una Promo Grande como el Sol – Luis Miguel La Serie</title>
+        <meta name="description" content="Una promo para que formes parte de la segunda temporada de la serie. Si ingresas conocerás la mecánica y los premios que Sabritas y Chedraui tienen para ti.">
+
+        <!-- og tags Facebook -->
+        <meta property="fb:app_id" content="373636493516659" />
+        <meta property="og:title" content="Una Promo Grande como el Sol – Luis Miguel La Serie">
+        <meta property="og:description" content="Una promo para que formes parte de la segunda temporada de la serie. Si ingresas conocerás la mecánica y los premios que Sabritas y Chedraui tienen para ti.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://sabritas.com.mx/promocion">
+        <meta property="og:image" content="{{ url('/') }}/images/share_fb.jpg">
+        <meta property="og:site_name" content="sabritas.com.mx">
+        
+        <!-- Twitter Cards -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@Papas_Sabritas">
+        <meta name="twitter:title" content="Una Promo Grande como el Sol – Luis Miguel La Serie">
+        <meta name="twitter:description" content="Una promo para que formes parte de la segunda temporada de la serie. Si ingresas conocerás la mecánica y los premios que Sabritas y Chedraui tienen para ti.">
+        <meta name="twitter:creator" content="@Papas_Sabritas">
+        <meta name="twitter:image:src" content="{{ url('/') }}/images/share_fb.jpg">
+        <meta name="twitter:domain" content="sabritas.com.mx">
+        <link rel="canonical" href="https://sabritas.com.mx/promocion">
+
+        <meta name="author" content="Sabritas">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <link rel="shortcut icon" href="{{ asset('images/favicon.ico')  }}">
+
 
         <script src="https://kit.fontawesome.com/ae241ef174.js" crossorigin="anonymous"></script>
 
@@ -30,8 +53,29 @@
                     <ul class="flex justify-center items-center space-x-12 text-xl tracking-widest">
                         <li><a href="{{ route('home', '#mecanica') }}">MECÁNICA</a></li>
                         <li><a href="{{ route('home', '#premios') }}">PREMIOS</a></li>
-                        <li><a href="{{ route('tickets.index') }}">REGÍSTRA TU TICKET</a></li>
-                        <li><a href="{{ route('ranking') }}">RANKING</a></li>
+                        @guest
+                            <li><a href="{{ route('login') }}">INICIAR SESIÓN</a></li>
+                            <li><a href="{{ route('register') }}">REGISTRO</a></li>
+                        @else
+                            <li><a href="{{ route('tickets.index') }}">REGÍSTRA TU TICKET</a></li>
+                            <li><a href="{{ route('ranking') }}">RANKING</a></li>
+                        @endguest
+
+                        @auth
+                            <li>
+                                <a 
+                                    href="{{ route('logout') }}"
+                                    class="p-0 m-0"
+                                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form-desktop').submit();"
+                                >
+                                    CERRAR SESIÓN
+                                </a>
+                                <form id="logout-form-desktop" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </li>
+                        @endauth
                     </ul>
                 </nav>  
                 <div class="">
@@ -46,12 +90,19 @@
         @yield('content')
 
         <div class="w-8/12 h-1 mx-auto bg-gradient-to-r from-transparent via-yellow to-transparent"></div>
-        <footer class="py-6">
+        <footer class="h-24 flex justify-center items-center">
             <div class="container flex justify-between items-center">
-                <div class="font-montserrat text-white">
-                    <p class="text-xs">COME BIEN</p>
-                    <p class="text-xs">BASADO EN LUIS MIGUEL LA SERIE. USO AUTORIZADO POR NETFLIX.</p>
-                    <p class="text-xs">©Copyright 2020 PepsiCo, Inc., Todos los Derechos Reservados</p>
+                <div class="font-montserrat text-white text-xs">
+                    COME BIEN
+                    <br>
+                    BASADO EN LUIS MIGUEL LA SERIE. USO AUTORIZADO POR NETFLIX.
+                    <br>
+                    ©Copyright 2020 PepsiCo, Inc., Todos los Derechos Reservados
+                    <br>
+                    <div class="space-x-2 mt-2">
+                        <a class="underline" href="{{ route('terms') }}">Términos y condiciones</a>
+                        <a class="underline" href="{{ route('privacy') }}">Aviso de privacidad</a>
+                    </div>
                 </div>
                 <div class="flex justify-center items-center space-x-2">
                     <a class="btn__icon--primary text-sm" href=""><i class="fab fa-facebook-f"></i></a>
