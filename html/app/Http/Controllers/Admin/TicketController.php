@@ -121,12 +121,11 @@ class TicketController extends Controller
         // Envío de mailing ticker rechazado
         if ($request->valido != 2) {
             Mail::to($user->email)->send(new InvalidTicket($user, $participation));
-        } 
+        } else {
+            // Mailing ticket valido
+            Mail::to($user->email)->send(new ValidTicket($user, $participation));
+        }
             
-        // Mailing ticket valido
-        Mail::to($user->email)->send(new ValidTicket($user, $participation));
-        
-        
         // Obtener el mensaje de validación
         $validation_message = ($request->valido == 2) 
                                 ? 'El ticket fue aceptado.' 
