@@ -180,10 +180,12 @@
                                                         <td>{{ $ticket->temporality->name }}</td>
                                                         <td>{{ $ticket->created_at }}</td>
                                                         <td>
-                                                            @if ($ticket->validation != 1)
+                                                            @if ($ticket->validation == 1)
                                                                 <p>Pendiente</p>
-                                                            @else
+                                                            @elseif ($ticket->validation == 2)
                                                                 <p>Revisado</p>
+                                                            @else
+                                                                <p>Rechazado</p>
                                                             @endif
                                                         </td>
                                                         <td style="font-size: 22px;">
