@@ -6,7 +6,7 @@
 
         <h1>REGÍSTRATE</h1>
 
-        <form class="my-8" method="POST" action="{{ route('register') }}">
+        <form class="my-8 w-full max-w-sm" method="POST" action="{{ route('register') }}">
             @csrf
 
                 <div class="w-full max-w-md mx-auto space-y-4">

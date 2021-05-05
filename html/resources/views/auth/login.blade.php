@@ -6,7 +6,7 @@
 
         <h1>INICIAR SESIÓN</h1>
 
-        <form class="my-8" method="POST" action="{{ route('login') }}">
+        <form class="my-8 w-full max-w-sm" method="POST" action="{{ route('login') }}">
                 @csrf
 
                 <div class="w-full max-w-md mx-auto space-y-4">
@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="flex flex-col justify-center items-center mt-8 space-y-4">
-                    <button class="btn--red" type="submit">REGISTRAR TICKET</button>
+                    <button class="btn--red" type="submit">INGRESAR</button>
                     <a class="btn--facebook" href="{{ route('social.auth', 'facebook') }}">
                         CONECTAR CON FACEBOOK
                     </a>
