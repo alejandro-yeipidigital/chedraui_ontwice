@@ -46,6 +46,15 @@ class ParticipationController extends Controller
         // Obtener usuario que está logueado
         $user = auth()->user();
 
+        // Si el usuario está bloqueado
+        if ($user->active == 0) {
+            return redirect()->route('tickets.index')
+                        ->withInput()
+                        ->withErrors([
+                                        'ticket_code' => 'Has infligido nuestros Términos y Condiciones'
+                                        ]);
+        }
+
         // Obtener numero de tickets ingresados el dia de hoy por el usuario
         $no_tickets = $this->participationRepository->countUserTodayTickets($user->id);
 
