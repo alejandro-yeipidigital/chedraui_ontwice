@@ -43,7 +43,7 @@ class PromotionController extends Controller
         // Get all promotions
         $promotions = [
                                 'id'                => 1,
-                                'name'              => "Saladitas Cuaresma",
+                                'name'              => "Una promo grande como El Sol",
                                 'temporality_name'  => $this->activeTemporality()->name
                             ];        
 
