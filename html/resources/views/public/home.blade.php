@@ -50,7 +50,7 @@
                 </p>
                 <div class="flex justify-center items-center space-x-4">
                     <img class="h-8" src="{{ 'images/logo_sabritas.png' }}" alt="Sabritas">
-                    <p class="text-lg tracking-widest">
+                    <p class="text-lg tracking-widest">en</p>
                     <img class="h-8" src="{{ 'images/logo_chedraui.png' }}" alt="Chedraui">
                 </div>
             </div>
