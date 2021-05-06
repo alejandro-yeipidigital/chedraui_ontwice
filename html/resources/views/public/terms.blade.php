@@ -5,7 +5,7 @@
     <section class="section">
 
         <h1>TÉRMINOS Y CONDICIONES</h1>
-        <div class="font-montserrat text-xs text-white my-8">
+        <div class="w-full font-montserrat text-xs text-white my-8">
 
             <p><a name="_Hlk520215190"></a><strong><u>PROMOCI&Oacute;N </u></strong></p>
             <p><strong><u>&ldquo;Una Promo Grande Como el Sol en Chedraui&rdquo;</u></strong></p>

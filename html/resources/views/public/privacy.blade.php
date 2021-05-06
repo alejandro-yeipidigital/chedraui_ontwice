@@ -5,7 +5,7 @@
     <section class="section">
 
         <h1>AVISO DE PRIVACIDAD</h1>
-        <div class=" font-montserrat text-xs text-white my-8">
+        <div class="w-full font-montserrat text-xs text-white my-8">
             <p>En atenci&oacute;n a las disposiciones contenidas en la Ley Federal de Protecci&oacute;n de Datos Personales en Posesi&oacute;n de los Particulares, su Reglamento y los Lineamientos del Aviso de Privacidad (&ldquo;Ley&rdquo;) vigentes en M&eacute;xico, le informamos que este Aviso de Privacidad de Datos Personales ("Aviso") describe de qu&eacute; manera COMERCIALIZADORA PEPSICO M&Eacute;XICO S. DE R.L. DE C.V., (en adelante CPM) dar&aacute; tratamiento a sus datos personales.</p>
             <p>&nbsp;</p>
             <p>Se informa al USUARIO que el PORTAL (en adelante PORTAL) <a href="http://www.sabritas.com.mx/chedraui" aria-invalid="true">www.sabritas.com.mx/chedraui</a> o sub-dominios (indistintamente) es un sitio web en Internet en el que LOS USUARIOS pueden encontrar contenidos y servicios.</p>
