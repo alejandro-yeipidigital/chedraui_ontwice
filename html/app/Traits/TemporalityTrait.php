@@ -16,7 +16,7 @@ trait TemporalityTrait
     public function activeTemporality()
     {
         $now        = Carbon::createFromFormat("Y-m-d H:i:s", Carbon::now())->toDateTimeString();
-        $response   = Temporality::select('id', 'name')
+        $response   = Temporality::select('id', 'name', 'finalized')
                         ->where('start', '<=', $now)
                         ->where('end', '>', $now)
                         ->first();
