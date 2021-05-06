@@ -24,7 +24,7 @@ class TemporalitiesTableSeeder extends Seeder
 
         Temporality::create([
             'name'          => 'Finalizado',
-            'start'         => '2021-05-20 00:00:00',
+            'start'         => '2021-05-06 00:00:00',
             'end'           => '2031-10-20 23:59:59',
             'finalized'     => 1
         ]);

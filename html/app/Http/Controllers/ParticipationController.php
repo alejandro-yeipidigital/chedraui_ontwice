@@ -43,6 +43,18 @@ class ParticipationController extends Controller
      */
     public function upload (StorePaticipationRequest $request)
     {
+        // Obtener temporalidad actual
+        $temporality = $this->activeTemporality();
+
+        // Si la temporalidad finalizó
+        if ($temporality->finalized == 1) {
+            return redirect()->route('tickets.index')
+                        ->withInput()
+                        ->withErrors([
+                                        'ticket_code' => 'Las fases de participación han finalizado.'
+                                        ]);
+        }
+
         // Obtener usuario que está logueado
         $user = auth()->user();
 
@@ -80,11 +92,8 @@ class ParticipationController extends Controller
             $file_name
         );
 
-        // Obtener temporalidad actual
-        $temporality_id = $this->activeTemporality()->id;
-        
         // REGISTRAR TICKET en Base de datos
-        $ticket_data = $this->participationRepository->createTicket($file_name, $request->ticket_code, $temporality_id, $user->id);
+        $ticket_data = $this->participationRepository->createTicket($file_name, $request->ticket_code, $temporality->id, $user->id);
 
         // auth()->user()->participations()->save($ticket_data);
 

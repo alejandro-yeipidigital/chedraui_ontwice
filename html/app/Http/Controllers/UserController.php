@@ -63,32 +63,30 @@ class UserController extends Controller
         Session::put('userAvatar', $userAvatar);
 
         // Get current temporality
-        $actualTemporality  = $this->activeTemporality()->id;
+        $actualTemporality  = $this->activeTemporality();
 
         $tickets = Participation::whereUserId($user->id)
-                            ->whereTemporalityId($actualTemporality)
+                            ->whereTemporalityId($actualTemporality->id)
                             ->first();
-                            // dd($tickets);
 
         $user_points = UserPoint::whereUserId($user->id)
-                                ->whereTemporalityId($actualTemporality)
+                                ->whereTemporalityId($actualTemporality->id)
                                 ->first();
 
         // Default values
         $user_position      = 0;
         $user_points        = $user_points->points ?? 0;
         $tickets_validated  = 0;
-        // $tickets = null;
 
         // If user has points, then update default values
         if ($tickets) {
             // dd('si');
             $tickets_validated = Participation::whereUserId($user->id)
-                                                ->whereTemporalityId($actualTemporality)
+                                                ->whereTemporalityId($actualTemporality->id)
                                                 ->count();
 
             $user_position = UserPoint::where('points', '>', $user_points)
-                                        ->whereTemporalityId($actualTemporality)
+                                        ->whereTemporalityId($actualTemporality->id)
                                         ->orderBy('points', 'desc')
                                         ->count();
 
