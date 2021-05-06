@@ -81,19 +81,63 @@
         <div class="my-8" id="products">
 
             <div class="bg-white mx-6 rounded-lg border-2 border-yellow w-60 h-60">
-                <img class="w-full h-full object-contain p-6" src="{{ asset('images/products/chetetos_torciditos.png') }}" alt="">
+                <img class="w-full h-full object-contain p-2" src="{{ asset('images/products/CHEETOS_TORCIDITOS_370G-1000.png') }}" alt="">
             </div>
 
             <div class="bg-white mx-6 rounded-lg border-2 border-yellow w-60 h-60">
-                <img class="w-full h-full object-contain p-6" src="{{ asset('images/products/chicharron_cerdo.png') }}" alt="">
+                <img class="w-full h-full object-contain p-2" src="{{ asset('images/products/CHICHARRON_CERDO_115G_1000.png') }}" alt="">
             </div>
 
             <div class="bg-white mx-6 rounded-lg border-2 border-yellow w-60 h-60">
-                <img class="w-full h-full object-contain p-6" src="{{ asset('images/products/currumais_flamas.png') }}" alt="">
+                <img class="w-full h-full object-contain p-2" src="{{ asset('images/products/CHURRUMAIS_FLAMA_COMPARTE_HBSF-1000.png') }}" alt="">
             </div>
 
             <div class="bg-white mx-6 rounded-lg border-2 border-yellow w-60 h-60">
-                <img class="w-full h-full object-contain p-6" src="{{ asset('images/products/chetetos_torciditos.png') }}" alt="">
+                <img class="w-full h-full object-contain p-2" src="{{ asset('images/products/CRUJITOS_120G_COMPARTE_HBSF_1000.png') }}" alt="">
+            </div>
+
+            <div class="bg-white mx-6 rounded-lg border-2 border-yellow w-60 h-60">
+                <img class="w-full h-full object-contain p-2" src="{{ asset('images/products/DORITOS NACHO_FIESTA_370G_HB-1000.png') }}" alt="">
+            </div>
+
+            <div class="bg-white mx-6 rounded-lg border-2 border-yellow w-60 h-60">
+                <img class="w-full h-full object-contain p-2" src="{{ asset('images/products/FRITOS SAL Y LIMON_FAMILIAR_HB_265G-1000.png') }}" alt="">
+            </div>
+
+            <div class="bg-white mx-6 rounded-lg border-2 border-yellow w-60 h-60">
+                <img class="w-full h-full object-contain p-2" src="{{ asset('images/products/KARATE_JAPONES_154G-1000.png') }}" alt="">
+            </div>
+
+            <div class="bg-white mx-6 rounded-lg border-2 border-yellow w-60 h-60">
+                <img class="w-full h-full object-contain p-2" src="{{ asset('images/products/RANCHERITOS_240G_FAMILIAR-1000.png') }}" alt="">
+            </div>
+
+            <div class="bg-white mx-6 rounded-lg border-2 border-yellow w-60 h-60">
+                <img class="w-full h-full object-contain p-2" src="{{ asset('images/products/RENDER_185g_FH-1000.png') }}" alt="">
+            </div>
+
+            <div class="bg-white mx-6 rounded-lg border-2 border-yellow w-60 h-60">
+                <img class="w-full h-full object-contain p-2" src="{{ asset('images/products/RUFFLES_QUESO_120G_HBSF_1000.png') }}" alt="">
+            </div>
+
+            <div class="bg-white mx-6 rounded-lg border-2 border-yellow w-60 h-60">
+                <img class="w-full h-full object-contain p-2" src="{{ asset('images/products/SABRITAS_SAL_340G_SF_MEGA_1000.png') }}" alt="">
+            </div>
+
+            <div class="bg-white mx-6 rounded-lg border-2 border-yellow w-60 h-60">
+                <img class="w-full h-full object-contain p-2" src="{{ asset('images/products/SABRITONES_GD_160G-1000.png') }}" alt="">
+            </div>
+
+            <div class="bg-white mx-6 rounded-lg border-2 border-yellow w-60 h-60">
+                <img class="w-full h-full object-contain p-2" src="{{ asset('images/products/SUNBITES_PALOMITA_37G_SAL_HB-1000.png') }}" alt="">
+            </div>
+
+            <div class="bg-white mx-6 rounded-lg border-2 border-yellow w-60 h-60">
+                <img class="w-full h-full object-contain p-2" src="{{ asset('images/products/SUNBITES_PLATANITO_28G_DULCE_HB-1000.png') }}" alt="">
+            </div>
+
+            <div class="bg-white mx-6 rounded-lg border-2 border-yellow w-60 h-60">
+                <img class="w-full h-full object-contain p-2" src="{{ asset('images/products/TOSTITOS_SV_FAMILIAR_240_HB-1000.png') }}" alt="">
             </div>
 
         </div>
@@ -118,8 +162,6 @@
               settings: {
                 slidesToShow: 2,
                 slidesToScroll: 2,
-                infinite: true,
-                dots: true
               }
             },
             {
@@ -129,9 +171,6 @@
                 slidesToScroll: 1
               }
             }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
           ],
           prevArrow: `<button type="button" class="slick-prev btn__icon--red"><i class="fas fa-caret-left"></i></button>`,
           nextArrow: `<button type="button" class="slick-next btn__icon--red"><i class="fas fa-caret-right"></i></button>`,
