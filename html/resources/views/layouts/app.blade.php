@@ -46,13 +46,18 @@
     <body class="bg-black">
         <header class="bg-black h-20 text-yellow">
             <div class="container h-full flex justify-between items-center">
-                <a class=" block h-14" href="{{ url('/') }}">
+                <a class="block h-12 md:h-14" href="{{ url('/') }}">
                     <img class="h-full" src="{{ asset('images/logo_sabritas.png') }}" alt="">    
                 </a>  
-                <nav>
-                    <ul class="flex justify-center items-center space-x-12 text-xl tracking-widest">
-                        <li><a href="{{ route('home', '#mecanica') }}">MECÁNICA</a></li>
-                        <li><a href="{{ route('home', '#premios') }}">PREMIOS</a></li>
+                <nav class="nav" id="menu">
+                    <div class="md:hidden absolute top-4 right-4 text-white text-4xl" id="btnMenuClose">
+                        <i class="far fa-times"></i>
+                    </div>
+                    <img class="md:hidden w-10/12 max-w-xs mb-2" src="{{ asset('images/logo_promo.png') }}" alt="Una promo grande como el sol - Sabritas">
+                    <div class="md:hidden line-gradient"></div>
+                    <ul class="nav-ul">
+                        <li><a class="link_section" href="{{ route('home', '#mecanica') }}">MECÁNICA</a></li>
+                        <li><a class="link_section" href="{{ route('home', '#premios') }}">PREMIOS</a></li>
                         @guest
                             <li><a href="{{ route('login') }}">INICIAR SESIÓN</a></li>
                             <li><a href="{{ route('register') }}">REGISTRO</a></li>
@@ -78,21 +83,24 @@
                         @endauth
                     </ul>
                 </nav>  
-                <div class="">
+                <div class="flex justify-end items-center space-x-3">
                     <a href="{{ route('users.profile') }}" class="btn__icon--primary text-xl">
                         <i class="fas fa-user"></i>
                     </a>
+                    <div class="md:hidden text-yellow text-3xl" id="btnMenu">
+                        <i class="far fa-bars block"></i>
+                    </div>
                 </div>
             </div>   
         </header>
-        <div class="w-8/12 h-1 mx-auto bg-gradient-to-r from-transparent via-yellow to-transparent"></div>
+        <div class="line-gradient"></div>
 
         @yield('content')
 
-        <div class="w-8/12 h-1 mx-auto bg-gradient-to-r from-transparent via-yellow to-transparent"></div>
-        <footer class="h-24 flex justify-center items-center">
-            <div class="container flex justify-between items-center">
-                <div class="font-montserrat text-white text-xs">
+        <div class="line-gradient"></div>
+        <footer class="h-auto py-4 sm:py-0 md:h-24 flex justify-center items-center">
+            <div class="container flex flex-col sm:flex-row justify-between items-center">
+                <div class="font-montserrat text-white text-xs text-center sm:text-left order-2 sm:order-none">
                     COME BIEN
                     <br>
                     BASADO EN LUIS MIGUEL LA SERIE. USO AUTORIZADO POR NETFLIX.
@@ -104,7 +112,7 @@
                         <a class="underline" href="{{ route('privacy') }}">Aviso de privacidad</a>
                     </div>
                 </div>
-                <div class="flex justify-center items-center space-x-2">
+                <div class="flex justify-center items-center space-x-2 order-1 sm:order-none mb-4 sm:mb-0">
                     <a class="btn__icon--primary text-sm" href=""><i class="fab fa-facebook-f"></i></a>
                     <a class="btn__icon--primary text-sm" href=""><i class="fab fa-twitter"></i></a>
                     <a class="btn__icon--primary text-sm" href=""><i class="fab fa-youtube"></i></a>
@@ -115,6 +123,7 @@
         <script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
 
         @yield('scripts')
         

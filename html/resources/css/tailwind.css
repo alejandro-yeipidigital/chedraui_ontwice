@@ -47,6 +47,44 @@ h1{
     min-height: calc(100vh - 11.5rem)
 }
 
+
+.section{
+    @apply container min-h-main flex flex-col justify-center items-center py-12 bg-left-bottom bg-no-repeat;
+    background-image: url('../images/potato.png');
+    background-size: 60%;
+}
+@screen sm {
+    .section{
+        background-size: auto;
+    }
+}
+
+
+
+/* MENU */
+.nav{
+    @apply hidden fixed top-0 left-0 w-full h-full bg-black z-10 flex-col justify-center items-center;
+}
+.nav.active{
+    @apply flex;
+}
+@screen md {
+    .nav{
+        @apply relative w-auto h-auto z-auto block;
+    }
+}
+
+.nav-ul{
+    @apply flex flex-col justify-center items-center space-y-4 xl:space-x-12 text-center text-3xl xl:text-xl mt-8 tracking-widest;
+}
+@screen md {
+    .nav-ul{
+        @apply h-auto flex-row space-y-0 space-x-6 text-lg mt-0
+    }
+}
+
+
+
 .btn__icon--primary{
     @apply bg-btn w-10 h-10 rounded-full text-black border border-yellow flex justify-center items-center text-2xl leading-tight;
 }
@@ -56,15 +94,44 @@ h1{
 }
 
 .btn--primary{
-    @apply bg-yellow-gradient text-white rounded-full border border-yellow pt-2 pb-1 px-8 mx-2 text-xl tracking-widest;
+    @apply bg-yellow-gradient text-white rounded-full border border-yellow pt-2 pb-1 px-8 mx-2 text-lg tracking-widest;
 }
-
 .btn--red{
-    @apply bg-red-gradient text-white rounded-full border border-red pt-2 pb-1 px-8 mx-2 text-xl tracking-widest;
+    @apply bg-red-gradient text-white rounded-full border border-red pt-2 pb-1 px-8 mx-2 text-lg tracking-widest;
+}
+.btn--facebook{
+    @apply bg-facebook text-white rounded-full border border-white pt-2 pb-1 px-8 mx-2 text-lg tracking-widest;
+}
+@screen sm {
+    .btn--primary{
+        @apply text-xl;
+    }
+    .btn--red{
+        @apply text-xl;
+    }
+    .btn--facebook{
+        @apply text-xl;
+    }
 }
 
-.btn--facebook{
-    @apply bg-facebook text-white rounded-full border border-white pt-2 pb-1 px-8 mx-2 text-xl tracking-widest;
+
+
+/* FORM */
+
+.form-input{
+    @apply w-full text-black tracking-widest px-2 h-8;
+}
+
+
+
+/* Line Gradient */
+.line-gradient{
+    @apply w-full h-1 mx-auto bg-gradient-to-r from-transparent via-yellow to-transparent;
+}
+@screen md {
+    .line-gradient{
+        @apply w-8/12;
+    }
 }
 
 

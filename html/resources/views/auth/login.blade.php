@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="container min-h-main flex flex-col justify-center items-center py-12 bg-left-bottom bg-no-repeat" style="background-image: url({{ asset('images/potato.png') }})">
+    <section class="section">
 
         <h1>INICIAR SESIÓN</h1>
 
@@ -16,7 +16,7 @@
                         <input 
                             id="email" 
                             type="email" 
-                            class="w-full text-black tracking-widest px-2 h-8 @error('email') is-invalid @enderror" 
+                            class="form-input @error('email') is-invalid @enderror" 
                             name="email" 
                             value="{{ old('email') }}" 
                             required 
@@ -33,7 +33,7 @@
                         <input
                             id="password"
                             type="password"
-                            class="w-full text-black tracking-widest px-2 h-8 @error('password') is-invalid @enderror"
+                            class="form-input @error('password') is-invalid @enderror"
                             name="password"
                             required
                             autocomplete="off"

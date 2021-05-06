@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <section class="container min-h-main flex flex-col justify-center items-center py-12 bg-left-bottom bg-no-repeat" style="background-image: url({{ asset('images/potato.png') }})">
+    <section class="section">
         <div>
             <table class="table">
                 <thead>

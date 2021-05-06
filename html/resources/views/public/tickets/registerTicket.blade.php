@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="container min-h-main flex flex-col justify-center items-center py-12 bg-left-bottom bg-no-repeat" style="background-image: url({{ asset('images/potato.png') }})">
+    <section class="section">
 
         <h1>REGISTRA TU TICKET</h1>
         <form class="my-8 w-full max-w-sm" action="{{ route('tickets.upload') }}" enctype="multipart/form-data" method="POST">
@@ -14,7 +14,7 @@
                         <input 
                             id="ticket_code" 
                             type="text" 
-                            class="w-full text-black tracking-widest px-2 h-8 @error('email') is-invalid @enderror" 
+                            class="form-input @error('email') is-invalid @enderror" 
                             name="ticket_code" 
                             value="{{ old('ticket_code') }}" 
                             required 

@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <section class="container min-h-main flex flex-col justify-center items-center py-12 bg-left-bottom bg-no-repeat" style="background-image: url({{ asset('images/potato.png') }})">
+    <section class="section">
 
         <h1>RANKING</h1>
         <div class="bg-white text-black w-10/12 max-w-lg rounded-lg border-2 border-yellow py-6 px-16 mt-8">

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="container min-h-main flex flex-col justify-center items-center py-12 bg-left-bottom bg-no-repeat" style="background-image: url({{ asset('images/potato.png') }})">
+    <section class="section">
 
         <h1>TÉRMINOS Y CONDICIONES</h1>
         <div class="font-montserrat text-xs text-white my-8">

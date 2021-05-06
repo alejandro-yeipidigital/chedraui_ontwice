@@ -44,6 +44,9 @@ module.exports = {
             },
             fontSize: {
                 'xxs': '.5rem'
+            },
+            spacing: {
+                '76': '19rem',
             }
         },
         borderWidth: {
