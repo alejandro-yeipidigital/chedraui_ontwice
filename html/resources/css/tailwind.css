@@ -51,7 +51,7 @@ h1{
 .section{
     @apply container min-h-main flex flex-col justify-center items-center py-12 bg-left-bottom bg-no-repeat;
     background-image: url('../images/potato.png');
-    background-size: 60%;
+    background-size: 45%;
 }
 @screen sm {
     .section{
