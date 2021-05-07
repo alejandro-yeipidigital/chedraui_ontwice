@@ -1,60 +1,107 @@
-# Proyecto Laravel
+# Pepsico - Sabritas y Chedraui con Luis Miguel
 
+## Requisitos
+Los requerimientos necesarios para que el proyecto funcione son los siguientes:
 
-Este proyecto esta hecho con docker, PHP (Laravel), MySQL y NGINX, a continuación se muestran las configuraciones previas:
+- Linux, distibución utilizada por nosotros Ubuntu Server 18.04.03 LTS
+- MySQL 5.7
+    - CREATE USER 'sabritas'@'localhost' IDENTIFIED WITH mysql_native_password BY 'definido_por_l2a'; 
+- PHP >= 7.4
+    * Composer para poder emplear la carpeta vendor (https://getcomposer.org/download/)
+- Apache2 o NGINX
+    - En caso de Apache2 tener activo modo rewrite
+    - En caso de Nginx dentro del sites-available tener la siguiente linea
+        - location / {try_files $uri $uri/ /index.php?$query_string;}
 
+Ahora para hacer funcionar el proyecto cuando es un dominio se puede hacer apuntando el dominio a la carpeta public, por ejemplo si el proyecto se encuentra en **/home/sabritas/public_html/**, entonces el site.conf debe estar apuntado a **/home/sabritas/public_html/public**.
 
+## Configuración del Proyecto
+Para ejecutar el proyecto es necesario ocupar composer de la siguiente manera:
 
-### Copiando el .env
+- Posicionarse en la carpeta raíz del proyecto (/html) 
+- Ejecutar 
+    ````
+    composer install
+    ````
+- Ejecutar los siguientes comandos:
+    ````
+    chown -R www-data:www-data bootstrap
+    ````
+    ````
+    chmod -R 755 bootstrap
+    ````
+    ````
+    chown -R www-data:www-data storage
+    ````
 
-```
-    $ cp .env.example .env
-```
+- Permisos para Archivos **640**
+- Permisos para Carpetas **750**
 
-Para poder indicar puertos de nginx, base de datos con su password, existe un .env en el cual se puede configurar
-```
-    PROJECT_NAME=nombre_del_proyecto
+- Copiar el contenido del archivo .env.example a un nuevo archivo .env 
+    ````
+    cp .env.example .env
+    ````
 
-    HTTP_PORT=puerto_para_http
-    SSL_PORT=puerto_para_https
+- Ejecutar:
+    ````
+    php artisan key:generate
+    ````
 
-    DB_PORT_EXT=puerto_para_mysql(33061)
-    DB_ROOT_PASS=password_para_user_root_mysql
-    DB_NAME=name_to_our_database
-```
+### Configuración archivo .env
+Líneas a cambiar:
+````
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://localhost
+ASSET_URL=http://localhost
+````
 
+Quedando de la siguiente manera con los cambios:
+````
+APP_ENV=production
+APP_DEBUG=false
+APP_URL=definido_por_l2a_con_https_sin_la_ultima_/
+ASSET_URL=definido_por_l2a_con_https_sin_la_ultima_/
+````
 
-### Ejecutando el proyecto
+Modificar la frecuencia de creación del archivo de logs a daily:
+`````
+LOG_CHANNEL=daily
+`````
 
-```
-        $ docker-compose up --build -d
+### Configuración de Mails
+Para la configuración del envío de mails es necesario agregar los siguientes valores dentro del archivo .env y configurar los accesos de acuerdo al provedor de mails que utilice L2A:
+````
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=null
+MAIL_FROM_NAME="${APP_NAME}"
+````
 
-    Ejecutar para ver que los 3 servicios esten corriendo
+### Configuración de BD
+Para configurar la Base de Datos se hace desde el .env que se acaba de copiar:
+````
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=sabritas
+DB_USERNAME=definido_por_l2a
+DB_PASSWORD=definido_por_l2a
+````
 
-        $ docker ps 
-```
+### Crear enlace simbólico de la carpeta storage
+Para que el proyecto funcione correctamente es necesario generar un enlace simbólico de la carpeta storage a la carpeta public. Ejecutar:
 
-### Correr composer install
-```
-        $ docker exec -ti PROJECT_NAME_composer bash
+````
+php artisan storage:link
+````
 
-    Una vez dentro ejecutar los siguientes comandos
-
-        $ composer install && \
-        cp .env.example .env && \
-        chmod -R 777 storage && \
-        chmod -R 777 bootstrap
-```
-
-### Revisando el resultado
-
-Para poder ver el resultado final, hay que verlo en el navegador con el puerto que fue asignado dentro del .env en HTTP_PORT, por ejemplo si asignamos HTTP_PORT=8080, revisaremos con la siguiente url
-
-```
-    http://localhost:puerto_para_http
-```
-
-
-### Migraciones dentro de laravel
-
-Importante para poder correr las migraciones modificar el .env que esta dentro de 
+## Generar tablas dentro de la BD
+Para generar tablas y el llenado de los datos es necesario ejecutar el siguiente comando:    
+````
+php artisan migrate --seed
+````
