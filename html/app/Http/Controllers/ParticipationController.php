@@ -82,6 +82,19 @@ class ParticipationController extends Controller
                                             ]);
         }
 
+        // Revisar que el ticket no haya subido antes
+        $existing_ticket = Participation::whereTicketCode($request->ticket_code)
+                                            ->where('validation', '!=', 3)
+                                            ->first();
+
+        if ($existing_ticket) {
+            return redirect()->route('tickets.index')
+                            ->withInput()
+                            ->withErrors([
+                                            'ticket_code' => 'Este ticket ya ha sido utilizado.'
+                                            ]);
+        }
+
         // Generar nombre para guardar el ticket
         $file_name = $this->createTicketName($request, $user->id);
 
@@ -94,8 +107,6 @@ class ParticipationController extends Controller
 
         // REGISTRAR TICKET en Base de datos
         $ticket_data = $this->participationRepository->createTicket($file_name, $request->ticket_code, $temporality->id, $user->id);
-
-        // auth()->user()->participations()->save($ticket_data);
 
         return redirect()->route('users.profile')
                         ->with('status', [

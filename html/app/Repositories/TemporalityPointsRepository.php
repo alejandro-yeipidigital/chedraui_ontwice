@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Models\{TemporalityPoint, Temporality};
+use App\Models\{TemporalityPoint, Temporality, UserPoint};
 
 class TemporalityPointsRepository 
 {
@@ -121,14 +121,13 @@ class TemporalityPointsRepository
      * @param int $promotion_id
      * @return array $temporalitiees_points
      */
-    public function getUserPointsInPromotion(int $user_id, int $promotion_id) 
+    public function getUserPointsInPromotion(int $user_id) 
     {
-        $temporalities = Temporality::wherePromotionId($promotion_id)
-                                        ->whereFinalized(0)
+        $temporalities = Temporality::whereFinalized(0)
                                         ->get(['id', 'name']);
                                         
         foreach ($temporalities as $temporality) {
-            $points = TemporalityPoint::whereTemporalityId($temporality->id)
+            $points = UserPoint::whereTemporalityId($temporality->id)
                                         ->whereUserId($user_id)
                                         ->get(['points'])
                                         ->pluck('points');
