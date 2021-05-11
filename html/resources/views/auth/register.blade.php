@@ -29,6 +29,40 @@
                         @enderror
                     </div>
                     <div class="w-full">
+                        <label for="middle_name" class="text-yellow block tracking-widest">APELLIDO PATERNO:</label>
+                        <input 
+                            id="middle_name" 
+                            type="text" 
+                            class="form-input @error('middle_name') is-invalid @enderror" 
+                            name="middle_name" 
+                            value="{{ old('middle_name') }}" 
+                            required 
+                            autocomplete="off" 
+                        >
+                        @error('middle_name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="w-full">
+                        <label for="last_name" class="text-yellow block tracking-widest">APELLIDO MATERNO:</label>
+                        <input 
+                            id="last_name" 
+                            type="text" 
+                            class="form-input @error('last_name') is-invalid @enderror" 
+                            name="last_name" 
+                            value="{{ old('last_name') }}" 
+                            required 
+                            autocomplete="off" 
+                        >
+                        @error('last_name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="w-full">
                         <label for="email" class="text-yellow block tracking-widest">EMAIL:</label>
                         <input 
                             id="email" 
@@ -45,6 +79,75 @@
                             </span>
                         @enderror
                     </div>
+                    <div class="w-full">
+                        <label for="birthday" class="text-yellow block tracking-widest">FECHA DE NACIMIENTO:</label>
+                        <input 
+                            id="birthday" 
+                            type="text" 
+                            class="form-input @error('birthday') is-invalid @enderror" 
+                            name="birthday" 
+                            value="{{ old('birthday') }}" 
+                            required 
+                            autocomplete="off" 
+                        >
+                        @error('birthday')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="w-full">
+                        <label for="street" class="text-yellow block tracking-widest">CALLE:</label>
+                        <input 
+                            id="street" 
+                            type="text" 
+                            class="form-input @error('street') is-invalid @enderror" 
+                            name="street" 
+                            value="{{ old('street') }}" 
+                            required 
+                            autocomplete="off" 
+                        >
+                        @error('street')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="w-full">
+                        <label for="municipality" class="text-yellow block tracking-widest">MUNICIPIO:</label>
+                        <input 
+                            id="municipality" 
+                            type="text" 
+                            class="form-input @error('municipality') is-invalid @enderror" 
+                            name="municipality" 
+                            value="{{ old('municipality') }}" 
+                            required 
+                            autocomplete="off" 
+                        >
+                        @error('municipality')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="w-full">
+                        <label for="zip_code" class="text-yellow block tracking-widest">CÓDIGO POSTAL:</label>
+                        <input 
+                            id="zip_code" 
+                            type="text" 
+                            class="form-input @error('zip_code') is-invalid @enderror" 
+                            name="zip_code" 
+                            value="{{ old('zip_code') }}" 
+                            required 
+                            autocomplete="off" 
+                        >
+                        @error('zip_code')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+
                     <div class="w-full">
                         <label for="password" class="text-yellow block tracking-widest">CONTRASEÑA:</label>
                         <input

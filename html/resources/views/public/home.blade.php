@@ -45,7 +45,7 @@
                     1
                 </a>
                 <div class="text-yellow text-2xl sm:text-3xl tracking-widest">EN LA COMPRA</div>
-                <p class="text-lg tracking-wider">
+                <p class="text-2xl tracking-wider">
                     en línea de productos participantes
                 </p>
                 <div class="flex justify-center items-center space-x-4">
@@ -58,8 +58,8 @@
                 <a class="btn__icon--primary mb-4" href="#">
                     2
                 </a>
-                <div class="text-yellow text-2xl sm:text-3xl tracking-widest">REGÍSTRA</div>
-                <p class="text-lg tracking-wider">
+                <div class="text-yellow text-2xl sm:text-3xl tracking-widest">REGISTRA</div>
+                <p class="text-2xl tracking-wider">
                     Tu ticket en el website para acumular puntos.
                 </p>
             </div>
@@ -68,7 +68,7 @@
                     3
                 </a>
                 <div class="text-yellow text-2xl sm:text-3xl tracking-widest">PARTICIPA PARA GANAR</div>
-                <p class="text-lg tracking-wider">
+                <p class="text-2xl tracking-wider">
                     uno de los lentes de la promoción. 
                     <br>
                     Podrán ganar los 10 primeros lugares que acumulen más puntos.
