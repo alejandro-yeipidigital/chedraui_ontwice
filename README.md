@@ -105,3 +105,14 @@ Para generar tablas y el llenado de los datos es necesario ejecutar el siguiente
 ````
 php artisan migrate --seed
 ````
+
+# ACTUALIZACIÓN DE BASE DE DATOS - AJUSTES 
+Necesitamos que se corran los siguientes comandos en la raíz del proyecto para actualizar unos campos en base de datos
+
+````
+composer dump-autoload
+````
+
+````
+php artisan migrate:refresh --seed
+````
