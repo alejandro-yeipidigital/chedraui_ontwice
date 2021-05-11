@@ -30,7 +30,8 @@ Route::post('/completa-tu-registro', 'UserController@update')
 
 //PROFILE
 Route::get('/perfil', 'UserController@profile')
-    ->name('users.profile');
+    ->name('users.profile')
+    ->middleware('registerComplete');
 
 
 //RANKING
@@ -47,7 +48,7 @@ Route::get('jugar/demo', function() {
 Route::post('/juego/save-points', "GameController@savePoints")->name('game.save-points');
 
 Route::group(['prefix' => 'tickets'], function() {
-    Route::get('/', 'ParticipationController@index')->name('tickets.index');
+    Route::get('/', 'ParticipationController@index')->name('tickets.index')->middleware('registerComplete');
     Route::post('/upload', 'ParticipationController@upload')->name('tickets.upload');
 });
 

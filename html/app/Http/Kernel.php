@@ -67,5 +67,6 @@ class Kernel extends HttpKernel
         'verifyRegister' => \App\Http\Middleware\VerifyRegisterComplete::class,
         'verifyOnlyOneSession' => \App\Http\Middleware\ValidateOnlyOneSessionByUser::class,
         'VerifyAbandonedActiveParticipation' => \App\Http\Middleware\VerifyAbandonedActiveParticipation::class,
+        'registerComplete' => \App\Http\Middleware\RegisterComplete::class,
     ];
 }
