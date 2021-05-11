@@ -34,6 +34,6 @@ class ValidTicket extends Mailable
      */
     public function build()
     {
-        return $this->subject('Tu ticket ha sido validado con exito')->view('emails.tickets.valid');
+        return $this->subject('Tu ticket ha sido validado con éxito')->view('emails.tickets.valid');
     }
 }
