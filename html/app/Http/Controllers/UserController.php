@@ -37,10 +37,15 @@ class UserController extends Controller
     {
         $request->validate([
             'name'          => ['required', 'string', 'max:255'],
-            'middle_name'   => ['required', 'string', 'max:255'],
-            'last_name'     => ['required', 'string', 'max:255'],
-            'telephone'     => ['required', 'regex:/[0-9]/'],
-            'birthday'      => ['required', 'string'],
+            'middle_name'   => ['required', 'string'],
+            'last_name'     => ['required', 'string'],
+            'email'         => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'birthday'      => ['required', 'date'],
+            'telephone'     => ['required', 'string', 'min:10', 'max:10'],
+            'street'        => ['required', 'string'],
+            'municipality'  => ['required', 'string'],
+            'zip_code'      => ['required', 'string'],
+            'state'         => ['required', 'string']
         ]);
 
         $auth_user = User::find(auth()->user()->id);

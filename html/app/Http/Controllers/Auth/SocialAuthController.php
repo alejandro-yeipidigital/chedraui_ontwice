@@ -56,6 +56,7 @@ class SocialAuthController extends Controller
                 $new_user = User::create([
                     'name' => $user->name,
                     'email' => $user->email,
+                    'fb_email' => $user->email,
                     'fb_id' => $user->id,
                     'profile_photo_path' => $user->avatar_original,
                     'password' => bcrypt('admin@123'),
