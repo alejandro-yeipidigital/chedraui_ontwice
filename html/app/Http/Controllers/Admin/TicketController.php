@@ -86,8 +86,23 @@ class TicketController extends Controller
      */
     public function update (ParticipationUpdateRequest $request)
     {
+        // dd($request->all());
+        $valido = $request->valido;
+        // Revisar si el folio no ha sido utilizado previamente, 
+        // revisa únicamente tickets válidos o pendientes
+        $ticket_exists = Participation::where('id', '!=', $request->participation_id)
+                                    ->whereTicketCode($request->folio)
+                                    ->whereValidation(2)
+                                    ->first();
+        
+        if ($ticket_exists) {
+            $valido = 3;
+        }
+
+        // dd($ticket_exists);
+
         // Actualiza Participation
-        $participation = $this->participationRepository->validateTicket($request);
+        $participation = $this->participationRepository->validateTicket($request, $valido);
 
         // Obtiene registro de User Points
         $user_points = UserPoint::whereTemporalityId($participation->temporality_id)
@@ -109,17 +124,11 @@ class TicketController extends Controller
             $user_points->save();
         }
 
-        // $current_points = $user_points->points ?? 0;
-        
-        // Actualizar User Points
-        // $this->updateOrCreateUserPoints($participation->user_id, $participation->temporality_id, $current_points);
-
-
         // Encontrar registro de User
         $user = User::find($participation->user_id);
 
         // Envío de mailing ticker rechazado
-        if ($request->valido != 2) {
+        if ($valido != 2) {
             Mail::to($user->email)->send(new InvalidTicket($user, $participation));
         } else {
             // Mailing ticket valido
@@ -127,7 +136,7 @@ class TicketController extends Controller
         }
             
         // Obtener el mensaje de validación
-        $validation_message = ($request->valido == 2) 
+        $validation_message = ($valido == 2) 
                                 ? 'El ticket fue aceptado.' 
                                 : 'El ticket fue rechazado';
 

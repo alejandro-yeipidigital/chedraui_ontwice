@@ -66,22 +66,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                {{-- <div class="col-12 col-md-4">
-                                    <div class="user-info-list card">
-                                        <div class="card-header card-header-divider">
-                                            Eliminar Usuario
-                                        </div>
-                                        <div class="card-body">
-                                            <form action="{{ secure_url('/admin/usuarios/delete') }}" method="POST">
-                                                @csrf
-                                                <input type="hidden" name="wa_id" value="{{ $user->id }}">
-                                                <div align="center">
-                                                    <button class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar este usuario y todos sus registros?')">Eliminar</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div> --}}
                             </div>
                         </div>
 
@@ -111,12 +95,12 @@
                                     <div class="card-header card-header-divider">Puntos Acumulados por Fase</div>
                                     <div class="card-body">
                                         <div class="row user-display-details">
-                                            {{-- @foreach ($temporalities_points as $temporality_points)
+                                            @foreach ($temporalities_points as $temporality_points)
                                                 <div class="col-4 col-md-2 col-lg-1">
                                                     <div class="title">{{ $temporality_points->name }}</div>
                                                     <div class="counter">{{ $temporality_points->points }}</div>
                                                 </div>
-                                            @endforeach --}}
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>

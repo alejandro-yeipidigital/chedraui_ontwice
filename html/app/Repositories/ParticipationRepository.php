@@ -35,13 +35,13 @@ class ParticipationRepository
      * @param $request
      * @return Participation
      */
-    public function validateTicket ($request)
+    public function validateTicket ($request, $valido)
     {
         $participation = Participation::find($request->participation_id);
         $participation->total_ticket    = $request->total;
-        $participation->total_points    = ($request->valido == 2) ? (int) $request->total : 0;
+        $participation->total_points    = ($valido == 2) ? (int) $request->total : 0;
         $participation->ticket_code     = $request->folio;
-        $participation->validation      = $request->valido;
+        $participation->validation      = $valido;
         $participation->store           = $request->store;
         $participation->pay             = $request->payment;
         $participation->main_product    = $request->main_product;

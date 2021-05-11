@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\User;
-use App\Repositories\{UserRepository};
+use App\Repositories\{TemporalityPointsRepository, UserRepository};
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -20,6 +20,7 @@ class UserController extends Controller
         $this->middleware('auth:admin');
 
         $this->userRepository = new UserRepository;
+        $this->temporality_points = new TemporalityPointsRepository;
     }
 
     /**
@@ -40,8 +41,11 @@ class UserController extends Controller
      */
     public function show (User $user)
     {
+        $temporalities_points = $this->temporality_points->getUserPointsInPromotion($user->id);
+
         return view('admin.users.show', compact([
-                                                    'user'
+                                                    'user',
+                                                    'temporalities_points'
                                                 ]));
     }
 

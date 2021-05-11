@@ -21,13 +21,13 @@ class CreateUsersTable extends Migration
             $table->string('email');
             $table->string('telephone')->nullable();
             $table->string('birthday')->nullable();
-            // $table->string('street')->nullable();
+            $table->string('street')->nullable();
             // $table->string('number_int')->nullable();
             // $table->string('number_ext')->nullable();
-            // $table->string('zip_code')->nullable();
+            $table->string('zip_code')->nullable();
             // $table->string('neighborhood')->nullable();
-            // $table->string('municipality')->nullable();
-            // $table->string('state')->nullable();
+            $table->string('municipality')->nullable();
+            $table->string('state')->nullable();
             $table->string('total_info')->nullable();
             $table->string('fb_email')->unique()->nullable();
             $table->string('fb_id')->nullable();
