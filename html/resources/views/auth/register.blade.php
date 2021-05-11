@@ -98,17 +98,17 @@
                             @enderror
                         </div>
                         <div class="w-full">
-                            <label for="zip_code" class="text-yellow block tracking-widest">CÓDIGO POSTAL:</label>
+                            <label for="telephone" class="text-yellow block tracking-widest">TELÉFONO:</label>
                             <input 
-                                id="zip_code" 
+                                id="telephone" 
                                 type="text" 
-                                class="form-input @error('zip_code') is-invalid @enderror" 
-                                name="zip_code" 
-                                value="{{ old('zip_code') }}" 
+                                class="form-input @error('telephone') is-invalid @enderror" 
+                                name="telephone" 
+                                value="{{ old('telephone') }}" 
                                 required 
                                 autocomplete="off" 
                             >
-                            @error('zip_code')
+                            @error('telephone')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -117,7 +117,7 @@
                     </div>
                     <div class="w-1/2 max-w-sm space-y-4">
                         <div class="w-full">
-                            <label for="street" class="text-yellow block tracking-widest">CALLE:</label>
+                            <label for="street" class="text-yellow block tracking-widest">DOMICILIO:</label>
                             <input 
                                 id="street" 
                                 type="text" 
@@ -145,6 +145,23 @@
                                 autocomplete="off" 
                             >
                             @error('municipality')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="w-full">
+                            <label for="zip_code" class="text-yellow block tracking-widest">CÓDIGO POSTAL:</label>
+                            <input 
+                                id="zip_code" 
+                                type="text" 
+                                class="form-input @error('zip_code') is-invalid @enderror" 
+                                name="zip_code" 
+                                value="{{ old('zip_code') }}" 
+                                required 
+                                autocomplete="off" 
+                            >
+                            @error('zip_code')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
