@@ -55,7 +55,7 @@ h1{
 }
 @screen sm {
     .section{
-        background-size: auto;
+        background-size: 280px auto;
     }
 }
 

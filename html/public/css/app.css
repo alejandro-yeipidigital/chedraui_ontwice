@@ -713,7 +713,7 @@ h1{
 
 @media (min-width: 640px) {
   .section{
-    background-size: auto;
+    background-size: 280px auto;
   }
 }
 
