@@ -45,7 +45,7 @@
                     <table style="margin: 0 auto; border-spacing: 0;" align="center" border="0" cellpadding="0" cellspacing="0">
                         <tr>
                             <td style="line-height: 0; font-size: 0; height: 71px; background-color: #000;">
-                                <a href="{{ route('tickets.index') }}" target="_blank" style="display: inline-block;">
+                                <a href="{{url('password/reset', $token)}}" target="_blank" style="display: inline-block;">
                                     <img src="{{ asset('images/mailing/Btn_Restablecer.png') }}" alt="Ir a la app" border=”0” style="display: inline-block; margin: 0 auto; width: 200px;">
                                 </a>
                             </td>

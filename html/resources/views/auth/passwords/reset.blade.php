@@ -2,84 +2,67 @@
 
 @section('content')
 
-<div class="registerTicketContainer">
-    <div class="registerTicketBanner">
-        <div class="registerTicketSection">
+    <section class="section">
 
+        <h1>¿OLVIDASTE TU CONTRASEÑA?</h1>
 
-            <div class="row col-12 p-0 m-0 justify-content-center">
-                <div class="generalSectionsTitle">
-                    <h1>REINICIA TU CONTRASEÑA</h1>
+            <form method="POST" action="{{ route('password.update') }}" class="my-8 w-full max-w-sm">
+                @csrf
+                <input type="hidden" name="token" value="{{ $token }}">
+
+                <div class="w-full max-w-md mx-auto space-y-4">
+                    <div class="w-full">
+                        <label for="email" class="text-yellow block tracking-widest">EMAIL:</label>
+                        <input 
+                            id="email" 
+                            type="email" 
+                            class="form-input @error('email') is-invalid @enderror" 
+                            name="email" 
+                            value="{{ old('email') }}" 
+                            required 
+                            autocomplete="off"
+                        >
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="w-full">
+                        <label for="password" class="text-yellow block tracking-widest">CONTRASEÑA:</label>
+                        <input
+                            id="password"
+                            type="password"
+                            class="form-input @error('password') is-invalid @enderror"
+                            name="password"
+                            required
+                            autocomplete="off"
+                        >
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="w-full">
+                        <label for="password-confirm" class="text-yellow block tracking-widest">CONFIRMAR CONTRASEÑA:</label>
+                        <input 
+                            id="password-confirm" 
+                            type="password" 
+                            class="form-input"
+                            name="password_confirmation" 
+                            required 
+                            autocomplete="off"
+                        >
+                    </div>
                 </div>
 
-                <div class="registerTicketContain generalSectionsContain">
-                    <form class="registerTicketForm col-10 col-sm-7 col-md-7 col-lg-4" method="POST" action="{{ route('password.update') }}">
-                        @csrf
-                        <div class="registerTicketFormContain">
-                            <input type="hidden" name="token" value="{{ $token }}">
-                            <div class="ticketNameGroup">
-                                @error('email')
-                                    <span class="col-12 text-center text-danger" role="alert">
-                                        <strong><i>{{ $message }}</i></strong>
-                                    </span>
-                                @enderror
-                                <input 
-                                    class="generalFormInput @error('email') is-invalid @enderror" 
-                                    id="email"
-                                    type="email" 
-                                    name="email" 
-                                    value="{{ $email ?? old('email') }}" 
-                                    required 
-                                    autocomplete="off" 
-                                >
-                                <label for="email" class="generalFormLabel">{{ __('Correo electrónico') }}</label>
-                            </div>
-
-                            <div class="ticketNameGroup">
-                                @error('password')
-                                    <span class="col-12 text-center text-danger" role="alert">
-                                        <strong><i>{{ $message }}</i></strong>
-                                    </span>
-                                @enderror
-                                <input 
-                                    class="generalFormInput @error('password') is-invalid @enderror" 
-                                    id="password" 
-                                    type="password" 
-                                    name="password" 
-                                    required 
-                                    autocomplete="off"
-                                >
-                                <label for="password" class="generalFormLabel">{{ __('Nueva contraseña') }}</label>
-                            </div>
-
-                            <div class="ticketNameGroup">
-                                <input 
-                                    class="generalFormInput" 
-                                    id="password-confirm" 
-                                    type="password" 
-                                    name="password_confirmation" 
-                                    required 
-                                    autocomplete="off"
-                                >
-                                <label for="password-confirm" class="generalFormLabel">{{ __('Confirma tu contraseña') }}</label>
-                            </div>
-                            <br>
-                            <div class="actionButton pb-3">
-                                <button class="font-weight-bold" type="submit">
-                                    {{ __('Reiniciar contraseña') }}
-                                </button>
-                            </div>
-
-                        </div>
-                    </form>
+                <div class="flex flex-col justify-center items-center mt-8 space-y-4">
+                    <button class="btn--red" type="submit">ENVIAR</button>
                 </div>
-            </div>
+        </form>
 
-            <div class="generalLogoCookie">
-                <img src="{{asset('images/general/Logo_Cookie.png')}}" alt="Logo_Cookie">
-            </div>    
-
-        </div>
-    </div>
-</div>
+    </section>
+   
+                        
 @endsection

@@ -44,6 +44,9 @@
                             </span>
                         @enderror
                     </div>
+                    <div class="w-full text-right">
+                        <a class="font-montserrat text-white text-xs underline text-right" href="{{ route('password.request') }}">¿Olvidaste tu contraseña?</a>
+                    </div>
                 </div>
 
                 <div class="flex flex-col justify-center items-center mt-8 space-y-4">
@@ -51,6 +54,11 @@
                     <a class="btn--facebook" href="{{ route('social.auth', 'facebook') }}">
                         CONECTAR CON FACEBOOK
                     </a>
+                </div>
+
+                <div class=" font-montserrat text-white text-xs text-center mt-8">
+                    Si no tienes cuenta 
+                    <a class="underline" href="{{ route('register') }}">Registrate aquí</a>
                 </div>
         </form>
 

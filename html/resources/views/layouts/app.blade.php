@@ -123,8 +123,8 @@
                     </div>
                 </div>
                 <div class="flex justify-center items-center space-x-2 order-1 sm:order-none mb-4 sm:mb-0">
-                    <a class="btn__icon--primary text-sm" href="https://www.facebook.com/search/top?q=promociones%20pepsico%20m%C3%A9xico" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn__icon--primary text-sm" href="https://twitter.com/JoyApp_PepsiCo/status/1354127020259684353" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a class="btn__icon--primary text-sm" href="https://www.facebook.com/JoyApp.PepsiCo" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn__icon--primary text-sm" href="https://twitter.com/JoyApp_PepsiCo" target="_blank"><i class="fab fa-twitter"></i></a>
                     <a class="btn__icon--primary text-sm" href="https://www.youtube.com/channel/UCxIhWXZ2NdRRS8q_oc0OtuQ" target="_blank"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>

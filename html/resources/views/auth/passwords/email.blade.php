@@ -1,64 +1,49 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="registerTicketContainer">
-        <div class="registerTicketBanner">
-            <div class="registerTicketSection">
 
-                <div class="row col-12 p-0 m-0 justify-content-center">
+    <section class="section">
 
-                    <div class="generalSectionsTitle">
-                        <h1>¿OLVIDASTE TU CONTRASEÑA?</h1>
-                    </div>
+        <h1>¿OLVIDASTE TU CONTRASEÑA?</h1>
 
-                    <div class="registerTicketContain generalSectionsContain">
-                        <form class="registerTicketForm" method="POST" action="{{ route('password.email') }}">
-                            @csrf
-                            <div class="registerTicketFormContain">
-                                <div class="ticketNameGroup">
-                                    @error('email')
-                                        <span class="col-12 text-center text-danger" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                    <div class="text-blueSaladitas">
-                                        <small class="font-weight-bold">
-                                            <i>Ingrese su correo electrónico para recibir la liga de reinicio de contraseña.</i>
-                                        </small>
-                                    </div>
-                                    <input 
-                                        class="generalFormInput" 
-                                        type="email" 
-                                        name="email" 
-                                        id="email" 
-                                        autocomplete="off" 
-                                        title="Ingrese su email"
-                                        value="{{ old('email') }}" 
-                                        required 
-                                    >
-                                    <label
-                                        class="generalFormLabel"
-                                        for="email"
-                                    >
-                                        {{ __('E-Mail') }}
-                                    </label>
-                                </div>
-                                <div class="actionButtonDark pt-5 pb-5">
-                                    <button type="submit">
-                                        {{ __('Enviarme liga de reinicio') }}
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+        <p class="mt-8 tracking-wider">Ingrese su correo electrónico para recibir la liga de reinicio de contraseña.</p>
 
-                </div>
-
-                <div class="generalLogoCookie">
-                    <img src="{{asset('images/general/Logo_Cookie.png')}}" alt="Logo_Cookie">
-                </div>
-
+        @if (session('status'))
+            <div class="font-montserrat text-center text-green" role="alert">
+                {{ session('status') }}
             </div>
-        </div>
-    </div>
+        @endif
+
+            <form class="my-8 w-full max-w-sm" method="POST" action="{{ route('password.email') }}">
+                @csrf
+
+                <div class="w-full max-w-md mx-auto space-y-4">
+
+                    <div class="w-full">
+                        <label for="email" class="text-yellow block tracking-widest">EMAIL:</label>
+                        <input 
+                            id="email" 
+                            type="email" 
+                            class="form-input @error('email') is-invalid @enderror" 
+                            name="email" 
+                            value="{{ old('email') }}" 
+                            required 
+                            autocomplete="off"
+                        >
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-center items-center mt-8 space-y-4">
+                    <button class="btn--red" type="submit">REESTABLECER</button>
+                </div>
+        </form>
+
+    </section>
+   
+                        
 @endsection

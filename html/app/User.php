@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Models\Participation;
+use App\Notifications\CustomResetPasswordNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -82,5 +83,16 @@ class User extends Authenticatable
     public function isAdmin()
     {
         return false;
+    }
+
+    /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new CustomResetPasswordNotification($token));
     }
 }
