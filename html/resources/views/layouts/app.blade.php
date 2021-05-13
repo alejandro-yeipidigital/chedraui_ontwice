@@ -52,8 +52,21 @@
         gtag('config', 'UA-54378716-19');
         </script>
 
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-N5JGJWC');</script>
+        <!-- End Google Tag Manager -->
+
     </head>
     <body class="bg-black">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5JGJWC"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            <!-- End Google Tag Manager (noscript) -->
+            
         <header class="bg-black h-20 text-yellow">
             <div class="container h-full flex justify-between items-center">
                 <a class="block h-12 md:h-14" href="{{ url('/') }}">
