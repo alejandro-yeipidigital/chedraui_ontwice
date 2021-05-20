@@ -88,17 +88,38 @@ h1{
 .btn__icon--primary{
     @apply bg-btn w-10 h-10 rounded-full text-black border border-yellow flex justify-center items-center text-2xl leading-tight;
 }
+    .btn__icon--primary:hover{
+        @apply bg-btn-reverse;
+    }
 
 .btn__icon--red{
     @apply bg-red-gradient w-10 h-10 rounded-full border border-red flex justify-center items-center text-2xl leading-tight text-white;
 }
+    .btn__icon--red:hover{
+        @apply bg-red-gradient-reverse;
+    }
 
 .btn--primary{
     @apply bg-yellow-gradient text-white rounded-full border border-yellow pt-2 pb-1 px-8 mx-2 text-lg tracking-widest;
 }
+    .btn--primary:hover{
+        @apply bg-yellow-gradient-reverse;
+    }
+
 .btn--red{
     @apply bg-red-gradient text-white rounded-full border border-red pt-2 pb-1 px-8 mx-2 text-lg tracking-widest;
 }
+    .btn--red:hover{
+        @apply bg-red-gradient-reverse;
+    }
+
+.btn--compra{
+    @apply bg-transparent text-yellow rounded-full border border-yellow pt-2 pb-1 px-8 mx-2 text-lg tracking-widest;
+}
+    .btn--compra:hover{
+        @apply bg-yellow-gradient-reverse text-white;
+    }
+
 .btn--facebook{
     @apply bg-facebook text-white rounded-full border border-white pt-2 pb-1 px-8 mx-2 text-lg tracking-widest;
 }

@@ -23,12 +23,15 @@
                 <img class="w-10/12 max-w-xl m-auto" src="{{ asset('images/logo_promo.png') }}" alt="Una promo grande como el sol - Sabritas">
                 <div class="flex flex-wrap justify-center items-center">
                     @guest
-                        <a class="btn--primary my-2" href="{{ route('login') }}">INICIAR SESIÓN</a>
-                        <a class="btn--red my-2" href="{{ route('register') }}">REGÍSTRARTE</a>
+                        <a class="btn--primary my-4" href="{{ route('login') }}">INICIAR SESIÓN</a>
+                        <a class="btn--red my-4" href="{{ route('register') }}">REGÍSTRARTE</a>
                     @else
-                        <a class="btn--primary my-2" href="{{ route('users.profile') }}">VER PERFIL</a>
-                        <a class="btn--red my-2" href="{{ route('tickets.index') }}">REGÍSTRAR TICKET</a>
+                        <a class="btn--primary my-4" href="{{ route('users.profile') }}">VER PERFIL</a>
+                        <a class="btn--red my-4" href="{{ route('tickets.index') }}">REGÍSTRAR TICKET</a>
                     @endguest
+                    <div class="w-full flex justify-center items-center">
+                        <a class="btn--compra my-4" href="https://www.chedraui.com.mx/Departamentos/S%C3%BAper/Despensa/Botanas-y-Frutas-Secas/c/MC210505?siteName=Sitio+de+Chedraui&isAlcoholRestricted=false" target="_blank">COMPRA AQUÍ</a>
+                    </div>
                 </div>
             </div>
         </div>

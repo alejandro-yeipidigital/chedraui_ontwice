@@ -9,9 +9,12 @@ module.exports = {
         extend: {
             backgroundImage: theme => ({
                 'btn': "linear-gradient(220deg, rgba(207,175,78,1) 0%, rgba(244,225,119,1) 50%, rgba(167,116,14,1) 100%)",
+                'btn-reverse': "linear-gradient(220deg, rgba(167,116,14,1) 0%, rgba(244,225,119,1) 50%, rgba(207,175,78,1) 100%)",
                 'banner': "url('../images/banner.jpg')",
                 'yellow-gradient': "linear-gradient(180deg, rgba(223,190,84,1) 0%, rgba(199,155,42,1) 50%)",
+                'yellow-gradient-reverse': "linear-gradient(180deg, rgba(199,155,42,1) 0%, rgba(223,190,84,1) 50%)",
                 'red-gradient': "linear-gradient(0deg, rgba(126,11,1,1) 0%, rgba(213,102,3,1) 100%)",
+                'red-gradient-reverse': "linear-gradient(0deg, rgba(213,102,3,1) 0%, rgba(126,11,1,1) 100%)",
                 
             }),
             colors: {

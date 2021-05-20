@@ -57,6 +57,11 @@
                     <button class="btn--red" type="submit">REGISTRAR TICKET</button>
                 </div>
         </form>
+        
+        <div class="flex flex-col justify-center items-center">
+            <p class="font-montserrat text-xs">¿Aún no tienes producto?</p>
+            <a class="btn--compra my-4" href="https://www.chedraui.com.mx/Departamentos/S%C3%BAper/Despensa/Botanas-y-Frutas-Secas/c/MC210505?siteName=Sitio+de+Chedraui&isAlcoholRestricted=false" target="_blank">COMPRA AQUÍ</a>
+        </div>
 
     </section>
                 
